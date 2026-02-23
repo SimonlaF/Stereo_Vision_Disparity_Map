@@ -1,31 +1,31 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="C:\Users\FERRIER Simon\Documents\Cours\Computer Vision\TP\Stereo-Vision-Project-\src\main.cpp">
+    <ClCompile Include="C:\Users\Simon\Documents\Cours\Computer Vision\TP1\Stereo-Vision-Project-\src\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\FERRIER Simon\Documents\Cours\Computer Vision\TP\Stereo-Vision-Project-\src\calibration.cpp">
+    <ClCompile Include="C:\Users\Simon\Documents\Cours\Computer Vision\TP1\Stereo-Vision-Project-\src\calibration.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\FERRIER Simon\Documents\Cours\Computer Vision\TP\Stereo-Vision-Project-\src\stereo_calibration.cpp">
+    <ClCompile Include="C:\Users\Simon\Documents\Cours\Computer Vision\TP1\Stereo-Vision-Project-\src\stereo_calibration.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\FERRIER Simon\Documents\Cours\Computer Vision\TP\Stereo-Vision-Project-\src\feature_matcher.cpp">
+    <ClCompile Include="C:\Users\Simon\Documents\Cours\Computer Vision\TP1\Stereo-Vision-Project-\src\feature_matcher.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\FERRIER Simon\Documents\Cours\Computer Vision\TP\Stereo-Vision-Project-\src\epipolar.cpp">
+    <ClCompile Include="C:\Users\Simon\Documents\Cours\Computer Vision\TP1\Stereo-Vision-Project-\src\epipolar.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\FERRIER Simon\Documents\Cours\Computer Vision\TP\Stereo-Vision-Project-\src\stereo_reconstruction.cpp">
+    <ClCompile Include="C:\Users\Simon\Documents\Cours\Computer Vision\TP1\Stereo-Vision-Project-\src\stereo_reconstruction.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\Users\FERRIER Simon\Documents\Cours\Computer Vision\TP\Stereo-Vision-Project-\CMakeLists.txt" />
+    <CustomBuild Include="C:\Users\Simon\Documents\Cours\Computer Vision\TP1\Stereo-Vision-Project-\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{4C0860FF-C04E-398A-9A1E-293F9FA6335D}</UniqueIdentifier>
+      <UniqueIdentifier>{98744186-956D-36FF-A0B9-C4CBB0B42969}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

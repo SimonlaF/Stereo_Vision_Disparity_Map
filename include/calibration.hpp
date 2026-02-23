@@ -11,7 +11,7 @@ public:
     
     // Execute la capture interactive et sauvegarde le .yml
     bool runCalibration(int camID, const std::string& saveFileName);
-
+    bool runCalibrationFromFiles(const std::vector<std::string>& imagePaths, const std::string& saveFileName); 
 private:
     cv::Size _patternSize;
     float _squareSize;

@@ -24,6 +24,117 @@ void StereoCalibrator::generateObjectPoints(std::vector<cv::Point3f>& objp) {
     }
 }
 
+bool StereoCalibrator::runStereoCalibrationFromTwoFiles(const std::string& leftImgPath, 
+                                                        const std::string& rightImgPath, 
+                                                        const std::string& saveFile) {
+    std::vector<std::vector<cv::Point3f>> objectPoints;
+    std::vector<std::vector<cv::Point2f>> imgPts1, imgPts2;
+    std::vector<cv::Point3f> objp;
+    generateObjectPoints(objp);
+
+    // Chargement des deux images
+    cv::Mat frame1 = cv::imread(leftImgPath);
+    cv::Mat frame2 = cv::imread(rightImgPath);
+
+    if (frame1.empty() || frame2.empty()) {
+        std::cerr << "Erreur : Impossible de charger les images." << std::endl;
+        return false;
+    }
+
+    cv::Mat gray1, gray2;
+    cv::cvtColor(frame1, gray1, cv::COLOR_BGR2GRAY);
+    cv::cvtColor(frame2, gray2, cv::COLOR_BGR2GRAY);
+
+    std::vector<cv::Point2f> corners1, corners2;
+    // Détection des coins
+    bool found1 = cv::findChessboardCorners(gray1, _patternSize, corners1);
+    bool found2 = cv::findChessboardCorners(gray2, _patternSize, corners2);
+
+    if (found1 && found2) {
+        // Affinage indispensable
+        cv::cornerSubPix(gray1, corners1, cv::Size(11, 11), cv::Size(-1, -1), 
+                         cv::TermCriteria(cv::TermCriteria::EPS + cv::TermCriteria::COUNT, 30, 0.001));
+        cv::cornerSubPix(gray2, corners2, cv::Size(11, 11), cv::Size(-1, -1), 
+                         cv::TermCriteria(cv::TermCriteria::EPS + cv::TermCriteria::COUNT, 30, 0.001));
+
+        imgPts1.push_back(corners1);
+        imgPts2.push_back(corners2);
+        objectPoints.push_back(objp);
+    } else {
+        std::cerr << "Échec : Le damier n'est pas visible sur les DEUX images." << std::endl;
+        return false;
+    }
+
+    // Calcul de la géométrie entre les deux caméras
+    cv::Mat R, T, E, F;
+    double rms = cv::stereoCalibrate(objectPoints, imgPts1, imgPts2,
+                    _K1, _dist1, _K2, _dist2, gray1.size(),
+                    R, T, E, F, cv::CALIB_FIX_INTRINSIC);
+
+    // Sauvegarde des paramètres extrinsèques (R et T)
+    cv::FileStorage fs(saveFile, cv::FileStorage::WRITE);
+    fs << "K1" << _K1 << "D1" << _dist1 << "K2" << _K2 << "D2" << _dist2;
+    fs << "R" << R << "T" << T << "RMS" << rms;
+    fs.release();
+
+    std::cout << "Calibration finie avec 1 paire. RMS: " << rms << std::endl;
+    // --- PHASE DE VÉRIFICATION : RECTIFICATION ---
+    std::cout << "Génération de la vue rectifiée pour vérification..." << std::endl;
+    // IMPORTANT : OpenCV exige souvent du CV_64F (double) pour la stéréo
+    _K1.convertTo(_K1, CV_64F);
+    _K2.convertTo(_K2, CV_64F);
+    _dist1.convertTo(_dist1, CV_64F);
+    _dist2.convertTo(_dist2, CV_64F);
+    
+    // On s'assure que R et T sont aussi au bon format
+    R.convertTo(R, CV_64F);
+    T.convertTo(T, CV_64F);
+
+    cv::Mat R1, R2, P1, P2, Q;
+    cv::Rect validROI[2];
+
+    // 1. Calcul des matrices de rectification
+    // On utilise la taille de gray1 qui est déjà chargée
+    cv::stereoRectify(_K1, _dist1, _K2, _dist2, gray1.size(), R, T, 
+                      R1, R2, P1, P2, Q, cv::CALIB_ZERO_DISPARITY, 1, gray1.size(), 
+                      &validROI[0], &validROI[1]);
+
+    // 2. Préparation des cartes de transformation
+    cv::Mat map11, map12, map21, map22;
+    cv::initUndistortRectifyMap(_K1, _dist1, R1, P1, gray1.size(), CV_16SC2, map11, map12);
+    cv::initUndistortRectifyMap(_K2, _dist2, R2, P2, gray2.size(), CV_16SC2, map21, map22);
+    // 3. Application de la rectification sur nos images originales
+    // 3. Application de la rectification sur nos images originales
+    cv::Mat rect1, rect2;
+    cv::remap(frame1, rect1, map11, map12, cv::INTER_LINEAR);
+    cv::remap(frame2, rect2, map21, map22, cv::INTER_LINEAR);
+
+    // --- CORRECTION ICI : Fini le canvas rigide et copyTo ! ---
+    cv::Mat canvas;
+    
+    // On vérifie que les images sont compatibles avant de les coller
+    if (rect1.size() != rect2.size() || rect1.type() != rect2.type()) {
+        std::cerr << "ERREUR FATALE : Les deux images n'ont pas la même taille ou le même format (Canaux) !" << std::endl;
+        std::cerr << "Taille img1: " << rect1.cols << "x" << rect1.rows << " | Taille img2: " << rect2.cols << "x" << rect2.rows << std::endl;
+        return false; 
+    }
+
+    // Colle les images l'une à côté de l'autre de manière 100% sécurisée
+    cv::hconcat(rect1, rect2, canvas);
+
+    // 5. Dessin de lignes horizontales rouges pour vérifier l'alignement
+    for (int i = 0; i < canvas.rows; i += 32) {
+        cv::line(canvas, cv::Point(0, i), cv::Point(canvas.cols, i), cv::Scalar(0, 0, 255), 1);
+    }
+
+    cv::imshow("Verification Rectification", canvas);
+    cv::waitKey(0); 
+    return true;
+}
+
+
+
+
 bool StereoCalibrator::runStereoCalibration(int camIdx1, int camIdx2, const std::string& saveFile) {
     std::vector<std::vector<cv::Point3f>> objectPoints;
     std::vector<std::vector<cv::Point2f>> imgPts1, imgPts2;

@@ -14,7 +14,7 @@ public:
 
     // Lance la capture synchro et calcule R et T
     bool runStereoCalibration(int camIdx1, int camIdx2, const std::string& saveFile);
-
+    bool runStereoCalibrationFromTwoFiles(const std::string& leftImgPath,const std::string& rightImgPath, const std::string& saveFile);
 private:
     cv::Size _patternSize;
     float _squareSize;
