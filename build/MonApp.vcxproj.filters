@@ -4,6 +4,21 @@
     <ClCompile Include="C:\Users\FERRIER Simon\Documents\Cours\Computer Vision\TP\Stereo-Vision-Project-\src\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="C:\Users\FERRIER Simon\Documents\Cours\Computer Vision\TP\Stereo-Vision-Project-\src\calibration.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\FERRIER Simon\Documents\Cours\Computer Vision\TP\Stereo-Vision-Project-\src\stereo_calibration.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\FERRIER Simon\Documents\Cours\Computer Vision\TP\Stereo-Vision-Project-\src\feature_matcher.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\FERRIER Simon\Documents\Cours\Computer Vision\TP\Stereo-Vision-Project-\src\epipolar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\FERRIER Simon\Documents\Cours\Computer Vision\TP\Stereo-Vision-Project-\src\stereo_reconstruction.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="C:\Users\FERRIER Simon\Documents\Cours\Computer Vision\TP\Stereo-Vision-Project-\CMakeLists.txt" />
