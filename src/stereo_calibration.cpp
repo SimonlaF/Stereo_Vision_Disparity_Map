@@ -96,7 +96,7 @@ bool StereoCalibrator::runStereoCalibrationFromTwoFiles(const std::string& leftI
     // 1. Calcul des matrices de rectification
     // On utilise la taille de gray1 qui est déjà chargée
     cv::stereoRectify(_K1, _dist1, _K2, _dist2, gray1.size(), R, T, 
-                      R1, R2, P1, P2, Q, cv::CALIB_ZERO_DISPARITY, 1, gray1.size(), 
+                      R1, R2, P1, P2, Q, cv::CALIB_ZERO_DISPARITY, 0, gray1.size(), 
                       &validROI[0], &validROI[1]);
 
     // 2. Préparation des cartes de transformation
@@ -194,5 +194,70 @@ bool StereoCalibrator::runStereoCalibration(int camIdx1, int camIdx2, const std:
     fs.release();
 
     std::cout << "Calibration Stéréo OK ! RMS: " << rms << std::endl;
+    return true;
+}
+
+bool StereoCalibrator::runStereoCalibrationFromFileSets(
+    const std::vector<std::string>& leftImages,
+    const std::vector<std::string>& rightImages,
+    const std::string& saveFile) 
+{
+    if (leftImages.size() != rightImages.size() || leftImages.empty()) {
+        std::cerr << "Erreur : le nombre d'images doit correspondre et > 0" << std::endl;
+        return false;
+    }
+
+    std::vector<std::vector<cv::Point3f>> objectPoints;
+    std::vector<std::vector<cv::Point2f>> imgPts1, imgPts2;
+    std::vector<cv::Point3f> objp;
+    generateObjectPoints(objp);
+
+    for (size_t i = 0; i < leftImages.size(); i++) {
+        cv::Mat imgL = cv::imread(leftImages[i]);
+        cv::Mat imgR = cv::imread(rightImages[i]);
+        if (imgL.empty() || imgR.empty()) continue;
+
+        cv::Mat grayL, grayR;
+        cv::cvtColor(imgL, grayL, cv::COLOR_BGR2GRAY);
+        cv::cvtColor(imgR, grayR, cv::COLOR_BGR2GRAY);
+
+        std::vector<cv::Point2f> cornersL, cornersR;
+        bool foundL = cv::findChessboardCorners(grayL, _patternSize, cornersL);
+        bool foundR = cv::findChessboardCorners(grayR, _patternSize, cornersR);
+
+        if (foundL && foundR) {
+            cv::cornerSubPix(grayL, cornersL, cv::Size(11,11), cv::Size(-1,-1),
+                             cv::TermCriteria(cv::TermCriteria::EPS + cv::TermCriteria::COUNT, 30, 0.001));
+            cv::cornerSubPix(grayR, cornersR, cv::Size(11,11), cv::Size(-1,-1),
+                             cv::TermCriteria(cv::TermCriteria::EPS + cv::TermCriteria::COUNT, 30, 0.001));
+
+            imgPts1.push_back(cornersL);
+            imgPts2.push_back(cornersR);
+            objectPoints.push_back(objp);
+        }
+    }
+
+    if (objectPoints.empty()) {
+        std::cerr << "Erreur : aucune paire valide pour la calibration stéréo" << std::endl;
+        return false;
+    }
+
+    cv::Mat R, T, E, F;
+    cv::Mat imgL = cv::imread(leftImages[0]);
+    cv::Size imageSize = imgL.size();
+
+    double rms = cv::stereoCalibrate(objectPoints, imgPts1, imgPts2,
+                                     _K1, _dist1, _K2, _dist2, imageSize,
+                                     R, T, E, F, cv::CALIB_FIX_INTRINSIC);
+
+    // Sauvegarde complète dans un fichier YAML
+    cv::FileStorage fs(saveFile, cv::FileStorage::WRITE);
+    fs << "K1" << _K1 << "D1" << _dist1
+       << "K2" << _K2 << "D2" << _dist2
+       << "R"  << R   << "T"  << T
+       << "RMS"<< rms;
+    fs.release();
+
+    std::cout << "Calibration stéréo terminée. RMS=" << rms << std::endl;
     return true;
 }

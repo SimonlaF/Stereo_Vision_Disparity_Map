@@ -1,7 +1,7 @@
 {
 	"InstallScripts" : 
 	[
-		"C:/Users/Simon/Documents/Cours/Computer Vision/TP1/Stereo-Vision-Project-/build/cmake_install.cmake"
+		"/home/luan/StereoVision/Stereo-Vision-Project-/build/cmake_install.cmake"
 	],
 	"Parallel" : false
 }
