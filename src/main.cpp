@@ -15,11 +15,11 @@ cv::Size pattern(7, 11);   // Nombre de coins internes du damier
 float squareSize = 25.0f; // Taille d'un carré en mm
 
 // --- FLAGS DE CONTROLE (Active/Désactive ici) ---
-bool runMonoCalib   = true; // Étape 1
+bool runMonoCalib   = false; // Étape 1
 bool runStereoCalib = true; // Étape 2
-bool showMatches    = false;  // Étape 3
-bool showEpipolar   = false;  // Étape 4, 5, 6
-bool show3D         = false;  // Étape 7, 8, 9, 10
+bool showMatches    = true;  // Étape 3
+bool showEpipolar   = true;  // Étape 4, 5, 6
+bool show3D         = true;  // Étape 7, 8, 9, 10
 
 // =========================================================
 // ÉTAPE 1 : CALIBRATION INTRINSÈQUE (Individuelle)
@@ -127,13 +127,24 @@ if (runStereoCalib) {
     cv::findChessboardCorners(grayL, pattern, ptsL);
     cv::findChessboardCorners(grayR, pattern, ptsR);
 
-    cv::Mat F = cv::findFundamentalMat(ptsL, ptsR, cv::FM_8POINT);
+    // Dessiner les coins détectés
+    cv::drawChessboardCorners(leftRect, pattern, ptsL, true);
+    cv::drawChessboardCorners(rightRect, pattern, ptsR, true);
 
-    Epipolar epipolar;
-    epipolar.drawEpipolarLines(leftRect, rightRect, F, ptsL, ptsR);
+    // Fusion horizontale
+    cv::Mat canvas;
+    cv::hconcat(leftRect, rightRect, canvas);
 
-    cv::imshow("Rectified Left", leftRect);
-    cv::imshow("Rectified Right", rightRect);
+    // Lignes horizontales de vérification
+    for (int y = 0; y < canvas.rows; y += 40)
+    {
+        cv::line(canvas,
+                cv::Point(0, y),
+                cv::Point(canvas.cols, y),
+                cv::Scalar(0, 255, 0), 1);
+    }
+
+    cv::imshow("Rectification Verification", canvas);
     cv::waitKey(0);
 }
 
@@ -148,82 +159,120 @@ StereoReconstructor reconstructor("stereo_params.yml");
 // Étape 7 : Pré-calcul de la rectification pour aligner les images
 reconstructor.computeRectification(cv::Size(1280, 720));
 
-cv::VideoCapture capL, capR;
-if (showMatches || showEpipolar || show3D) {
-    capL.open(0);
-    capR.open(1);
-    if (!capL.isOpened() || !capR.isOpened()) {
-        std::cerr << "ERREUR: Caméras introuvables." << std::endl;
-        return -1;
+// =========================================================
+// ÉTAPES 3 à 6 SUR DATASET
+// =========================================================
+
+    std::vector<std::string> leftImages, rightImages;
+
+    for (const auto& entry : fs::directory_iterator("../leftcamera"))
+        leftImages.push_back(entry.path().string());
+
+    for (const auto& entry : fs::directory_iterator("../rightcamera"))
+        rightImages.push_back(entry.path().string());
+
+    std::sort(leftImages.begin(), leftImages.end());
+    std::sort(rightImages.begin(), rightImages.end());
+
+    size_t N = std::min(leftImages.size(), rightImages.size());
+
+    for (size_t i = 0; i < N; i++)
+    {
+        std::cout << "Traitement paire : "
+                << leftImages[i] << " / "
+                << rightImages[i] << std::endl;
+
+        cv::Mat frameL = cv::imread(leftImages[i]);
+        cv::Mat frameR = cv::imread(rightImages[i]);
+
+        if (frameL.empty() || frameR.empty())
+            continue;
+
+        // ==========================
+        // ÉTAPE 3 : MATCHING
+        // ==========================
+        std::vector<cv::KeyPoint> kpL, kpR;
+        std::vector<cv::DMatch> goodMatches;
+
+        matcher.findMatches(frameL, frameR, kpL, kpR, goodMatches);
+
+        if (showMatches)
+            matcher.drawMatches(frameL, frameR, kpL, kpR, goodMatches);
+
+        // ==========================
+        // ÉTAPES 4,5,6 : EPIPOLAIRE
+        // ==========================
+        if (showEpipolar && goodMatches.size() >= 8)
+        {
+            std::vector<cv::Point2f> ptsL, ptsR;
+
+            for (auto& m : goodMatches)
+            {
+                ptsL.push_back(kpL[m.queryIdx].pt);
+                ptsR.push_back(kpR[m.trainIdx].pt);
+            }
+
+            cv::Mat F = epipolar.computeFundamental(ptsL, ptsR);
+
+            cv::Mat frameEpipolar = frameR.clone();
+            epipolar.drawEpipolarLines(frameL, frameEpipolar, F, ptsL, ptsR);
+
+            cv::imshow("Etape 6: Lignes Epipolaires", frameEpipolar);
+            cv::waitKey(0);
+        }
+
+// ==========================================================
+// ÉTAPES 7 à 10 : RECTIFICATION + DISPARITÉ + 3D (DATASET)
+// ==========================================================
+cv::Mat testImg = cv::imread(leftImages[0]);
+reconstructor.computeRectification(testImg.size());
+
+if (show3D)
+{
+    // Calcul de la carte de disparité
+    cv::Mat disparity = reconstructor.computeDisparity(frameL, frameR);
+
+    if (!disparity.empty())
+    {
+        // Pixel central
+        int centerX = frameL.cols / 2;
+        int centerY = frameL.rows / 2;
+
+        short dValue = disparity.at<short>(centerY, centerX);
+
+        if (dValue > 0)
+        {
+            float d = dValue / 16.0f;
+
+            cv::Point3f pos3D =
+                reconstructor.projectTo3D(centerX, centerY, d);
+
+            std::string text =
+                "Distance: " + std::to_string(pos3D.z / 10.0f) + " cm";
+
+            cv::putText(frameL, text,
+                        cv::Point(50, 80),
+                        cv::FONT_HERSHEY_SIMPLEX,
+                        1,
+                        cv::Scalar(255, 0, 0),
+                        2);
+
+            cv::drawMarker(frameL,
+                           cv::Point(centerX, centerY),
+                           cv::Scalar(0, 0, 255),
+                           cv::MARKER_CROSS,
+                           20, 2);
+        }
+
+        // Affichage carte de disparité normalisée
+        cv::Mat dispVis;
+        cv::normalize(disparity, dispVis, 0, 255, cv::NORM_MINMAX, CV_8U);
+        cv::imshow("Carte de disparité", dispVis);
     }
 }
 
-std::cout << "\n--- DEMARRAGE DU FLUX TEMPS REEL ---" << std::endl;
-cv::Mat frameL, frameR;
-
-while (true) {
-    capL >> frameL;
-    capR >> frameR;
-    if (frameL.empty() || frameR.empty()) break;
-
-    // =========================================================
-    // ÉTAPE 3 : CORRESPONDANCES (Matching)
-    // =========================================================
-    std::vector<cv::KeyPoint> kpL, kpR;
-    std::vector<cv::DMatch> goodMatches;
-    matcher.findMatches(frameL, frameR, kpL, kpR, goodMatches);
-
-    if (showMatches) {
-        matcher.drawMatches(frameL, frameR, kpL, kpR, goodMatches);
-    }
-
-    // =========================================================
-    // ÉTAPES 4, 5, 6 : GEOMETRIE EPIPOLAIRE
-    // =========================================================
-    if (showEpipolar && goodMatches.size() >= 8) {
-        std::vector<cv::Point2f> ptsL, ptsR;
-        for (auto& m : goodMatches) {
-            ptsL.push_back(kpL[m.queryIdx].pt);
-            ptsR.push_back(kpR[m.trainIdx].pt);
-        }
-
-        // Étape 4 & 5 : Calcul des matrices F et E
-        cv::Mat F = epipolar.computeFundamental(ptsL, ptsR);
-        
-        // Étape 6 : Dessin des lignes (Vérifie si le point est sur la ligne)
-        // On le dessine sur une copie pour ne pas polluer l'image 3D
-        cv::Mat frameEpipolar = frameR.clone();
-        epipolar.drawEpipolarLines(frameL, frameEpipolar, F, ptsL, ptsR);
-        cv::imshow("Etape 6: Lignes Epipolaires", frameEpipolar);
-    }
-
-    // =========================================================
-    // ÉTAPES 7 à 10 : RECTIFICATION ET 3D
-    // =========================================================
-    if (show3D) {
-        // Étape 7 & 10 : Rectification et calcul de la carte de disparité
-        cv::Mat disparity = reconstructor.computeDisparity(frameL, frameR);
-
-        // Étape 8 & 9 : Triangulation (Calcul de la distance Z)
-        // On teste sur le pixel central de l'image
-        int centerX = 640; int centerY = 360;
-        short dValue = disparity.at<short>(centerY, centerX);
-        
-        if (dValue > 0) {
-            float d = dValue / 16.0f; // Conversion format OpenCV
-            cv::Point3f pos3D = reconstructor.projectTo3D(centerX, centerY, d);
-            
-            // Affichage de la distance sur l'image
-            std::string text = "Distance: " + std::to_string(pos3D.z / 10.0f) + " cm";
-            cv::putText(frameL, text, cv::Point(50, 80), cv::FONT_HERSHEY_SIMPLEX, 1, cv::Scalar(255, 0, 0), 2);
-            
-            // Dessiner un curseur au centre
-            cv::drawMarker(frameL, cv::Point(centerX, centerY), cv::Scalar(0, 0, 255), cv::MARKER_CROSS, 20, 2);
-        }
-        cv::imshow("Etape 10: Vue Gauche + Distance", frameL);
-    }
-
-    if (cv::waitKey(1) == 27) break; // Echap pour quitter
+    cv::imshow("Etape 10: Vue Gauche + Distance", frameL);
+    cv::waitKey(0);
 }
 
 return 0;
