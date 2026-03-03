@@ -6,6 +6,35 @@
 #include "../include/stereo_reconstruction.hpp" // Tes étapes 7, 8, 9, 10
 #include <filesystem>
 namespace fs = std::filesystem;
+float fx, fy, cx0, cx1, cy, baseline, doffs;
+void loadCalibrationFromTxt(const std::string& filename)
+{
+    std::ifstream file(filename);
+    std::string line;
+
+    while (std::getline(file, line)) {
+
+        if (line.find("cam0=") != std::string::npos) {
+            sscanf(line.c_str(),
+                   "cam0=[%f 0 %f; 0 %f %f; 0 0 1]",
+                   &fx, &cx0, &fy, &cy);
+        }
+
+        if (line.find("cam1=") != std::string::npos) {
+            sscanf(line.c_str(),
+                   "cam1=[%*f 0 %f; 0 %*f %*f; 0 0 1]",
+                   &cx1);
+        }
+
+        if (line.find("baseline=") != std::string::npos)
+            sscanf(line.c_str(), "baseline=%f", &baseline);
+
+        if (line.find("doffs=") != std::string::npos)
+            sscanf(line.c_str(), "doffs=%f", &doffs);
+    }
+
+    std::cout << "Calibration chargée depuis calib.txt" << std::endl;
+}
 
 
 
@@ -15,8 +44,9 @@ cv::Size pattern(7, 11);   // Nombre de coins internes du damier
 float squareSize = 25.0f; // Taille d'un carré en mm
 
 // --- FLAGS DE CONTROLE (Active/Désactive ici) ---
+loadCalibrationFromTxt("calib.txt");
 bool runMonoCalib   = false; // Étape 1
-bool runStereoCalib = true; // Étape 2
+bool runStereoCalib = false; // Étape 2
 bool showMatches    = true;  // Étape 3
 bool showEpipolar   = true;  // Étape 4, 5, 6
 bool show3D         = true;  // Étape 7, 8, 9, 10
@@ -226,52 +256,46 @@ reconstructor.computeRectification(cv::Size(1280, 720));
 // ==========================================================
 cv::Mat testImg = cv::imread(leftImages[0]);
 reconstructor.computeRectification(testImg.size());
-
 if (show3D)
 {
-    // Calcul de la carte de disparité
-    cv::Mat disparity = reconstructor.computeDisparity(frameL, frameR);
+    cv::Mat grayL, grayR;
+    cv::cvtColor(frameL, grayL, cv::COLOR_BGR2GRAY);
+    cv::cvtColor(frameR, grayR, cv::COLOR_BGR2GRAY);
 
-    if (!disparity.empty())
+    cv::Ptr<cv::StereoBM> stereo = cv::StereoBM::create(16*17, 15);
+
+    cv::Mat disparity;
+    stereo->compute(grayL, grayR, disparity);
+
+    cv::Mat disp8;
+    disparity.convertTo(disp8, CV_8U, 255/(16.0*17.0));
+    cv::imshow("Disparity", disp8);
+
+    int centerX = frameL.cols / 2;
+    int centerY = frameL.rows / 2;
+
+    short dValue = disparity.at<short>(centerY, centerX);
+
+    if (dValue > 0)
     {
-        // Pixel central
-        int centerX = frameL.cols / 2;
-        int centerY = frameL.rows / 2;
+        float d = dValue / 16.0f;
 
-        short dValue = disparity.at<short>(centerY, centerX);
+        // FORMULE AVEC DOFFS
+        float Z = (fx * baseline) / (d + doffs);
 
-        if (dValue > 0)
-        {
-            float d = dValue / 16.0f;
+        std::string text = "Distance: " + std::to_string(Z/10.0f) + " cm";
 
-            cv::Point3f pos3D =
-                reconstructor.projectTo3D(centerX, centerY, d);
+        cv::putText(frameL, text, cv::Point(50,80),
+                    cv::FONT_HERSHEY_SIMPLEX, 1,
+                    cv::Scalar(0,0,255), 2);
 
-            std::string text =
-                "Distance: " + std::to_string(pos3D.z / 10.0f) + " cm";
-
-            cv::putText(frameL, text,
-                        cv::Point(50, 80),
-                        cv::FONT_HERSHEY_SIMPLEX,
-                        1,
-                        cv::Scalar(255, 0, 0),
-                        2);
-
-            cv::drawMarker(frameL,
-                           cv::Point(centerX, centerY),
-                           cv::Scalar(0, 0, 255),
-                           cv::MARKER_CROSS,
-                           20, 2);
-        }
-
-        // Affichage carte de disparité normalisée
-        cv::Mat dispVis;
-        cv::normalize(disparity, dispVis, 0, 255, cv::NORM_MINMAX, CV_8U);
-        cv::imshow("Carte de disparité", dispVis);
+        cv::drawMarker(frameL,
+                       cv::Point(centerX, centerY),
+                       cv::Scalar(0,255,0),
+                       cv::MARKER_CROSS, 20, 2);
     }
-}
 
-    cv::imshow("Etape 10: Vue Gauche + Distance", frameL);
+    cv::imshow("Image Gauche + Distance", frameL);
     cv::waitKey(0);
 }
 
