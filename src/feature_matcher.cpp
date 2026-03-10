@@ -2,7 +2,7 @@
 
 FeatureMatcher::FeatureMatcher() {
     // ORB est gratuit et très performant pour le temps réel
-    _orb = cv::ORB::create(500); // On cherche 500 points max
+    _orb = cv::ORB::create(5000); // On cherche 500 points max
     _matcher = cv::DescriptorMatcher::create(cv::DescriptorMatcher::BRUTEFORCE_HAMMING);
 }
 

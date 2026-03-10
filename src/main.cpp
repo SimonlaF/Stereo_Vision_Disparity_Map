@@ -46,8 +46,8 @@ float squareSize = 25.0f; // Taille d'un carré en mm
 
 // --- FLAGS DE CONTROLE (Active/Désactive ici) ---
 loadCalibrationFromTxt("calib.txt");
-bool runMonoCalib   = false; // Étape 1
-bool runStereoCalib = false; // Étape 2
+bool runMonoCalib   = true; // Étape 1
+bool runStereoCalib = true; // Étape 2
 bool showMatches    = true;  // Étape 3
 bool showEpipolar   = true;  // Étape 4, 5, 6
 bool show3D         = true;  // Étape 7, 8, 9, 10
@@ -226,10 +226,23 @@ reconstructor.computeRectification(cv::Size(1280, 720));
         // ÉTAPE 3 : MATCHING
         // ==========================
         std::vector<cv::KeyPoint> kpL, kpR;
-        
         std::vector<cv::DMatch> goodMatches;
 
         matcher.findMatches(frameL, frameR, kpL, kpR, goodMatches);
+
+        // --- NOUVEAU : Nombre et erreur moyenne ---
+        std::cout << "Nombre de correspondances trouvées : " << goodMatches.size() << std::endl;
+        
+        if (!goodMatches.empty()) {
+            float totalError = 0.0f;
+            for (const auto& match : goodMatches) {
+                totalError += match.distance;
+            }
+            std::cout << "Erreur moyenne de matching : " << (totalError / goodMatches.size()) << std::endl;
+        } else {
+            std::cout << "Aucun match trouvé." << std::endl;
+        }
+        // ------------------------------------------
 
         if (showMatches)
             matcher.drawMatches(frameL, frameR, kpL, kpR, goodMatches);
@@ -247,15 +260,18 @@ reconstructor.computeRectification(cv::Size(1280, 720));
                 ptsR.push_back(kpR[m.trainIdx].pt);
             }
 
-            cv::Mat F = epipolar.computeFundamental(ptsL, ptsR);
+            // --- NOUVEAU : Création du masque pour filtrer les inliers ---
+            std::vector<uchar> inliersMask; 
+            cv::Mat F = epipolar.computeFundamental(ptsL, ptsR, inliersMask);
 
             cv::Mat frameEpipolar = frameR.clone();
-            epipolar.drawEpipolarLines(frameL, frameEpipolar, F, ptsL, ptsR);
+            
+            // On passe le masque à la fonction de dessin
+            epipolar.drawEpipolarLines(frameL, frameEpipolar, F, ptsL, ptsR, inliersMask);
 
             cv::imshow("Etape 6: Lignes Epipolaires", frameEpipolar);
             cv::waitKey(0);
         }
-
 // ==========================================================
 // ÉTAPES 7 à 10 : RECTIFICATION + DISPARITÉ + 3D (DATASET)
 // ==========================================================
@@ -294,8 +310,7 @@ if (show3D)
                     cv::FONT_HERSHEY_SIMPLEX, 1,
                     cv::Scalar(0,0,255), 2);
 
-        cv::drawMarker(frameL,
-                       cv::Point(centerX, centerY),
+        cv::drawMarker(frameL, cv::Point(centerX, centerY),
                        cv::Scalar(0,255,0),
                        cv::MARKER_CROSS, 20, 2);
     }

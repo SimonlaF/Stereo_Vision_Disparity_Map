@@ -7,7 +7,7 @@
 class Epipolar {
 public:
     // Etape 4 : Matrice Fondamentale
-    cv::Mat computeFundamental(const std::vector<cv::Point2f>& pts1, const std::vector<cv::Point2f>& pts2);
+    cv::Mat computeFundamental(const std::vector<cv::Point2f>& pts1, const std::vector<cv::Point2f>& pts2, std::vector<uchar>& inliers);
 
     // Etape 5 : Matrice Essentielle et Décomposition
     void solveEssential(const cv::Mat& F, const cv::Mat& K1, const cv::Mat& K2, 
@@ -15,7 +15,7 @@ public:
 
     // Etape 6 : Lignes épipolaires (Utilitaires)
     void drawEpipolarLines(cv::Mat& img1, cv::Mat& img2, const cv::Mat& F, 
-                           const std::vector<cv::Point2f>& pts1, const std::vector<cv::Point2f>& pts2);
+                           const std::vector<cv::Point2f>& pts1, const std::vector<cv::Point2f>& pts2, const std::vector<uchar>& inliers);
 
 private:
     // Nettoyage des points aberrants par vérification de chiralité (points devant la caméra)
