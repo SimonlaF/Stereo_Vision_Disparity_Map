@@ -16,7 +16,18 @@ void StereoReconstructor::computeRectification(cv::Size imgSize) {
     cv::initUndistortRectifyMap(_K1, _D1, _R1, _P1, imgSize, CV_16SC2, _mapL1, _mapL2);
     cv::initUndistortRectifyMap(_K2, _D2, _R2, _P2, imgSize, CV_16SC2, _mapR1, _mapR2);
 }
+void StereoReconstructor::rectify(const cv::Mat& left, const cv::Mat& right, cv::Mat& leftRect, cv::Mat& rightRect) {
+    // On utilise les maps générées par computeRectification
+    if (_mapL1.empty() || _mapR1.empty()) {
+        std::cerr << "Erreur : Appelez computeRectification avant rectify !" << std::endl;
+        leftRect = left.clone();
+        rightRect = right.clone();
+        return;
+    }
 
+    cv::remap(left, leftRect, _mapL1, _mapL2, cv::INTER_LINEAR);
+    cv::remap(right, rightRect, _mapR1, _mapR2, cv::INTER_LINEAR);
+}
 cv::Mat StereoReconstructor::computeDisparity(const cv::Mat& leftImg, const cv::Mat& rightImg) {
     cv::Mat rectL, rectR, disp;
     // Appliquer la rectification

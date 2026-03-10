@@ -4,7 +4,7 @@ project(StereoVision)
 set(CMAKE_CXX_STANDARD 17)
 
 # Configuration OpenCV
-set(OpenCV_DIR " C:/opencv/build") 
+set(OpenCV_DIR "C:/opencv/build") 
 find_package(OpenCV REQUIRED)
 
 # On indique à CMake où chercher les headers (.h)

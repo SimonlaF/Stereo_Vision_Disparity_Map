@@ -2,7 +2,7 @@
 
 FeatureMatcher::FeatureMatcher() {
     // ORB est gratuit et très performant pour le temps réel
-    _orb = cv::ORB::create(500); // On cherche 500 points max
+    _orb = cv::ORB::create(50000); // On cherche 500 points max
     _matcher = cv::DescriptorMatcher::create(cv::DescriptorMatcher::BRUTEFORCE_HAMMING);
 }
 
@@ -34,5 +34,19 @@ void FeatureMatcher::drawMatches(const cv::Mat& img1, const cv::Mat& img2,
     cv::drawMatches(img1, kp1, img2, kp2, matches, imgMatches, cv::Scalar::all(-1),
                     cv::Scalar::all(-1), std::vector<char>(), cv::DrawMatchesFlags::NOT_DRAW_SINGLE_POINTS);
     
-    cv::imshow("Correspondances (Matches)", imgMatches);
+    // --- MODIFICATION POUR LA TAILLE ---
+    std::string winName = "Correspondances (Matches)";
+    
+    // 1. Créer une fenêtre redimensionnable
+    cv::namedWindow(winName, cv::WINDOW_NORMAL);
+    
+    // 2. Définir une largeur cible (ex: 1600px pour que ça tienne sur un écran standard)
+    int targetWidth = 1600;
+    
+    // 3. Calculer la hauteur proportionnelle (imgMatches contient les 2 images côte à côte)
+    int targetHeight = (imgMatches.rows * targetWidth) / imgMatches.cols;
+    
+    // 4. Redimensionner la fenêtre et afficher
+    cv::resizeWindow(winName, targetWidth, targetHeight);
+    cv::imshow(winName, imgMatches);
 }

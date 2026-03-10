@@ -24,6 +24,7 @@ private:
     cv::Mat _K1, _dist1, _K2, _dist2;
     
     void generateObjectPoints(std::vector<cv::Point3f>& objp);
+
 };
 
 #endif

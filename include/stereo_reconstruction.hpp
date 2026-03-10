@@ -18,6 +18,7 @@ public:
 
     // Générer le nuage de points complet
     void getPointCloud(const cv::Mat& disparity, std::vector<cv::Point3f>& points);
+    void rectify(const cv::Mat& left, const cv::Mat& right, cv::Mat& leftRect, cv::Mat& rightRect);
 
 private:
     cv::Mat _K1, _D1, _K2, _D2, _R, _T; // Paramètres de calibration
