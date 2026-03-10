@@ -5,6 +5,7 @@
 #include "../include/epipolar.hpp"          // Tes étapes 4, 5, 6
 #include "../include/stereo_reconstruction.hpp" // Tes étapes 7, 8, 9, 10
 #include <filesystem>
+#include <fstream>
 namespace fs = std::filesystem;
 float fx, fy, cx0, cx1, cy, baseline, doffs;
 void loadCalibrationFromTxt(const std::string& filename)
@@ -212,9 +213,12 @@ reconstructor.computeRectification(cv::Size(1280, 720));
                 << leftImages[i] << " / "
                 << rightImages[i] << std::endl;
 
-        cv::Mat frameL = cv::imread(leftImages[i]);
-        cv::Mat frameR = cv::imread(rightImages[i]);
-
+        // cv::Mat frameL = cv::imread(leftImages[i]);
+        // cv::Mat frameR = cv::imread(rightImages[i]);
+        
+        cv::Mat frameL = cv::imread("../im0.png");
+        cv::Mat frameR = cv::imread("../im1.png");
+        
         if (frameL.empty() || frameR.empty())
             continue;
 
@@ -222,6 +226,7 @@ reconstructor.computeRectification(cv::Size(1280, 720));
         // ÉTAPE 3 : MATCHING
         // ==========================
         std::vector<cv::KeyPoint> kpL, kpR;
+        
         std::vector<cv::DMatch> goodMatches;
 
         matcher.findMatches(frameL, frameR, kpL, kpR, goodMatches);
@@ -298,6 +303,6 @@ if (show3D)
     cv::imshow("Image Gauche + Distance", frameL);
     cv::waitKey(0);
 }
-
+    }
 return 0;
 }
