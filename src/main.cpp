@@ -46,8 +46,8 @@ float squareSize = 25.0f; // Taille d'un carré en mm
 
 // --- FLAGS DE CONTROLE (Active/Désactive ici) ---
 loadCalibrationFromTxt("calib.txt");
-bool runMonoCalib   = true; // Étape 1
-bool runStereoCalib = true; // Étape 2
+bool runMonoCalib   = false; // Étape 1
+bool runStereoCalib = false; // Étape 2
 bool showMatches    = true;  // Étape 3
 bool showEpipolar   = true;  // Étape 4, 5, 6
 bool show3D         = true;  // Étape 7, 8, 9, 10
@@ -283,13 +283,12 @@ if (show3D)
     cv::cvtColor(frameL, grayL, cv::COLOR_BGR2GRAY);
     cv::cvtColor(frameR, grayR, cv::COLOR_BGR2GRAY);
 
-    cv::Ptr<cv::StereoBM> stereo = cv::StereoBM::create(16*17, 15);
+    cv::Ptr<cv::StereoBM> stereo = cv::StereoBM::create(256, 15);
 
     cv::Mat disparity;
     stereo->compute(grayL, grayR, disparity);
-
     cv::Mat disp8;
-    disparity.convertTo(disp8, CV_8U, 255/(16.0*17.0));
+    cv::normalize(disparity, disp8, 0, 255, cv::NORM_MINMAX, CV_8U);
     cv::imshow("Disparity", disp8);
 
     int centerX = frameL.cols / 2;

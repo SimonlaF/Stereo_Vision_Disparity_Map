@@ -2998,3 +2998,139 @@ events:
         - "/usr/pkg"
         - "/opt"
 ...
+
+---
+events:
+  -
+    kind: "find_package-v1"
+    backtrace:
+      - "CMakeLists.txt:8 (find_package)"
+    name: "OpenCV"
+    configs:
+      -
+        filename: "OpenCVConfig.cmake"
+        kind: "cmake"
+      -
+        filename: "opencv-config.cmake"
+        kind: "cmake"
+    version_request:
+      exact: false
+    settings:
+      required: "required_explicit"
+      quiet: false
+      global: false
+      policy_scope: true
+      bypass_provider: false
+      names:
+        - "OpenCV"
+      path_suffixes:
+        - ""
+      paths:
+        CMAKE_FIND_USE_CMAKE_PATH: true
+        CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+        CMAKE_FIND_USE_INSTALL_PREFIX: true
+        CMAKE_FIND_USE_PACKAGE_ROOT_PATH: true
+        CMAKE_FIND_USE_CMAKE_PACKAGE_REGISTRY: true
+        CMAKE_FIND_USE_SYSTEM_PACKAGE_REGISTRY: true
+        CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
+    candidates:
+      -
+        path: "/home/luan/StereoVision/Stereo-Vision-Project-/ C:/opencv/build/OpenCVConfig.cmake"
+        mode: "none?"
+        reason: "no_exist"
+      -
+        path: "/home/luan/StereoVision/Stereo-Vision-Project-/ C:/opencv/build/opencv-config.cmake"
+        mode: "none?"
+        reason: "no_exist"
+      -
+        path: "/home/luan/StereoVision/Stereo-Vision-Project-/build/CMakeFiles/pkgRedirects/OpenCVConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/luan/StereoVision/Stereo-Vision-Project-/build/CMakeFiles/pkgRedirects/opencv-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/OpenCVConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/opencv-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/luan/.vscode-server/bin/072586267e68ece9a47aa43f8c108e0dcbf44622/bin/remote-cli/OpenCVConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/luan/.vscode-server/bin/072586267e68ece9a47aa43f8c108e0dcbf44622/bin/remote-cli/opencv-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/OpenCVConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/opencv-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+    found:
+      path: "/usr/lib/x86_64-linux-gnu/cmake/opencv4/OpenCVConfig.cmake"
+      mode: "config"
+      version: "4.6.0"
+    search_context:
+      ENV{PATH}:
+        - "/usr/local/bin"
+        - "/home/luan/.vscode-server/bin/072586267e68ece9a47aa43f8c108e0dcbf44622/bin/remote-cli"
+        - "/usr/local/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/usr/lib/wsl/lib"
+        - "/mnt/c/Program Files/Basler/pylon/Runtime/x64/"
+        - "/mnt/c/Program Files/Basler/pylon/Runtime/Win32/"
+        - "/mnt/c/Windows/system32"
+        - "/mnt/c/Windows"
+        - "/mnt/c/Windows/System32/Wbem"
+        - "/mnt/c/Windows/System32/WindowsPowerShell/v1.0/"
+        - "/mnt/c/Windows/System32/OpenSSH/"
+        - "/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common"
+        - "/mnt/c/WINDOWS/system32"
+        - "/mnt/c/WINDOWS"
+        - "/mnt/c/WINDOWS/System32/Wbem"
+        - "/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/"
+        - "/mnt/c/WINDOWS/System32/OpenSSH/"
+        - "/mnt/c/Program Files (x86)/dotnet/"
+        - "/mnt/c/Program Files/dotnet/"
+        - "/mnt/c/Program Files/MATLAB/R2024b/bin"
+        - "/mnt/c/Program Files/WireGuard/"
+        - "/mnt/c/Program Files/NVIDIA Corporation/NVIDIA app/NvDLISR"
+        - "/mnt/c/Program Files/CMake/bin"
+        - "/mnt/c/msys64/mingw64/bin"
+        - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/Scripts/"
+        - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/"
+        - "/mnt/c/Users/pariz/AppData/Local/Microsoft/WindowsApps"
+        - "/mnt/c/Users/pariz/.dotnet/tools"
+        - "/mnt/c/Users/pariz/AppData/Roaming/Programs/Zero Install"
+        - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code/bin"
+        - "/mnt/c/Users/pariz/AppData/Local/Microsoft/WindowsApps"
+        - "/mnt/c/Users/pariz/AppData/Local/Muse Hub/lib"
+        - "/home/luan/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/usr/local"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+...
