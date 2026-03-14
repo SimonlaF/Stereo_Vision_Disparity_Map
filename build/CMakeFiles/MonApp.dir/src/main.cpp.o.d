@@ -358,5 +358,4 @@ CMakeFiles/MonApp.dir/src/main.cpp.o: \
  /usr/include/opencv4/opencv2/video/background_segm.hpp \
  /home/luan/StereoVision/Stereo-Vision-Project-/src/../include/stereo_calibration.hpp \
  /home/luan/StereoVision/Stereo-Vision-Project-/src/../include/feature_matcher.hpp \
- /home/luan/StereoVision/Stereo-Vision-Project-/src/../include/epipolar.hpp \
  /home/luan/StereoVision/Stereo-Vision-Project-/src/../include/stereo_reconstruction.hpp
