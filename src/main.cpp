@@ -33,8 +33,26 @@ int main() {
     // ACTE I : CALIBRATION STÉRÉO (Dataset Damier)
     // ========================================================================
     std::cout << "--- ACTE I : CALIBRATION SUR DATASET DAMIER ---" << std::endl;
-
+    std::cout << "[STEP 1] Calibration Intrinsèque..." << std::endl;
+    CameraCalibrator mono(pattern, squareSize);
+    // Charger toutes les images du dossier left
     std::vector<std::string> leftImages, rightImages;
+
+    for (const auto& entry : fs::directory_iterator("../leftcamera")) {
+        leftImages.push_back(entry.path().string());
+    }
+
+    for (const auto& entry : fs::directory_iterator("../rightcamera")) {
+        rightImages.push_back(entry.path().string());
+
+    }
+
+    std::sort(leftImages.begin(), leftImages.end());
+    std::sort(rightImages.begin(), rightImages.end());
+
+    mono.runCalibrationFromFiles(leftImages, "intrinsics_L.yml");
+    mono.runCalibrationFromFiles(rightImages, "intrinsics_R.yml");
+
     for (const auto& entry : fs::directory_iterator("../leftcamera")) leftImages.push_back(entry.path().string());
     for (const auto& entry : fs::directory_iterator("../rightcamera")) rightImages.push_back(entry.path().string());
     std::sort(leftImages.begin(), leftImages.end());
