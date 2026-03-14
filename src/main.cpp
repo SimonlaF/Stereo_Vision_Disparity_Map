@@ -84,7 +84,7 @@ int main() {
     cv::cvtColor(frameL, grayL, cv::COLOR_BGR2GRAY);
     cv::cvtColor(frameR, grayR, cv::COLOR_BGR2GRAY);
     
-    cv::Ptr<cv::StereoBM> stereoBM = cv::StereoBM::create(256, 15);
+    cv::Ptr<cv::StereoBM> stereoBM = cv::StereoBM::create(96, 15);
     cv::Mat disparity;
     stereoBM->compute(grayL, grayR, disparity);
     

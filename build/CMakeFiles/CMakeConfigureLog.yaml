@@ -2,230 +2,3080 @@
 ---
 events:
   -
-    kind: "message-v1"
+    kind: "find-v1"
     backtrace:
-      - "C:/Program Files/CMake/share/cmake-3.27/Modules/CMakeDetermineSystem.cmake:211 (message)"
+      - "/usr/local/share/cmake-4.1/Modules/CMakeDetermineSystem.cmake:12 (find_program)"
       - "CMakeLists.txt:2 (project)"
-    message: |
-      The system is: Windows - 10.0.19045 - AMD64
+    mode: "program"
+    variable: "CMAKE_UNAME"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "uname"
+    candidate_directories:
+      - "/usr/local/bin/"
+      - "/home/luan/.vscode-server/bin/61b3d0ab13be7dda2389f1d3e60a119c7f660cc3/bin/remote-cli/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/games/"
+      - "/usr/local/games/"
+      - "/usr/lib/wsl/lib/"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code/"
+      - "/mnt/c/Program Files/Basler/pylon/Runtime/x64/"
+      - "/mnt/c/Program Files/Basler/pylon/Runtime/Win32/"
+      - "/mnt/c/Windows/system32/"
+      - "/mnt/c/Windows/"
+      - "/mnt/c/Windows/System32/Wbem/"
+      - "/mnt/c/Windows/System32/WindowsPowerShell/v1.0/"
+      - "/mnt/c/Windows/System32/OpenSSH/"
+      - "/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
+      - "/mnt/c/WINDOWS/system32/"
+      - "/mnt/c/WINDOWS/"
+      - "/mnt/c/WINDOWS/System32/Wbem/"
+      - "/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/"
+      - "/mnt/c/WINDOWS/System32/OpenSSH/"
+      - "/mnt/c/Program Files (x86)/dotnet/"
+      - "/mnt/c/Program Files/dotnet/"
+      - "/mnt/c/Program Files/MATLAB/R2024b/bin/"
+      - "/mnt/c/Program Files/WireGuard/"
+      - "/mnt/c/Program Files/NVIDIA Corporation/NVIDIA app/NvDLISR/"
+      - "/mnt/c/Program Files/CMake/bin/"
+      - "/mnt/c/msys64/mingw64/bin/"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/Scripts/"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/"
+      - "/mnt/c/Users/pariz/AppData/Local/Microsoft/WindowsApps/"
+      - "/mnt/c/Users/pariz/.dotnet/tools/"
+      - "/mnt/c/Users/pariz/AppData/Roaming/Programs/Zero Install/"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code/bin/"
+      - "/mnt/c/Users/pariz/AppData/Local/Muse Hub/lib/"
+      - "/home/luan/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts/"
+    searched_directories:
+      - "/usr/local/bin/uname"
+      - "/home/luan/.vscode-server/bin/61b3d0ab13be7dda2389f1d3e60a119c7f660cc3/bin/remote-cli/uname"
+      - "/usr/local/sbin/uname"
+      - "/usr/sbin/uname"
+    found: "/usr/bin/uname"
+    search_context:
+      ENV{PATH}:
+        - "/usr/local/bin"
+        - "/home/luan/.vscode-server/bin/61b3d0ab13be7dda2389f1d3e60a119c7f660cc3/bin/remote-cli"
+        - "/usr/local/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/usr/lib/wsl/lib"
+        - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code"
+        - "/mnt/c/Program Files/Basler/pylon/Runtime/x64/"
+        - "/mnt/c/Program Files/Basler/pylon/Runtime/Win32/"
+        - "/mnt/c/Windows/system32"
+        - "/mnt/c/Windows"
+        - "/mnt/c/Windows/System32/Wbem"
+        - "/mnt/c/Windows/System32/WindowsPowerShell/v1.0/"
+        - "/mnt/c/Windows/System32/OpenSSH/"
+        - "/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common"
+        - "/mnt/c/WINDOWS/system32"
+        - "/mnt/c/WINDOWS"
+        - "/mnt/c/WINDOWS/System32/Wbem"
+        - "/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/"
+        - "/mnt/c/WINDOWS/System32/OpenSSH/"
+        - "/mnt/c/Program Files (x86)/dotnet/"
+        - "/mnt/c/Program Files/dotnet/"
+        - "/mnt/c/Program Files/MATLAB/R2024b/bin"
+        - "/mnt/c/Program Files/WireGuard/"
+        - "/mnt/c/Program Files/NVIDIA Corporation/NVIDIA app/NvDLISR"
+        - "/mnt/c/Program Files/CMake/bin"
+        - "/mnt/c/msys64/mingw64/bin"
+        - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/Scripts/"
+        - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/"
+        - "/mnt/c/Users/pariz/AppData/Local/Microsoft/WindowsApps"
+        - "/mnt/c/Users/pariz/.dotnet/tools"
+        - "/mnt/c/Users/pariz/AppData/Roaming/Programs/Zero Install"
+        - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code/bin"
+        - "/mnt/c/Users/pariz/AppData/Local/Microsoft/WindowsApps"
+        - "/mnt/c/Users/pariz/AppData/Local/Muse Hub/lib"
+        - "/home/luan/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts"
   -
     kind: "message-v1"
     backtrace:
-      - "C:/Program Files/CMake/share/cmake-3.27/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
-      - "C:/Program Files/CMake/share/cmake-3.27/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
-      - "C:/Program Files/CMake/share/cmake-3.27/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "/usr/local/share/cmake-4.1/Modules/CMakeDetermineSystem.cmake:212 (message)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      The system is: Linux - 6.6.87.2-microsoft-standard-WSL2 - x86_64
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/local/share/cmake-4.1/Modules/CMakeUnixFindMake.cmake:5 (find_program)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_MAKE_PROGRAM"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "gmake"
+      - "make"
+      - "smake"
+    candidate_directories:
+      - "/usr/local/bin/"
+      - "/home/luan/.vscode-server/bin/61b3d0ab13be7dda2389f1d3e60a119c7f660cc3/bin/remote-cli/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/games/"
+      - "/usr/local/games/"
+      - "/usr/lib/wsl/lib/"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code/"
+      - "/mnt/c/Program Files/Basler/pylon/Runtime/x64/"
+      - "/mnt/c/Program Files/Basler/pylon/Runtime/Win32/"
+      - "/mnt/c/Windows/system32/"
+      - "/mnt/c/Windows/"
+      - "/mnt/c/Windows/System32/Wbem/"
+      - "/mnt/c/Windows/System32/WindowsPowerShell/v1.0/"
+      - "/mnt/c/Windows/System32/OpenSSH/"
+      - "/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
+      - "/mnt/c/WINDOWS/system32/"
+      - "/mnt/c/WINDOWS/"
+      - "/mnt/c/WINDOWS/System32/Wbem/"
+      - "/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/"
+      - "/mnt/c/WINDOWS/System32/OpenSSH/"
+      - "/mnt/c/Program Files (x86)/dotnet/"
+      - "/mnt/c/Program Files/dotnet/"
+      - "/mnt/c/Program Files/MATLAB/R2024b/bin/"
+      - "/mnt/c/Program Files/WireGuard/"
+      - "/mnt/c/Program Files/NVIDIA Corporation/NVIDIA app/NvDLISR/"
+      - "/mnt/c/Program Files/CMake/bin/"
+      - "/mnt/c/msys64/mingw64/bin/"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/Scripts/"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/"
+      - "/mnt/c/Users/pariz/AppData/Local/Microsoft/WindowsApps/"
+      - "/mnt/c/Users/pariz/.dotnet/tools/"
+      - "/mnt/c/Users/pariz/AppData/Roaming/Programs/Zero Install/"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code/bin/"
+      - "/mnt/c/Users/pariz/AppData/Local/Muse Hub/lib/"
+      - "/home/luan/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts/"
+    searched_directories:
+      - "/usr/local/bin/gmake"
+      - "/home/luan/.vscode-server/bin/61b3d0ab13be7dda2389f1d3e60a119c7f660cc3/bin/remote-cli/gmake"
+      - "/usr/local/sbin/gmake"
+      - "/usr/sbin/gmake"
+    found: "/usr/bin/gmake"
+    search_context:
+      ENV{PATH}:
+        - "/usr/local/bin"
+        - "/home/luan/.vscode-server/bin/61b3d0ab13be7dda2389f1d3e60a119c7f660cc3/bin/remote-cli"
+        - "/usr/local/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/usr/lib/wsl/lib"
+        - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code"
+        - "/mnt/c/Program Files/Basler/pylon/Runtime/x64/"
+        - "/mnt/c/Program Files/Basler/pylon/Runtime/Win32/"
+        - "/mnt/c/Windows/system32"
+        - "/mnt/c/Windows"
+        - "/mnt/c/Windows/System32/Wbem"
+        - "/mnt/c/Windows/System32/WindowsPowerShell/v1.0/"
+        - "/mnt/c/Windows/System32/OpenSSH/"
+        - "/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common"
+        - "/mnt/c/WINDOWS/system32"
+        - "/mnt/c/WINDOWS"
+        - "/mnt/c/WINDOWS/System32/Wbem"
+        - "/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/"
+        - "/mnt/c/WINDOWS/System32/OpenSSH/"
+        - "/mnt/c/Program Files (x86)/dotnet/"
+        - "/mnt/c/Program Files/dotnet/"
+        - "/mnt/c/Program Files/MATLAB/R2024b/bin"
+        - "/mnt/c/Program Files/WireGuard/"
+        - "/mnt/c/Program Files/NVIDIA Corporation/NVIDIA app/NvDLISR"
+        - "/mnt/c/Program Files/CMake/bin"
+        - "/mnt/c/msys64/mingw64/bin"
+        - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/Scripts/"
+        - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/"
+        - "/mnt/c/Users/pariz/AppData/Local/Microsoft/WindowsApps"
+        - "/mnt/c/Users/pariz/.dotnet/tools"
+        - "/mnt/c/Users/pariz/AppData/Roaming/Programs/Zero Install"
+        - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code/bin"
+        - "/mnt/c/Users/pariz/AppData/Local/Microsoft/WindowsApps"
+        - "/mnt/c/Users/pariz/AppData/Local/Muse Hub/lib"
+        - "/home/luan/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/local/share/cmake-4.1/Modules/CMakeDetermineCompiler.cmake:73 (find_program)"
+      - "/usr/local/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:64 (_cmake_find_compiler)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_C_COMPILER"
+    description: "C compiler"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "cc"
+      - "gcc"
+      - "cl"
+      - "bcc"
+      - "xlc"
+      - "icx"
+      - "clang"
+    candidate_directories:
+      - "/usr/local/bin/"
+      - "/home/luan/.vscode-server/bin/61b3d0ab13be7dda2389f1d3e60a119c7f660cc3/bin/remote-cli/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/games/"
+      - "/usr/local/games/"
+      - "/usr/lib/wsl/lib/"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code/"
+      - "/mnt/c/Program Files/Basler/pylon/Runtime/x64/"
+      - "/mnt/c/Program Files/Basler/pylon/Runtime/Win32/"
+      - "/mnt/c/Windows/system32/"
+      - "/mnt/c/Windows/"
+      - "/mnt/c/Windows/System32/Wbem/"
+      - "/mnt/c/Windows/System32/WindowsPowerShell/v1.0/"
+      - "/mnt/c/Windows/System32/OpenSSH/"
+      - "/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
+      - "/mnt/c/WINDOWS/system32/"
+      - "/mnt/c/WINDOWS/"
+      - "/mnt/c/WINDOWS/System32/Wbem/"
+      - "/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/"
+      - "/mnt/c/WINDOWS/System32/OpenSSH/"
+      - "/mnt/c/Program Files (x86)/dotnet/"
+      - "/mnt/c/Program Files/dotnet/"
+      - "/mnt/c/Program Files/MATLAB/R2024b/bin/"
+      - "/mnt/c/Program Files/WireGuard/"
+      - "/mnt/c/Program Files/NVIDIA Corporation/NVIDIA app/NvDLISR/"
+      - "/mnt/c/Program Files/CMake/bin/"
+      - "/mnt/c/msys64/mingw64/bin/"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/Scripts/"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/"
+      - "/mnt/c/Users/pariz/AppData/Local/Microsoft/WindowsApps/"
+      - "/mnt/c/Users/pariz/.dotnet/tools/"
+      - "/mnt/c/Users/pariz/AppData/Roaming/Programs/Zero Install/"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code/bin/"
+      - "/mnt/c/Users/pariz/AppData/Local/Muse Hub/lib/"
+      - "/home/luan/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts/"
+    searched_directories:
+      - "/usr/local/bin/cc"
+      - "/home/luan/.vscode-server/bin/61b3d0ab13be7dda2389f1d3e60a119c7f660cc3/bin/remote-cli/cc"
+      - "/usr/local/sbin/cc"
+      - "/usr/sbin/cc"
+    found: "/usr/bin/cc"
+    search_context:
+      ENV{PATH}:
+        - "/usr/local/bin"
+        - "/home/luan/.vscode-server/bin/61b3d0ab13be7dda2389f1d3e60a119c7f660cc3/bin/remote-cli"
+        - "/usr/local/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/usr/lib/wsl/lib"
+        - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code"
+        - "/mnt/c/Program Files/Basler/pylon/Runtime/x64/"
+        - "/mnt/c/Program Files/Basler/pylon/Runtime/Win32/"
+        - "/mnt/c/Windows/system32"
+        - "/mnt/c/Windows"
+        - "/mnt/c/Windows/System32/Wbem"
+        - "/mnt/c/Windows/System32/WindowsPowerShell/v1.0/"
+        - "/mnt/c/Windows/System32/OpenSSH/"
+        - "/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common"
+        - "/mnt/c/WINDOWS/system32"
+        - "/mnt/c/WINDOWS"
+        - "/mnt/c/WINDOWS/System32/Wbem"
+        - "/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/"
+        - "/mnt/c/WINDOWS/System32/OpenSSH/"
+        - "/mnt/c/Program Files (x86)/dotnet/"
+        - "/mnt/c/Program Files/dotnet/"
+        - "/mnt/c/Program Files/MATLAB/R2024b/bin"
+        - "/mnt/c/Program Files/WireGuard/"
+        - "/mnt/c/Program Files/NVIDIA Corporation/NVIDIA app/NvDLISR"
+        - "/mnt/c/Program Files/CMake/bin"
+        - "/mnt/c/msys64/mingw64/bin"
+        - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/Scripts/"
+        - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/"
+        - "/mnt/c/Users/pariz/AppData/Local/Microsoft/WindowsApps"
+        - "/mnt/c/Users/pariz/.dotnet/tools"
+        - "/mnt/c/Users/pariz/AppData/Roaming/Programs/Zero Install"
+        - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code/bin"
+        - "/mnt/c/Users/pariz/AppData/Local/Microsoft/WindowsApps"
+        - "/mnt/c/Users/pariz/AppData/Local/Muse Hub/lib"
+        - "/home/luan/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/local/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:462 (find_file)"
+      - "/usr/local/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:500 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "/usr/local/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "/usr/local/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/local/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "file"
+    variable: "src_in"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "CMakeCCompilerId.c.in"
+    candidate_directories:
+      - "/usr/local/share/cmake-4.1/Modules/"
+    found: "/usr/local/share/cmake-4.1/Modules/CMakeCCompilerId.c.in"
+    search_context:
+      ENV{PATH}:
+        - "/usr/local/bin"
+        - "/home/luan/.vscode-server/bin/61b3d0ab13be7dda2389f1d3e60a119c7f660cc3/bin/remote-cli"
+        - "/usr/local/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/usr/lib/wsl/lib"
+        - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code"
+        - "/mnt/c/Program Files/Basler/pylon/Runtime/x64/"
+        - "/mnt/c/Program Files/Basler/pylon/Runtime/Win32/"
+        - "/mnt/c/Windows/system32"
+        - "/mnt/c/Windows"
+        - "/mnt/c/Windows/System32/Wbem"
+        - "/mnt/c/Windows/System32/WindowsPowerShell/v1.0/"
+        - "/mnt/c/Windows/System32/OpenSSH/"
+        - "/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common"
+        - "/mnt/c/WINDOWS/system32"
+        - "/mnt/c/WINDOWS"
+        - "/mnt/c/WINDOWS/System32/Wbem"
+        - "/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/"
+        - "/mnt/c/WINDOWS/System32/OpenSSH/"
+        - "/mnt/c/Program Files (x86)/dotnet/"
+        - "/mnt/c/Program Files/dotnet/"
+        - "/mnt/c/Program Files/MATLAB/R2024b/bin"
+        - "/mnt/c/Program Files/WireGuard/"
+        - "/mnt/c/Program Files/NVIDIA Corporation/NVIDIA app/NvDLISR"
+        - "/mnt/c/Program Files/CMake/bin"
+        - "/mnt/c/msys64/mingw64/bin"
+        - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/Scripts/"
+        - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/"
+        - "/mnt/c/Users/pariz/AppData/Local/Microsoft/WindowsApps"
+        - "/mnt/c/Users/pariz/.dotnet/tools"
+        - "/mnt/c/Users/pariz/AppData/Roaming/Programs/Zero Install"
+        - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code/bin"
+        - "/mnt/c/Users/pariz/AppData/Local/Microsoft/WindowsApps"
+        - "/mnt/c/Users/pariz/AppData/Local/Muse Hub/lib"
+        - "/home/luan/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/local/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/local/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/local/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
       - "CMakeLists.txt:2 (project)"
     message: |
       Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
-      Compiler:  
+      Compiler: /usr/bin/cc 
       Build flags: 
       Id flags:  
       
       The output was:
       0
-      MSBuild version 17.14.40+3e7442088 for .NET Framework
-      Build started 3/14/2026 2:21:40 PM.
-      
-      Project "C:\\Users\\FERRIER Simon\\Documents\\Cours\\Computer Vision\\TP\\Stereo-Vision-Project-\\build\\CMakeFiles\\3.27.4\\CompilerIdC\\CompilerIdC.vcxproj" on node 1 (default targets).
-      PrepareForBuild:
-        Creating directory "Debug\\".
-        Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
-        Creating directory "Debug\\CompilerIdC.tlog\\".
-      InitializeBuildStatus:
-        Creating "Debug\\CompilerIdC.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
-        Touching "Debug\\CompilerIdC.tlog\\unsuccessfulbuild".
-      ClCompile:
-        C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /nologo /W0 /WX- /diagnostics:column /Od /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\\\" /Fd"Debug\\vc143.pdb" /external:W0 /Gd /TC /FC /errorReport:queue CMakeCCompilerId.c
-        CMakeCCompilerId.c
-      Link:
-        C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:".\\CompilerIdC.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\CompilerIdC.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\CompilerIdC.lib" /MACHINE:X64 Debug\\CMakeCCompilerId.obj
-        CompilerIdC.vcxproj -> C:\\Users\\FERRIER Simon\\Documents\\Cours\\Computer Vision\\TP\\Stereo-Vision-Project-\\build\\CMakeFiles\\3.27.4\\CompilerIdC\\CompilerIdC.exe
-      PostBuildEvent:
-        for %%i in (cl.exe) do @echo CMAKE_C_COMPILER=%%~$PATH:i
-        :VCEnd
-        CMAKE_C_COMPILER=C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe
-      FinalizeBuildStatus:
-        Deleting file "Debug\\CompilerIdC.tlog\\unsuccessfulbuild".
-        Touching "Debug\\CompilerIdC.tlog\\CompilerIdC.lastbuildstate".
-      Done Building Project "C:\\Users\\FERRIER Simon\\Documents\\Cours\\Computer Vision\\TP\\Stereo-Vision-Project-\\build\\CMakeFiles\\3.27.4\\CompilerIdC\\CompilerIdC.vcxproj" (default targets).
-      
-      Build succeeded.
-          0 Warning(s)
-          0 Error(s)
-      
-      Time Elapsed 00:00:01.30
       
       
-      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
       
-      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.vcxproj"
+      The C compiler identification is GNU, found in:
+        /home/luan/StereoVision/Stereo-Vision-Project-/build/CMakeFiles/4.1.2/CompilerIdC/a.out
       
-      The C compiler identification is MSVC, found in:
-        C:/Users/FERRIER Simon/Documents/Cours/Computer Vision/TP/Stereo-Vision-Project-/build/CMakeFiles/3.27.4/CompilerIdC/CompilerIdC.exe
-      
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/local/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:238 (find_program)"
+      - "/usr/local/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_AR"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "ar"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/usr/local/bin/"
+      - "/home/luan/.vscode-server/bin/61b3d0ab13be7dda2389f1d3e60a119c7f660cc3/bin/remote-cli/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/games/"
+      - "/usr/local/games/"
+      - "/usr/lib/wsl/lib/"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code/"
+      - "/mnt/c/Program Files/Basler/pylon/Runtime/x64/"
+      - "/mnt/c/Program Files/Basler/pylon/Runtime/Win32/"
+      - "/mnt/c/Windows/system32/"
+      - "/mnt/c/Windows/"
+      - "/mnt/c/Windows/System32/Wbem/"
+      - "/mnt/c/Windows/System32/WindowsPowerShell/v1.0/"
+      - "/mnt/c/Windows/System32/OpenSSH/"
+      - "/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
+      - "/mnt/c/WINDOWS/system32/"
+      - "/mnt/c/WINDOWS/"
+      - "/mnt/c/WINDOWS/System32/Wbem/"
+      - "/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/"
+      - "/mnt/c/WINDOWS/System32/OpenSSH/"
+      - "/mnt/c/Program Files (x86)/dotnet/"
+      - "/mnt/c/Program Files/dotnet/"
+      - "/mnt/c/Program Files/MATLAB/R2024b/bin/"
+      - "/mnt/c/Program Files/WireGuard/"
+      - "/mnt/c/Program Files/NVIDIA Corporation/NVIDIA app/NvDLISR/"
+      - "/mnt/c/Program Files/CMake/bin/"
+      - "/mnt/c/msys64/mingw64/bin/"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/Scripts/"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/"
+      - "/mnt/c/Users/pariz/AppData/Local/Microsoft/WindowsApps/"
+      - "/mnt/c/Users/pariz/.dotnet/tools/"
+      - "/mnt/c/Users/pariz/AppData/Roaming/Programs/Zero Install/"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code/bin/"
+      - "/mnt/c/Users/pariz/AppData/Local/Muse Hub/lib/"
+      - "/home/luan/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts/"
+    found: "/usr/bin/ar"
+    search_context:
+      ENV{PATH}:
+        - "/usr/local/bin"
+        - "/home/luan/.vscode-server/bin/61b3d0ab13be7dda2389f1d3e60a119c7f660cc3/bin/remote-cli"
+        - "/usr/local/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/usr/lib/wsl/lib"
+        - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code"
+        - "/mnt/c/Program Files/Basler/pylon/Runtime/x64/"
+        - "/mnt/c/Program Files/Basler/pylon/Runtime/Win32/"
+        - "/mnt/c/Windows/system32"
+        - "/mnt/c/Windows"
+        - "/mnt/c/Windows/System32/Wbem"
+        - "/mnt/c/Windows/System32/WindowsPowerShell/v1.0/"
+        - "/mnt/c/Windows/System32/OpenSSH/"
+        - "/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common"
+        - "/mnt/c/WINDOWS/system32"
+        - "/mnt/c/WINDOWS"
+        - "/mnt/c/WINDOWS/System32/Wbem"
+        - "/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/"
+        - "/mnt/c/WINDOWS/System32/OpenSSH/"
+        - "/mnt/c/Program Files (x86)/dotnet/"
+        - "/mnt/c/Program Files/dotnet/"
+        - "/mnt/c/Program Files/MATLAB/R2024b/bin"
+        - "/mnt/c/Program Files/WireGuard/"
+        - "/mnt/c/Program Files/NVIDIA Corporation/NVIDIA app/NvDLISR"
+        - "/mnt/c/Program Files/CMake/bin"
+        - "/mnt/c/msys64/mingw64/bin"
+        - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/Scripts/"
+        - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/"
+        - "/mnt/c/Users/pariz/AppData/Local/Microsoft/WindowsApps"
+        - "/mnt/c/Users/pariz/.dotnet/tools"
+        - "/mnt/c/Users/pariz/AppData/Roaming/Programs/Zero Install"
+        - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code/bin"
+        - "/mnt/c/Users/pariz/AppData/Local/Microsoft/WindowsApps"
+        - "/mnt/c/Users/pariz/AppData/Local/Muse Hub/lib"
+        - "/home/luan/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/local/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:238 (find_program)"
+      - "/usr/local/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_RANLIB"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "ranlib"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/usr/local/bin/"
+      - "/home/luan/.vscode-server/bin/61b3d0ab13be7dda2389f1d3e60a119c7f660cc3/bin/remote-cli/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/games/"
+      - "/usr/local/games/"
+      - "/usr/lib/wsl/lib/"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code/"
+      - "/mnt/c/Program Files/Basler/pylon/Runtime/x64/"
+      - "/mnt/c/Program Files/Basler/pylon/Runtime/Win32/"
+      - "/mnt/c/Windows/system32/"
+      - "/mnt/c/Windows/"
+      - "/mnt/c/Windows/System32/Wbem/"
+      - "/mnt/c/Windows/System32/WindowsPowerShell/v1.0/"
+      - "/mnt/c/Windows/System32/OpenSSH/"
+      - "/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
+      - "/mnt/c/WINDOWS/system32/"
+      - "/mnt/c/WINDOWS/"
+      - "/mnt/c/WINDOWS/System32/Wbem/"
+      - "/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/"
+      - "/mnt/c/WINDOWS/System32/OpenSSH/"
+      - "/mnt/c/Program Files (x86)/dotnet/"
+      - "/mnt/c/Program Files/dotnet/"
+      - "/mnt/c/Program Files/MATLAB/R2024b/bin/"
+      - "/mnt/c/Program Files/WireGuard/"
+      - "/mnt/c/Program Files/NVIDIA Corporation/NVIDIA app/NvDLISR/"
+      - "/mnt/c/Program Files/CMake/bin/"
+      - "/mnt/c/msys64/mingw64/bin/"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/Scripts/"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/"
+      - "/mnt/c/Users/pariz/AppData/Local/Microsoft/WindowsApps/"
+      - "/mnt/c/Users/pariz/.dotnet/tools/"
+      - "/mnt/c/Users/pariz/AppData/Roaming/Programs/Zero Install/"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code/bin/"
+      - "/mnt/c/Users/pariz/AppData/Local/Muse Hub/lib/"
+      - "/home/luan/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts/"
+    found: "/usr/bin/ranlib"
+    search_context:
+      ENV{PATH}:
+        - "/usr/local/bin"
+        - "/home/luan/.vscode-server/bin/61b3d0ab13be7dda2389f1d3e60a119c7f660cc3/bin/remote-cli"
+        - "/usr/local/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/usr/lib/wsl/lib"
+        - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code"
+        - "/mnt/c/Program Files/Basler/pylon/Runtime/x64/"
+        - "/mnt/c/Program Files/Basler/pylon/Runtime/Win32/"
+        - "/mnt/c/Windows/system32"
+        - "/mnt/c/Windows"
+        - "/mnt/c/Windows/System32/Wbem"
+        - "/mnt/c/Windows/System32/WindowsPowerShell/v1.0/"
+        - "/mnt/c/Windows/System32/OpenSSH/"
+        - "/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common"
+        - "/mnt/c/WINDOWS/system32"
+        - "/mnt/c/WINDOWS"
+        - "/mnt/c/WINDOWS/System32/Wbem"
+        - "/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/"
+        - "/mnt/c/WINDOWS/System32/OpenSSH/"
+        - "/mnt/c/Program Files (x86)/dotnet/"
+        - "/mnt/c/Program Files/dotnet/"
+        - "/mnt/c/Program Files/MATLAB/R2024b/bin"
+        - "/mnt/c/Program Files/WireGuard/"
+        - "/mnt/c/Program Files/NVIDIA Corporation/NVIDIA app/NvDLISR"
+        - "/mnt/c/Program Files/CMake/bin"
+        - "/mnt/c/msys64/mingw64/bin"
+        - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/Scripts/"
+        - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/"
+        - "/mnt/c/Users/pariz/AppData/Local/Microsoft/WindowsApps"
+        - "/mnt/c/Users/pariz/.dotnet/tools"
+        - "/mnt/c/Users/pariz/AppData/Roaming/Programs/Zero Install"
+        - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code/bin"
+        - "/mnt/c/Users/pariz/AppData/Local/Microsoft/WindowsApps"
+        - "/mnt/c/Users/pariz/AppData/Local/Muse Hub/lib"
+        - "/home/luan/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/local/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:238 (find_program)"
+      - "/usr/local/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_STRIP"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "strip"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/usr/local/bin/"
+      - "/home/luan/.vscode-server/bin/61b3d0ab13be7dda2389f1d3e60a119c7f660cc3/bin/remote-cli/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/games/"
+      - "/usr/local/games/"
+      - "/usr/lib/wsl/lib/"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code/"
+      - "/mnt/c/Program Files/Basler/pylon/Runtime/x64/"
+      - "/mnt/c/Program Files/Basler/pylon/Runtime/Win32/"
+      - "/mnt/c/Windows/system32/"
+      - "/mnt/c/Windows/"
+      - "/mnt/c/Windows/System32/Wbem/"
+      - "/mnt/c/Windows/System32/WindowsPowerShell/v1.0/"
+      - "/mnt/c/Windows/System32/OpenSSH/"
+      - "/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
+      - "/mnt/c/WINDOWS/system32/"
+      - "/mnt/c/WINDOWS/"
+      - "/mnt/c/WINDOWS/System32/Wbem/"
+      - "/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/"
+      - "/mnt/c/WINDOWS/System32/OpenSSH/"
+      - "/mnt/c/Program Files (x86)/dotnet/"
+      - "/mnt/c/Program Files/dotnet/"
+      - "/mnt/c/Program Files/MATLAB/R2024b/bin/"
+      - "/mnt/c/Program Files/WireGuard/"
+      - "/mnt/c/Program Files/NVIDIA Corporation/NVIDIA app/NvDLISR/"
+      - "/mnt/c/Program Files/CMake/bin/"
+      - "/mnt/c/msys64/mingw64/bin/"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/Scripts/"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/"
+      - "/mnt/c/Users/pariz/AppData/Local/Microsoft/WindowsApps/"
+      - "/mnt/c/Users/pariz/.dotnet/tools/"
+      - "/mnt/c/Users/pariz/AppData/Roaming/Programs/Zero Install/"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code/bin/"
+      - "/mnt/c/Users/pariz/AppData/Local/Muse Hub/lib/"
+      - "/home/luan/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts/"
+    found: "/usr/bin/strip"
+    search_context:
+      ENV{PATH}:
+        - "/usr/local/bin"
+        - "/home/luan/.vscode-server/bin/61b3d0ab13be7dda2389f1d3e60a119c7f660cc3/bin/remote-cli"
+        - "/usr/local/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/usr/lib/wsl/lib"
+        - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code"
+        - "/mnt/c/Program Files/Basler/pylon/Runtime/x64/"
+        - "/mnt/c/Program Files/Basler/pylon/Runtime/Win32/"
+        - "/mnt/c/Windows/system32"
+        - "/mnt/c/Windows"
+        - "/mnt/c/Windows/System32/Wbem"
+        - "/mnt/c/Windows/System32/WindowsPowerShell/v1.0/"
+        - "/mnt/c/Windows/System32/OpenSSH/"
+        - "/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common"
+        - "/mnt/c/WINDOWS/system32"
+        - "/mnt/c/WINDOWS"
+        - "/mnt/c/WINDOWS/System32/Wbem"
+        - "/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/"
+        - "/mnt/c/WINDOWS/System32/OpenSSH/"
+        - "/mnt/c/Program Files (x86)/dotnet/"
+        - "/mnt/c/Program Files/dotnet/"
+        - "/mnt/c/Program Files/MATLAB/R2024b/bin"
+        - "/mnt/c/Program Files/WireGuard/"
+        - "/mnt/c/Program Files/NVIDIA Corporation/NVIDIA app/NvDLISR"
+        - "/mnt/c/Program Files/CMake/bin"
+        - "/mnt/c/msys64/mingw64/bin"
+        - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/Scripts/"
+        - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/"
+        - "/mnt/c/Users/pariz/AppData/Local/Microsoft/WindowsApps"
+        - "/mnt/c/Users/pariz/.dotnet/tools"
+        - "/mnt/c/Users/pariz/AppData/Roaming/Programs/Zero Install"
+        - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code/bin"
+        - "/mnt/c/Users/pariz/AppData/Local/Microsoft/WindowsApps"
+        - "/mnt/c/Users/pariz/AppData/Local/Muse Hub/lib"
+        - "/home/luan/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/local/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:238 (find_program)"
+      - "/usr/local/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_LINKER"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "ld"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/usr/local/bin/"
+      - "/home/luan/.vscode-server/bin/61b3d0ab13be7dda2389f1d3e60a119c7f660cc3/bin/remote-cli/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/games/"
+      - "/usr/local/games/"
+      - "/usr/lib/wsl/lib/"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code/"
+      - "/mnt/c/Program Files/Basler/pylon/Runtime/x64/"
+      - "/mnt/c/Program Files/Basler/pylon/Runtime/Win32/"
+      - "/mnt/c/Windows/system32/"
+      - "/mnt/c/Windows/"
+      - "/mnt/c/Windows/System32/Wbem/"
+      - "/mnt/c/Windows/System32/WindowsPowerShell/v1.0/"
+      - "/mnt/c/Windows/System32/OpenSSH/"
+      - "/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
+      - "/mnt/c/WINDOWS/system32/"
+      - "/mnt/c/WINDOWS/"
+      - "/mnt/c/WINDOWS/System32/Wbem/"
+      - "/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/"
+      - "/mnt/c/WINDOWS/System32/OpenSSH/"
+      - "/mnt/c/Program Files (x86)/dotnet/"
+      - "/mnt/c/Program Files/dotnet/"
+      - "/mnt/c/Program Files/MATLAB/R2024b/bin/"
+      - "/mnt/c/Program Files/WireGuard/"
+      - "/mnt/c/Program Files/NVIDIA Corporation/NVIDIA app/NvDLISR/"
+      - "/mnt/c/Program Files/CMake/bin/"
+      - "/mnt/c/msys64/mingw64/bin/"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/Scripts/"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/"
+      - "/mnt/c/Users/pariz/AppData/Local/Microsoft/WindowsApps/"
+      - "/mnt/c/Users/pariz/.dotnet/tools/"
+      - "/mnt/c/Users/pariz/AppData/Roaming/Programs/Zero Install/"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code/bin/"
+      - "/mnt/c/Users/pariz/AppData/Local/Muse Hub/lib/"
+      - "/home/luan/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts/"
+    found: "/usr/bin/ld"
+    search_context:
+      ENV{PATH}:
+        - "/usr/local/bin"
+        - "/home/luan/.vscode-server/bin/61b3d0ab13be7dda2389f1d3e60a119c7f660cc3/bin/remote-cli"
+        - "/usr/local/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/usr/lib/wsl/lib"
+        - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code"
+        - "/mnt/c/Program Files/Basler/pylon/Runtime/x64/"
+        - "/mnt/c/Program Files/Basler/pylon/Runtime/Win32/"
+        - "/mnt/c/Windows/system32"
+        - "/mnt/c/Windows"
+        - "/mnt/c/Windows/System32/Wbem"
+        - "/mnt/c/Windows/System32/WindowsPowerShell/v1.0/"
+        - "/mnt/c/Windows/System32/OpenSSH/"
+        - "/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common"
+        - "/mnt/c/WINDOWS/system32"
+        - "/mnt/c/WINDOWS"
+        - "/mnt/c/WINDOWS/System32/Wbem"
+        - "/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/"
+        - "/mnt/c/WINDOWS/System32/OpenSSH/"
+        - "/mnt/c/Program Files (x86)/dotnet/"
+        - "/mnt/c/Program Files/dotnet/"
+        - "/mnt/c/Program Files/MATLAB/R2024b/bin"
+        - "/mnt/c/Program Files/WireGuard/"
+        - "/mnt/c/Program Files/NVIDIA Corporation/NVIDIA app/NvDLISR"
+        - "/mnt/c/Program Files/CMake/bin"
+        - "/mnt/c/msys64/mingw64/bin"
+        - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/Scripts/"
+        - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/"
+        - "/mnt/c/Users/pariz/AppData/Local/Microsoft/WindowsApps"
+        - "/mnt/c/Users/pariz/.dotnet/tools"
+        - "/mnt/c/Users/pariz/AppData/Roaming/Programs/Zero Install"
+        - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code/bin"
+        - "/mnt/c/Users/pariz/AppData/Local/Microsoft/WindowsApps"
+        - "/mnt/c/Users/pariz/AppData/Local/Muse Hub/lib"
+        - "/home/luan/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/local/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:238 (find_program)"
+      - "/usr/local/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_NM"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "nm"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/usr/local/bin/"
+      - "/home/luan/.vscode-server/bin/61b3d0ab13be7dda2389f1d3e60a119c7f660cc3/bin/remote-cli/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/games/"
+      - "/usr/local/games/"
+      - "/usr/lib/wsl/lib/"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code/"
+      - "/mnt/c/Program Files/Basler/pylon/Runtime/x64/"
+      - "/mnt/c/Program Files/Basler/pylon/Runtime/Win32/"
+      - "/mnt/c/Windows/system32/"
+      - "/mnt/c/Windows/"
+      - "/mnt/c/Windows/System32/Wbem/"
+      - "/mnt/c/Windows/System32/WindowsPowerShell/v1.0/"
+      - "/mnt/c/Windows/System32/OpenSSH/"
+      - "/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
+      - "/mnt/c/WINDOWS/system32/"
+      - "/mnt/c/WINDOWS/"
+      - "/mnt/c/WINDOWS/System32/Wbem/"
+      - "/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/"
+      - "/mnt/c/WINDOWS/System32/OpenSSH/"
+      - "/mnt/c/Program Files (x86)/dotnet/"
+      - "/mnt/c/Program Files/dotnet/"
+      - "/mnt/c/Program Files/MATLAB/R2024b/bin/"
+      - "/mnt/c/Program Files/WireGuard/"
+      - "/mnt/c/Program Files/NVIDIA Corporation/NVIDIA app/NvDLISR/"
+      - "/mnt/c/Program Files/CMake/bin/"
+      - "/mnt/c/msys64/mingw64/bin/"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/Scripts/"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/"
+      - "/mnt/c/Users/pariz/AppData/Local/Microsoft/WindowsApps/"
+      - "/mnt/c/Users/pariz/.dotnet/tools/"
+      - "/mnt/c/Users/pariz/AppData/Roaming/Programs/Zero Install/"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code/bin/"
+      - "/mnt/c/Users/pariz/AppData/Local/Muse Hub/lib/"
+      - "/home/luan/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts/"
+    found: "/usr/bin/nm"
+    search_context:
+      ENV{PATH}:
+        - "/usr/local/bin"
+        - "/home/luan/.vscode-server/bin/61b3d0ab13be7dda2389f1d3e60a119c7f660cc3/bin/remote-cli"
+        - "/usr/local/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/usr/lib/wsl/lib"
+        - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code"
+        - "/mnt/c/Program Files/Basler/pylon/Runtime/x64/"
+        - "/mnt/c/Program Files/Basler/pylon/Runtime/Win32/"
+        - "/mnt/c/Windows/system32"
+        - "/mnt/c/Windows"
+        - "/mnt/c/Windows/System32/Wbem"
+        - "/mnt/c/Windows/System32/WindowsPowerShell/v1.0/"
+        - "/mnt/c/Windows/System32/OpenSSH/"
+        - "/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common"
+        - "/mnt/c/WINDOWS/system32"
+        - "/mnt/c/WINDOWS"
+        - "/mnt/c/WINDOWS/System32/Wbem"
+        - "/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/"
+        - "/mnt/c/WINDOWS/System32/OpenSSH/"
+        - "/mnt/c/Program Files (x86)/dotnet/"
+        - "/mnt/c/Program Files/dotnet/"
+        - "/mnt/c/Program Files/MATLAB/R2024b/bin"
+        - "/mnt/c/Program Files/WireGuard/"
+        - "/mnt/c/Program Files/NVIDIA Corporation/NVIDIA app/NvDLISR"
+        - "/mnt/c/Program Files/CMake/bin"
+        - "/mnt/c/msys64/mingw64/bin"
+        - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/Scripts/"
+        - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/"
+        - "/mnt/c/Users/pariz/AppData/Local/Microsoft/WindowsApps"
+        - "/mnt/c/Users/pariz/.dotnet/tools"
+        - "/mnt/c/Users/pariz/AppData/Roaming/Programs/Zero Install"
+        - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code/bin"
+        - "/mnt/c/Users/pariz/AppData/Local/Microsoft/WindowsApps"
+        - "/mnt/c/Users/pariz/AppData/Local/Muse Hub/lib"
+        - "/home/luan/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/local/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:238 (find_program)"
+      - "/usr/local/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_OBJDUMP"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "objdump"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/usr/local/bin/"
+      - "/home/luan/.vscode-server/bin/61b3d0ab13be7dda2389f1d3e60a119c7f660cc3/bin/remote-cli/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/games/"
+      - "/usr/local/games/"
+      - "/usr/lib/wsl/lib/"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code/"
+      - "/mnt/c/Program Files/Basler/pylon/Runtime/x64/"
+      - "/mnt/c/Program Files/Basler/pylon/Runtime/Win32/"
+      - "/mnt/c/Windows/system32/"
+      - "/mnt/c/Windows/"
+      - "/mnt/c/Windows/System32/Wbem/"
+      - "/mnt/c/Windows/System32/WindowsPowerShell/v1.0/"
+      - "/mnt/c/Windows/System32/OpenSSH/"
+      - "/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
+      - "/mnt/c/WINDOWS/system32/"
+      - "/mnt/c/WINDOWS/"
+      - "/mnt/c/WINDOWS/System32/Wbem/"
+      - "/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/"
+      - "/mnt/c/WINDOWS/System32/OpenSSH/"
+      - "/mnt/c/Program Files (x86)/dotnet/"
+      - "/mnt/c/Program Files/dotnet/"
+      - "/mnt/c/Program Files/MATLAB/R2024b/bin/"
+      - "/mnt/c/Program Files/WireGuard/"
+      - "/mnt/c/Program Files/NVIDIA Corporation/NVIDIA app/NvDLISR/"
+      - "/mnt/c/Program Files/CMake/bin/"
+      - "/mnt/c/msys64/mingw64/bin/"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/Scripts/"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/"
+      - "/mnt/c/Users/pariz/AppData/Local/Microsoft/WindowsApps/"
+      - "/mnt/c/Users/pariz/.dotnet/tools/"
+      - "/mnt/c/Users/pariz/AppData/Roaming/Programs/Zero Install/"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code/bin/"
+      - "/mnt/c/Users/pariz/AppData/Local/Muse Hub/lib/"
+      - "/home/luan/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts/"
+    found: "/usr/bin/objdump"
+    search_context:
+      ENV{PATH}:
+        - "/usr/local/bin"
+        - "/home/luan/.vscode-server/bin/61b3d0ab13be7dda2389f1d3e60a119c7f660cc3/bin/remote-cli"
+        - "/usr/local/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/usr/lib/wsl/lib"
+        - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code"
+        - "/mnt/c/Program Files/Basler/pylon/Runtime/x64/"
+        - "/mnt/c/Program Files/Basler/pylon/Runtime/Win32/"
+        - "/mnt/c/Windows/system32"
+        - "/mnt/c/Windows"
+        - "/mnt/c/Windows/System32/Wbem"
+        - "/mnt/c/Windows/System32/WindowsPowerShell/v1.0/"
+        - "/mnt/c/Windows/System32/OpenSSH/"
+        - "/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common"
+        - "/mnt/c/WINDOWS/system32"
+        - "/mnt/c/WINDOWS"
+        - "/mnt/c/WINDOWS/System32/Wbem"
+        - "/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/"
+        - "/mnt/c/WINDOWS/System32/OpenSSH/"
+        - "/mnt/c/Program Files (x86)/dotnet/"
+        - "/mnt/c/Program Files/dotnet/"
+        - "/mnt/c/Program Files/MATLAB/R2024b/bin"
+        - "/mnt/c/Program Files/WireGuard/"
+        - "/mnt/c/Program Files/NVIDIA Corporation/NVIDIA app/NvDLISR"
+        - "/mnt/c/Program Files/CMake/bin"
+        - "/mnt/c/msys64/mingw64/bin"
+        - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/Scripts/"
+        - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/"
+        - "/mnt/c/Users/pariz/AppData/Local/Microsoft/WindowsApps"
+        - "/mnt/c/Users/pariz/.dotnet/tools"
+        - "/mnt/c/Users/pariz/AppData/Roaming/Programs/Zero Install"
+        - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code/bin"
+        - "/mnt/c/Users/pariz/AppData/Local/Microsoft/WindowsApps"
+        - "/mnt/c/Users/pariz/AppData/Local/Muse Hub/lib"
+        - "/home/luan/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/local/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:238 (find_program)"
+      - "/usr/local/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_OBJCOPY"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "objcopy"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/usr/local/bin/"
+      - "/home/luan/.vscode-server/bin/61b3d0ab13be7dda2389f1d3e60a119c7f660cc3/bin/remote-cli/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/games/"
+      - "/usr/local/games/"
+      - "/usr/lib/wsl/lib/"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code/"
+      - "/mnt/c/Program Files/Basler/pylon/Runtime/x64/"
+      - "/mnt/c/Program Files/Basler/pylon/Runtime/Win32/"
+      - "/mnt/c/Windows/system32/"
+      - "/mnt/c/Windows/"
+      - "/mnt/c/Windows/System32/Wbem/"
+      - "/mnt/c/Windows/System32/WindowsPowerShell/v1.0/"
+      - "/mnt/c/Windows/System32/OpenSSH/"
+      - "/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
+      - "/mnt/c/WINDOWS/system32/"
+      - "/mnt/c/WINDOWS/"
+      - "/mnt/c/WINDOWS/System32/Wbem/"
+      - "/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/"
+      - "/mnt/c/WINDOWS/System32/OpenSSH/"
+      - "/mnt/c/Program Files (x86)/dotnet/"
+      - "/mnt/c/Program Files/dotnet/"
+      - "/mnt/c/Program Files/MATLAB/R2024b/bin/"
+      - "/mnt/c/Program Files/WireGuard/"
+      - "/mnt/c/Program Files/NVIDIA Corporation/NVIDIA app/NvDLISR/"
+      - "/mnt/c/Program Files/CMake/bin/"
+      - "/mnt/c/msys64/mingw64/bin/"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/Scripts/"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/"
+      - "/mnt/c/Users/pariz/AppData/Local/Microsoft/WindowsApps/"
+      - "/mnt/c/Users/pariz/.dotnet/tools/"
+      - "/mnt/c/Users/pariz/AppData/Roaming/Programs/Zero Install/"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code/bin/"
+      - "/mnt/c/Users/pariz/AppData/Local/Muse Hub/lib/"
+      - "/home/luan/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts/"
+    found: "/usr/bin/objcopy"
+    search_context:
+      ENV{PATH}:
+        - "/usr/local/bin"
+        - "/home/luan/.vscode-server/bin/61b3d0ab13be7dda2389f1d3e60a119c7f660cc3/bin/remote-cli"
+        - "/usr/local/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/usr/lib/wsl/lib"
+        - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code"
+        - "/mnt/c/Program Files/Basler/pylon/Runtime/x64/"
+        - "/mnt/c/Program Files/Basler/pylon/Runtime/Win32/"
+        - "/mnt/c/Windows/system32"
+        - "/mnt/c/Windows"
+        - "/mnt/c/Windows/System32/Wbem"
+        - "/mnt/c/Windows/System32/WindowsPowerShell/v1.0/"
+        - "/mnt/c/Windows/System32/OpenSSH/"
+        - "/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common"
+        - "/mnt/c/WINDOWS/system32"
+        - "/mnt/c/WINDOWS"
+        - "/mnt/c/WINDOWS/System32/Wbem"
+        - "/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/"
+        - "/mnt/c/WINDOWS/System32/OpenSSH/"
+        - "/mnt/c/Program Files (x86)/dotnet/"
+        - "/mnt/c/Program Files/dotnet/"
+        - "/mnt/c/Program Files/MATLAB/R2024b/bin"
+        - "/mnt/c/Program Files/WireGuard/"
+        - "/mnt/c/Program Files/NVIDIA Corporation/NVIDIA app/NvDLISR"
+        - "/mnt/c/Program Files/CMake/bin"
+        - "/mnt/c/msys64/mingw64/bin"
+        - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/Scripts/"
+        - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/"
+        - "/mnt/c/Users/pariz/AppData/Local/Microsoft/WindowsApps"
+        - "/mnt/c/Users/pariz/.dotnet/tools"
+        - "/mnt/c/Users/pariz/AppData/Roaming/Programs/Zero Install"
+        - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code/bin"
+        - "/mnt/c/Users/pariz/AppData/Local/Microsoft/WindowsApps"
+        - "/mnt/c/Users/pariz/AppData/Local/Muse Hub/lib"
+        - "/home/luan/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/local/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:238 (find_program)"
+      - "/usr/local/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_READELF"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "readelf"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/usr/local/bin/"
+      - "/home/luan/.vscode-server/bin/61b3d0ab13be7dda2389f1d3e60a119c7f660cc3/bin/remote-cli/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/games/"
+      - "/usr/local/games/"
+      - "/usr/lib/wsl/lib/"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code/"
+      - "/mnt/c/Program Files/Basler/pylon/Runtime/x64/"
+      - "/mnt/c/Program Files/Basler/pylon/Runtime/Win32/"
+      - "/mnt/c/Windows/system32/"
+      - "/mnt/c/Windows/"
+      - "/mnt/c/Windows/System32/Wbem/"
+      - "/mnt/c/Windows/System32/WindowsPowerShell/v1.0/"
+      - "/mnt/c/Windows/System32/OpenSSH/"
+      - "/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
+      - "/mnt/c/WINDOWS/system32/"
+      - "/mnt/c/WINDOWS/"
+      - "/mnt/c/WINDOWS/System32/Wbem/"
+      - "/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/"
+      - "/mnt/c/WINDOWS/System32/OpenSSH/"
+      - "/mnt/c/Program Files (x86)/dotnet/"
+      - "/mnt/c/Program Files/dotnet/"
+      - "/mnt/c/Program Files/MATLAB/R2024b/bin/"
+      - "/mnt/c/Program Files/WireGuard/"
+      - "/mnt/c/Program Files/NVIDIA Corporation/NVIDIA app/NvDLISR/"
+      - "/mnt/c/Program Files/CMake/bin/"
+      - "/mnt/c/msys64/mingw64/bin/"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/Scripts/"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/"
+      - "/mnt/c/Users/pariz/AppData/Local/Microsoft/WindowsApps/"
+      - "/mnt/c/Users/pariz/.dotnet/tools/"
+      - "/mnt/c/Users/pariz/AppData/Roaming/Programs/Zero Install/"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code/bin/"
+      - "/mnt/c/Users/pariz/AppData/Local/Muse Hub/lib/"
+      - "/home/luan/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts/"
+    found: "/usr/bin/readelf"
+    search_context:
+      ENV{PATH}:
+        - "/usr/local/bin"
+        - "/home/luan/.vscode-server/bin/61b3d0ab13be7dda2389f1d3e60a119c7f660cc3/bin/remote-cli"
+        - "/usr/local/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/usr/lib/wsl/lib"
+        - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code"
+        - "/mnt/c/Program Files/Basler/pylon/Runtime/x64/"
+        - "/mnt/c/Program Files/Basler/pylon/Runtime/Win32/"
+        - "/mnt/c/Windows/system32"
+        - "/mnt/c/Windows"
+        - "/mnt/c/Windows/System32/Wbem"
+        - "/mnt/c/Windows/System32/WindowsPowerShell/v1.0/"
+        - "/mnt/c/Windows/System32/OpenSSH/"
+        - "/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common"
+        - "/mnt/c/WINDOWS/system32"
+        - "/mnt/c/WINDOWS"
+        - "/mnt/c/WINDOWS/System32/Wbem"
+        - "/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/"
+        - "/mnt/c/WINDOWS/System32/OpenSSH/"
+        - "/mnt/c/Program Files (x86)/dotnet/"
+        - "/mnt/c/Program Files/dotnet/"
+        - "/mnt/c/Program Files/MATLAB/R2024b/bin"
+        - "/mnt/c/Program Files/WireGuard/"
+        - "/mnt/c/Program Files/NVIDIA Corporation/NVIDIA app/NvDLISR"
+        - "/mnt/c/Program Files/CMake/bin"
+        - "/mnt/c/msys64/mingw64/bin"
+        - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/Scripts/"
+        - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/"
+        - "/mnt/c/Users/pariz/AppData/Local/Microsoft/WindowsApps"
+        - "/mnt/c/Users/pariz/.dotnet/tools"
+        - "/mnt/c/Users/pariz/AppData/Roaming/Programs/Zero Install"
+        - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code/bin"
+        - "/mnt/c/Users/pariz/AppData/Local/Microsoft/WindowsApps"
+        - "/mnt/c/Users/pariz/AppData/Local/Muse Hub/lib"
+        - "/home/luan/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/local/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:238 (find_program)"
+      - "/usr/local/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_DLLTOOL"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "dlltool"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/usr/local/bin/"
+      - "/home/luan/.vscode-server/bin/61b3d0ab13be7dda2389f1d3e60a119c7f660cc3/bin/remote-cli/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/games/"
+      - "/usr/local/games/"
+      - "/usr/lib/wsl/lib/"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code/"
+      - "/mnt/c/Program Files/Basler/pylon/Runtime/x64/"
+      - "/mnt/c/Program Files/Basler/pylon/Runtime/Win32/"
+      - "/mnt/c/Windows/system32/"
+      - "/mnt/c/Windows/"
+      - "/mnt/c/Windows/System32/Wbem/"
+      - "/mnt/c/Windows/System32/WindowsPowerShell/v1.0/"
+      - "/mnt/c/Windows/System32/OpenSSH/"
+      - "/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
+      - "/mnt/c/WINDOWS/system32/"
+      - "/mnt/c/WINDOWS/"
+      - "/mnt/c/WINDOWS/System32/Wbem/"
+      - "/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/"
+      - "/mnt/c/WINDOWS/System32/OpenSSH/"
+      - "/mnt/c/Program Files (x86)/dotnet/"
+      - "/mnt/c/Program Files/dotnet/"
+      - "/mnt/c/Program Files/MATLAB/R2024b/bin/"
+      - "/mnt/c/Program Files/WireGuard/"
+      - "/mnt/c/Program Files/NVIDIA Corporation/NVIDIA app/NvDLISR/"
+      - "/mnt/c/Program Files/CMake/bin/"
+      - "/mnt/c/msys64/mingw64/bin/"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/Scripts/"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/"
+      - "/mnt/c/Users/pariz/AppData/Local/Microsoft/WindowsApps/"
+      - "/mnt/c/Users/pariz/.dotnet/tools/"
+      - "/mnt/c/Users/pariz/AppData/Roaming/Programs/Zero Install/"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code/bin/"
+      - "/mnt/c/Users/pariz/AppData/Local/Muse Hub/lib/"
+      - "/home/luan/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts/"
+    searched_directories:
+      - "/usr/bin/dlltool"
+      - "/usr/local/bin/dlltool"
+      - "/home/luan/.vscode-server/bin/61b3d0ab13be7dda2389f1d3e60a119c7f660cc3/bin/remote-cli/dlltool"
+      - "/usr/local/sbin/dlltool"
+      - "/usr/sbin/dlltool"
+      - "/sbin/dlltool"
+      - "/bin/dlltool"
+      - "/usr/games/dlltool"
+      - "/usr/local/games/dlltool"
+      - "/usr/lib/wsl/lib/dlltool"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code/dlltool"
+      - "/mnt/c/Program Files/Basler/pylon/Runtime/x64/dlltool"
+      - "/mnt/c/Program Files/Basler/pylon/Runtime/Win32/dlltool"
+      - "/mnt/c/Windows/system32/dlltool"
+      - "/mnt/c/Windows/dlltool"
+      - "/mnt/c/Windows/System32/Wbem/dlltool"
+      - "/mnt/c/Windows/System32/WindowsPowerShell/v1.0/dlltool"
+      - "/mnt/c/Windows/System32/OpenSSH/dlltool"
+      - "/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common/dlltool"
+      - "/mnt/c/WINDOWS/system32/dlltool"
+      - "/mnt/c/WINDOWS/dlltool"
+      - "/mnt/c/WINDOWS/System32/Wbem/dlltool"
+      - "/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/dlltool"
+      - "/mnt/c/WINDOWS/System32/OpenSSH/dlltool"
+      - "/mnt/c/Program Files (x86)/dotnet/dlltool"
+      - "/mnt/c/Program Files/dotnet/dlltool"
+      - "/mnt/c/Program Files/MATLAB/R2024b/bin/dlltool"
+      - "/mnt/c/Program Files/WireGuard/dlltool"
+      - "/mnt/c/Program Files/NVIDIA Corporation/NVIDIA app/NvDLISR/dlltool"
+      - "/mnt/c/Program Files/CMake/bin/dlltool"
+      - "/mnt/c/msys64/mingw64/bin/dlltool"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/Scripts/dlltool"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/dlltool"
+      - "/mnt/c/Users/pariz/AppData/Local/Microsoft/WindowsApps/dlltool"
+      - "/mnt/c/Users/pariz/.dotnet/tools/dlltool"
+      - "/mnt/c/Users/pariz/AppData/Roaming/Programs/Zero Install/dlltool"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code/bin/dlltool"
+      - "/mnt/c/Users/pariz/AppData/Local/Muse Hub/lib/dlltool"
+      - "/home/luan/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts/dlltool"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "/usr/local/bin"
+        - "/home/luan/.vscode-server/bin/61b3d0ab13be7dda2389f1d3e60a119c7f660cc3/bin/remote-cli"
+        - "/usr/local/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/usr/lib/wsl/lib"
+        - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code"
+        - "/mnt/c/Program Files/Basler/pylon/Runtime/x64/"
+        - "/mnt/c/Program Files/Basler/pylon/Runtime/Win32/"
+        - "/mnt/c/Windows/system32"
+        - "/mnt/c/Windows"
+        - "/mnt/c/Windows/System32/Wbem"
+        - "/mnt/c/Windows/System32/WindowsPowerShell/v1.0/"
+        - "/mnt/c/Windows/System32/OpenSSH/"
+        - "/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common"
+        - "/mnt/c/WINDOWS/system32"
+        - "/mnt/c/WINDOWS"
+        - "/mnt/c/WINDOWS/System32/Wbem"
+        - "/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/"
+        - "/mnt/c/WINDOWS/System32/OpenSSH/"
+        - "/mnt/c/Program Files (x86)/dotnet/"
+        - "/mnt/c/Program Files/dotnet/"
+        - "/mnt/c/Program Files/MATLAB/R2024b/bin"
+        - "/mnt/c/Program Files/WireGuard/"
+        - "/mnt/c/Program Files/NVIDIA Corporation/NVIDIA app/NvDLISR"
+        - "/mnt/c/Program Files/CMake/bin"
+        - "/mnt/c/msys64/mingw64/bin"
+        - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/Scripts/"
+        - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/"
+        - "/mnt/c/Users/pariz/AppData/Local/Microsoft/WindowsApps"
+        - "/mnt/c/Users/pariz/.dotnet/tools"
+        - "/mnt/c/Users/pariz/AppData/Roaming/Programs/Zero Install"
+        - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code/bin"
+        - "/mnt/c/Users/pariz/AppData/Local/Microsoft/WindowsApps"
+        - "/mnt/c/Users/pariz/AppData/Local/Muse Hub/lib"
+        - "/home/luan/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/local/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:238 (find_program)"
+      - "/usr/local/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_ADDR2LINE"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "addr2line"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/usr/local/bin/"
+      - "/home/luan/.vscode-server/bin/61b3d0ab13be7dda2389f1d3e60a119c7f660cc3/bin/remote-cli/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/games/"
+      - "/usr/local/games/"
+      - "/usr/lib/wsl/lib/"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code/"
+      - "/mnt/c/Program Files/Basler/pylon/Runtime/x64/"
+      - "/mnt/c/Program Files/Basler/pylon/Runtime/Win32/"
+      - "/mnt/c/Windows/system32/"
+      - "/mnt/c/Windows/"
+      - "/mnt/c/Windows/System32/Wbem/"
+      - "/mnt/c/Windows/System32/WindowsPowerShell/v1.0/"
+      - "/mnt/c/Windows/System32/OpenSSH/"
+      - "/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
+      - "/mnt/c/WINDOWS/system32/"
+      - "/mnt/c/WINDOWS/"
+      - "/mnt/c/WINDOWS/System32/Wbem/"
+      - "/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/"
+      - "/mnt/c/WINDOWS/System32/OpenSSH/"
+      - "/mnt/c/Program Files (x86)/dotnet/"
+      - "/mnt/c/Program Files/dotnet/"
+      - "/mnt/c/Program Files/MATLAB/R2024b/bin/"
+      - "/mnt/c/Program Files/WireGuard/"
+      - "/mnt/c/Program Files/NVIDIA Corporation/NVIDIA app/NvDLISR/"
+      - "/mnt/c/Program Files/CMake/bin/"
+      - "/mnt/c/msys64/mingw64/bin/"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/Scripts/"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/"
+      - "/mnt/c/Users/pariz/AppData/Local/Microsoft/WindowsApps/"
+      - "/mnt/c/Users/pariz/.dotnet/tools/"
+      - "/mnt/c/Users/pariz/AppData/Roaming/Programs/Zero Install/"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code/bin/"
+      - "/mnt/c/Users/pariz/AppData/Local/Muse Hub/lib/"
+      - "/home/luan/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts/"
+    found: "/usr/bin/addr2line"
+    search_context:
+      ENV{PATH}:
+        - "/usr/local/bin"
+        - "/home/luan/.vscode-server/bin/61b3d0ab13be7dda2389f1d3e60a119c7f660cc3/bin/remote-cli"
+        - "/usr/local/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/usr/lib/wsl/lib"
+        - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code"
+        - "/mnt/c/Program Files/Basler/pylon/Runtime/x64/"
+        - "/mnt/c/Program Files/Basler/pylon/Runtime/Win32/"
+        - "/mnt/c/Windows/system32"
+        - "/mnt/c/Windows"
+        - "/mnt/c/Windows/System32/Wbem"
+        - "/mnt/c/Windows/System32/WindowsPowerShell/v1.0/"
+        - "/mnt/c/Windows/System32/OpenSSH/"
+        - "/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common"
+        - "/mnt/c/WINDOWS/system32"
+        - "/mnt/c/WINDOWS"
+        - "/mnt/c/WINDOWS/System32/Wbem"
+        - "/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/"
+        - "/mnt/c/WINDOWS/System32/OpenSSH/"
+        - "/mnt/c/Program Files (x86)/dotnet/"
+        - "/mnt/c/Program Files/dotnet/"
+        - "/mnt/c/Program Files/MATLAB/R2024b/bin"
+        - "/mnt/c/Program Files/WireGuard/"
+        - "/mnt/c/Program Files/NVIDIA Corporation/NVIDIA app/NvDLISR"
+        - "/mnt/c/Program Files/CMake/bin"
+        - "/mnt/c/msys64/mingw64/bin"
+        - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/Scripts/"
+        - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/"
+        - "/mnt/c/Users/pariz/AppData/Local/Microsoft/WindowsApps"
+        - "/mnt/c/Users/pariz/.dotnet/tools"
+        - "/mnt/c/Users/pariz/AppData/Roaming/Programs/Zero Install"
+        - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code/bin"
+        - "/mnt/c/Users/pariz/AppData/Local/Microsoft/WindowsApps"
+        - "/mnt/c/Users/pariz/AppData/Local/Muse Hub/lib"
+        - "/home/luan/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/local/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:238 (find_program)"
+      - "/usr/local/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_TAPI"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "tapi"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/usr/local/bin/"
+      - "/home/luan/.vscode-server/bin/61b3d0ab13be7dda2389f1d3e60a119c7f660cc3/bin/remote-cli/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/games/"
+      - "/usr/local/games/"
+      - "/usr/lib/wsl/lib/"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code/"
+      - "/mnt/c/Program Files/Basler/pylon/Runtime/x64/"
+      - "/mnt/c/Program Files/Basler/pylon/Runtime/Win32/"
+      - "/mnt/c/Windows/system32/"
+      - "/mnt/c/Windows/"
+      - "/mnt/c/Windows/System32/Wbem/"
+      - "/mnt/c/Windows/System32/WindowsPowerShell/v1.0/"
+      - "/mnt/c/Windows/System32/OpenSSH/"
+      - "/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
+      - "/mnt/c/WINDOWS/system32/"
+      - "/mnt/c/WINDOWS/"
+      - "/mnt/c/WINDOWS/System32/Wbem/"
+      - "/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/"
+      - "/mnt/c/WINDOWS/System32/OpenSSH/"
+      - "/mnt/c/Program Files (x86)/dotnet/"
+      - "/mnt/c/Program Files/dotnet/"
+      - "/mnt/c/Program Files/MATLAB/R2024b/bin/"
+      - "/mnt/c/Program Files/WireGuard/"
+      - "/mnt/c/Program Files/NVIDIA Corporation/NVIDIA app/NvDLISR/"
+      - "/mnt/c/Program Files/CMake/bin/"
+      - "/mnt/c/msys64/mingw64/bin/"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/Scripts/"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/"
+      - "/mnt/c/Users/pariz/AppData/Local/Microsoft/WindowsApps/"
+      - "/mnt/c/Users/pariz/.dotnet/tools/"
+      - "/mnt/c/Users/pariz/AppData/Roaming/Programs/Zero Install/"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code/bin/"
+      - "/mnt/c/Users/pariz/AppData/Local/Muse Hub/lib/"
+      - "/home/luan/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts/"
+    searched_directories:
+      - "/usr/bin/tapi"
+      - "/usr/local/bin/tapi"
+      - "/home/luan/.vscode-server/bin/61b3d0ab13be7dda2389f1d3e60a119c7f660cc3/bin/remote-cli/tapi"
+      - "/usr/local/sbin/tapi"
+      - "/usr/sbin/tapi"
+      - "/sbin/tapi"
+      - "/bin/tapi"
+      - "/usr/games/tapi"
+      - "/usr/local/games/tapi"
+      - "/usr/lib/wsl/lib/tapi"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code/tapi"
+      - "/mnt/c/Program Files/Basler/pylon/Runtime/x64/tapi"
+      - "/mnt/c/Program Files/Basler/pylon/Runtime/Win32/tapi"
+      - "/mnt/c/Windows/system32/tapi"
+      - "/mnt/c/Windows/tapi"
+      - "/mnt/c/Windows/System32/Wbem/tapi"
+      - "/mnt/c/Windows/System32/WindowsPowerShell/v1.0/tapi"
+      - "/mnt/c/Windows/System32/OpenSSH/tapi"
+      - "/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common/tapi"
+      - "/mnt/c/WINDOWS/system32/tapi"
+      - "/mnt/c/WINDOWS/tapi"
+      - "/mnt/c/WINDOWS/System32/Wbem/tapi"
+      - "/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/tapi"
+      - "/mnt/c/WINDOWS/System32/OpenSSH/tapi"
+      - "/mnt/c/Program Files (x86)/dotnet/tapi"
+      - "/mnt/c/Program Files/dotnet/tapi"
+      - "/mnt/c/Program Files/MATLAB/R2024b/bin/tapi"
+      - "/mnt/c/Program Files/WireGuard/tapi"
+      - "/mnt/c/Program Files/NVIDIA Corporation/NVIDIA app/NvDLISR/tapi"
+      - "/mnt/c/Program Files/CMake/bin/tapi"
+      - "/mnt/c/msys64/mingw64/bin/tapi"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/Scripts/tapi"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/tapi"
+      - "/mnt/c/Users/pariz/AppData/Local/Microsoft/WindowsApps/tapi"
+      - "/mnt/c/Users/pariz/.dotnet/tools/tapi"
+      - "/mnt/c/Users/pariz/AppData/Roaming/Programs/Zero Install/tapi"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code/bin/tapi"
+      - "/mnt/c/Users/pariz/AppData/Local/Muse Hub/lib/tapi"
+      - "/home/luan/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts/tapi"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "/usr/local/bin"
+        - "/home/luan/.vscode-server/bin/61b3d0ab13be7dda2389f1d3e60a119c7f660cc3/bin/remote-cli"
+        - "/usr/local/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/usr/lib/wsl/lib"
+        - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code"
+        - "/mnt/c/Program Files/Basler/pylon/Runtime/x64/"
+        - "/mnt/c/Program Files/Basler/pylon/Runtime/Win32/"
+        - "/mnt/c/Windows/system32"
+        - "/mnt/c/Windows"
+        - "/mnt/c/Windows/System32/Wbem"
+        - "/mnt/c/Windows/System32/WindowsPowerShell/v1.0/"
+        - "/mnt/c/Windows/System32/OpenSSH/"
+        - "/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common"
+        - "/mnt/c/WINDOWS/system32"
+        - "/mnt/c/WINDOWS"
+        - "/mnt/c/WINDOWS/System32/Wbem"
+        - "/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/"
+        - "/mnt/c/WINDOWS/System32/OpenSSH/"
+        - "/mnt/c/Program Files (x86)/dotnet/"
+        - "/mnt/c/Program Files/dotnet/"
+        - "/mnt/c/Program Files/MATLAB/R2024b/bin"
+        - "/mnt/c/Program Files/WireGuard/"
+        - "/mnt/c/Program Files/NVIDIA Corporation/NVIDIA app/NvDLISR"
+        - "/mnt/c/Program Files/CMake/bin"
+        - "/mnt/c/msys64/mingw64/bin"
+        - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/Scripts/"
+        - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/"
+        - "/mnt/c/Users/pariz/AppData/Local/Microsoft/WindowsApps"
+        - "/mnt/c/Users/pariz/.dotnet/tools"
+        - "/mnt/c/Users/pariz/AppData/Roaming/Programs/Zero Install"
+        - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code/bin"
+        - "/mnt/c/Users/pariz/AppData/Local/Microsoft/WindowsApps"
+        - "/mnt/c/Users/pariz/AppData/Local/Muse Hub/lib"
+        - "/home/luan/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/local/share/cmake-4.1/Modules/Compiler/GNU-FindBinUtils.cmake:18 (find_program)"
+      - "/usr/local/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:201 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_C_COMPILER_AR"
+    description: "A wrapper around 'ar' adding the appropriate '--plugin' option for the GCC compiler"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "gcc-ar-12.2"
+      - "gcc-ar-12"
+      - "gcc-ar12"
+      - "gcc-ar"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/usr/local/bin/"
+      - "/home/luan/.vscode-server/bin/61b3d0ab13be7dda2389f1d3e60a119c7f660cc3/bin/remote-cli/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/games/"
+      - "/usr/local/games/"
+      - "/usr/lib/wsl/lib/"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code/"
+      - "/mnt/c/Program Files/Basler/pylon/Runtime/x64/"
+      - "/mnt/c/Program Files/Basler/pylon/Runtime/Win32/"
+      - "/mnt/c/Windows/system32/"
+      - "/mnt/c/Windows/"
+      - "/mnt/c/Windows/System32/Wbem/"
+      - "/mnt/c/Windows/System32/WindowsPowerShell/v1.0/"
+      - "/mnt/c/Windows/System32/OpenSSH/"
+      - "/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
+      - "/mnt/c/WINDOWS/system32/"
+      - "/mnt/c/WINDOWS/"
+      - "/mnt/c/WINDOWS/System32/Wbem/"
+      - "/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/"
+      - "/mnt/c/WINDOWS/System32/OpenSSH/"
+      - "/mnt/c/Program Files (x86)/dotnet/"
+      - "/mnt/c/Program Files/dotnet/"
+      - "/mnt/c/Program Files/MATLAB/R2024b/bin/"
+      - "/mnt/c/Program Files/WireGuard/"
+      - "/mnt/c/Program Files/NVIDIA Corporation/NVIDIA app/NvDLISR/"
+      - "/mnt/c/Program Files/CMake/bin/"
+      - "/mnt/c/msys64/mingw64/bin/"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/Scripts/"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/"
+      - "/mnt/c/Users/pariz/AppData/Local/Microsoft/WindowsApps/"
+      - "/mnt/c/Users/pariz/.dotnet/tools/"
+      - "/mnt/c/Users/pariz/AppData/Roaming/Programs/Zero Install/"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code/bin/"
+      - "/mnt/c/Users/pariz/AppData/Local/Muse Hub/lib/"
+      - "/home/luan/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts/"
+    searched_directories:
+      - "/usr/bin/gcc-ar-12.2"
+      - "/usr/local/bin/gcc-ar-12.2"
+      - "/home/luan/.vscode-server/bin/61b3d0ab13be7dda2389f1d3e60a119c7f660cc3/bin/remote-cli/gcc-ar-12.2"
+      - "/usr/local/sbin/gcc-ar-12.2"
+      - "/usr/sbin/gcc-ar-12.2"
+      - "/sbin/gcc-ar-12.2"
+      - "/bin/gcc-ar-12.2"
+      - "/usr/games/gcc-ar-12.2"
+      - "/usr/local/games/gcc-ar-12.2"
+      - "/usr/lib/wsl/lib/gcc-ar-12.2"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code/gcc-ar-12.2"
+      - "/mnt/c/Program Files/Basler/pylon/Runtime/x64/gcc-ar-12.2"
+      - "/mnt/c/Program Files/Basler/pylon/Runtime/Win32/gcc-ar-12.2"
+      - "/mnt/c/Windows/system32/gcc-ar-12.2"
+      - "/mnt/c/Windows/gcc-ar-12.2"
+      - "/mnt/c/Windows/System32/Wbem/gcc-ar-12.2"
+      - "/mnt/c/Windows/System32/WindowsPowerShell/v1.0/gcc-ar-12.2"
+      - "/mnt/c/Windows/System32/OpenSSH/gcc-ar-12.2"
+      - "/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common/gcc-ar-12.2"
+      - "/mnt/c/WINDOWS/system32/gcc-ar-12.2"
+      - "/mnt/c/WINDOWS/gcc-ar-12.2"
+      - "/mnt/c/WINDOWS/System32/Wbem/gcc-ar-12.2"
+      - "/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/gcc-ar-12.2"
+      - "/mnt/c/WINDOWS/System32/OpenSSH/gcc-ar-12.2"
+      - "/mnt/c/Program Files (x86)/dotnet/gcc-ar-12.2"
+      - "/mnt/c/Program Files/dotnet/gcc-ar-12.2"
+      - "/mnt/c/Program Files/MATLAB/R2024b/bin/gcc-ar-12.2"
+      - "/mnt/c/Program Files/WireGuard/gcc-ar-12.2"
+      - "/mnt/c/Program Files/NVIDIA Corporation/NVIDIA app/NvDLISR/gcc-ar-12.2"
+      - "/mnt/c/Program Files/CMake/bin/gcc-ar-12.2"
+      - "/mnt/c/msys64/mingw64/bin/gcc-ar-12.2"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/Scripts/gcc-ar-12.2"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/gcc-ar-12.2"
+      - "/mnt/c/Users/pariz/AppData/Local/Microsoft/WindowsApps/gcc-ar-12.2"
+      - "/mnt/c/Users/pariz/.dotnet/tools/gcc-ar-12.2"
+      - "/mnt/c/Users/pariz/AppData/Roaming/Programs/Zero Install/gcc-ar-12.2"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code/bin/gcc-ar-12.2"
+      - "/mnt/c/Users/pariz/AppData/Local/Muse Hub/lib/gcc-ar-12.2"
+      - "/home/luan/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts/gcc-ar-12.2"
+    found: "/usr/bin/gcc-ar-12"
+    search_context:
+      ENV{PATH}:
+        - "/usr/local/bin"
+        - "/home/luan/.vscode-server/bin/61b3d0ab13be7dda2389f1d3e60a119c7f660cc3/bin/remote-cli"
+        - "/usr/local/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/usr/lib/wsl/lib"
+        - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code"
+        - "/mnt/c/Program Files/Basler/pylon/Runtime/x64/"
+        - "/mnt/c/Program Files/Basler/pylon/Runtime/Win32/"
+        - "/mnt/c/Windows/system32"
+        - "/mnt/c/Windows"
+        - "/mnt/c/Windows/System32/Wbem"
+        - "/mnt/c/Windows/System32/WindowsPowerShell/v1.0/"
+        - "/mnt/c/Windows/System32/OpenSSH/"
+        - "/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common"
+        - "/mnt/c/WINDOWS/system32"
+        - "/mnt/c/WINDOWS"
+        - "/mnt/c/WINDOWS/System32/Wbem"
+        - "/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/"
+        - "/mnt/c/WINDOWS/System32/OpenSSH/"
+        - "/mnt/c/Program Files (x86)/dotnet/"
+        - "/mnt/c/Program Files/dotnet/"
+        - "/mnt/c/Program Files/MATLAB/R2024b/bin"
+        - "/mnt/c/Program Files/WireGuard/"
+        - "/mnt/c/Program Files/NVIDIA Corporation/NVIDIA app/NvDLISR"
+        - "/mnt/c/Program Files/CMake/bin"
+        - "/mnt/c/msys64/mingw64/bin"
+        - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/Scripts/"
+        - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/"
+        - "/mnt/c/Users/pariz/AppData/Local/Microsoft/WindowsApps"
+        - "/mnt/c/Users/pariz/.dotnet/tools"
+        - "/mnt/c/Users/pariz/AppData/Roaming/Programs/Zero Install"
+        - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code/bin"
+        - "/mnt/c/Users/pariz/AppData/Local/Microsoft/WindowsApps"
+        - "/mnt/c/Users/pariz/AppData/Local/Muse Hub/lib"
+        - "/home/luan/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/local/share/cmake-4.1/Modules/Compiler/GNU-FindBinUtils.cmake:30 (find_program)"
+      - "/usr/local/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:201 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_C_COMPILER_RANLIB"
+    description: "A wrapper around 'ranlib' adding the appropriate '--plugin' option for the GCC compiler"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "gcc-ranlib-12.2"
+      - "gcc-ranlib-12"
+      - "gcc-ranlib12"
+      - "gcc-ranlib"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/usr/local/bin/"
+      - "/home/luan/.vscode-server/bin/61b3d0ab13be7dda2389f1d3e60a119c7f660cc3/bin/remote-cli/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/games/"
+      - "/usr/local/games/"
+      - "/usr/lib/wsl/lib/"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code/"
+      - "/mnt/c/Program Files/Basler/pylon/Runtime/x64/"
+      - "/mnt/c/Program Files/Basler/pylon/Runtime/Win32/"
+      - "/mnt/c/Windows/system32/"
+      - "/mnt/c/Windows/"
+      - "/mnt/c/Windows/System32/Wbem/"
+      - "/mnt/c/Windows/System32/WindowsPowerShell/v1.0/"
+      - "/mnt/c/Windows/System32/OpenSSH/"
+      - "/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
+      - "/mnt/c/WINDOWS/system32/"
+      - "/mnt/c/WINDOWS/"
+      - "/mnt/c/WINDOWS/System32/Wbem/"
+      - "/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/"
+      - "/mnt/c/WINDOWS/System32/OpenSSH/"
+      - "/mnt/c/Program Files (x86)/dotnet/"
+      - "/mnt/c/Program Files/dotnet/"
+      - "/mnt/c/Program Files/MATLAB/R2024b/bin/"
+      - "/mnt/c/Program Files/WireGuard/"
+      - "/mnt/c/Program Files/NVIDIA Corporation/NVIDIA app/NvDLISR/"
+      - "/mnt/c/Program Files/CMake/bin/"
+      - "/mnt/c/msys64/mingw64/bin/"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/Scripts/"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/"
+      - "/mnt/c/Users/pariz/AppData/Local/Microsoft/WindowsApps/"
+      - "/mnt/c/Users/pariz/.dotnet/tools/"
+      - "/mnt/c/Users/pariz/AppData/Roaming/Programs/Zero Install/"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code/bin/"
+      - "/mnt/c/Users/pariz/AppData/Local/Muse Hub/lib/"
+      - "/home/luan/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts/"
+    searched_directories:
+      - "/usr/bin/gcc-ranlib-12.2"
+      - "/usr/local/bin/gcc-ranlib-12.2"
+      - "/home/luan/.vscode-server/bin/61b3d0ab13be7dda2389f1d3e60a119c7f660cc3/bin/remote-cli/gcc-ranlib-12.2"
+      - "/usr/local/sbin/gcc-ranlib-12.2"
+      - "/usr/sbin/gcc-ranlib-12.2"
+      - "/sbin/gcc-ranlib-12.2"
+      - "/bin/gcc-ranlib-12.2"
+      - "/usr/games/gcc-ranlib-12.2"
+      - "/usr/local/games/gcc-ranlib-12.2"
+      - "/usr/lib/wsl/lib/gcc-ranlib-12.2"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code/gcc-ranlib-12.2"
+      - "/mnt/c/Program Files/Basler/pylon/Runtime/x64/gcc-ranlib-12.2"
+      - "/mnt/c/Program Files/Basler/pylon/Runtime/Win32/gcc-ranlib-12.2"
+      - "/mnt/c/Windows/system32/gcc-ranlib-12.2"
+      - "/mnt/c/Windows/gcc-ranlib-12.2"
+      - "/mnt/c/Windows/System32/Wbem/gcc-ranlib-12.2"
+      - "/mnt/c/Windows/System32/WindowsPowerShell/v1.0/gcc-ranlib-12.2"
+      - "/mnt/c/Windows/System32/OpenSSH/gcc-ranlib-12.2"
+      - "/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common/gcc-ranlib-12.2"
+      - "/mnt/c/WINDOWS/system32/gcc-ranlib-12.2"
+      - "/mnt/c/WINDOWS/gcc-ranlib-12.2"
+      - "/mnt/c/WINDOWS/System32/Wbem/gcc-ranlib-12.2"
+      - "/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/gcc-ranlib-12.2"
+      - "/mnt/c/WINDOWS/System32/OpenSSH/gcc-ranlib-12.2"
+      - "/mnt/c/Program Files (x86)/dotnet/gcc-ranlib-12.2"
+      - "/mnt/c/Program Files/dotnet/gcc-ranlib-12.2"
+      - "/mnt/c/Program Files/MATLAB/R2024b/bin/gcc-ranlib-12.2"
+      - "/mnt/c/Program Files/WireGuard/gcc-ranlib-12.2"
+      - "/mnt/c/Program Files/NVIDIA Corporation/NVIDIA app/NvDLISR/gcc-ranlib-12.2"
+      - "/mnt/c/Program Files/CMake/bin/gcc-ranlib-12.2"
+      - "/mnt/c/msys64/mingw64/bin/gcc-ranlib-12.2"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/Scripts/gcc-ranlib-12.2"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/gcc-ranlib-12.2"
+      - "/mnt/c/Users/pariz/AppData/Local/Microsoft/WindowsApps/gcc-ranlib-12.2"
+      - "/mnt/c/Users/pariz/.dotnet/tools/gcc-ranlib-12.2"
+      - "/mnt/c/Users/pariz/AppData/Roaming/Programs/Zero Install/gcc-ranlib-12.2"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code/bin/gcc-ranlib-12.2"
+      - "/mnt/c/Users/pariz/AppData/Local/Muse Hub/lib/gcc-ranlib-12.2"
+      - "/home/luan/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts/gcc-ranlib-12.2"
+    found: "/usr/bin/gcc-ranlib-12"
+    search_context:
+      ENV{PATH}:
+        - "/usr/local/bin"
+        - "/home/luan/.vscode-server/bin/61b3d0ab13be7dda2389f1d3e60a119c7f660cc3/bin/remote-cli"
+        - "/usr/local/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/usr/lib/wsl/lib"
+        - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code"
+        - "/mnt/c/Program Files/Basler/pylon/Runtime/x64/"
+        - "/mnt/c/Program Files/Basler/pylon/Runtime/Win32/"
+        - "/mnt/c/Windows/system32"
+        - "/mnt/c/Windows"
+        - "/mnt/c/Windows/System32/Wbem"
+        - "/mnt/c/Windows/System32/WindowsPowerShell/v1.0/"
+        - "/mnt/c/Windows/System32/OpenSSH/"
+        - "/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common"
+        - "/mnt/c/WINDOWS/system32"
+        - "/mnt/c/WINDOWS"
+        - "/mnt/c/WINDOWS/System32/Wbem"
+        - "/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/"
+        - "/mnt/c/WINDOWS/System32/OpenSSH/"
+        - "/mnt/c/Program Files (x86)/dotnet/"
+        - "/mnt/c/Program Files/dotnet/"
+        - "/mnt/c/Program Files/MATLAB/R2024b/bin"
+        - "/mnt/c/Program Files/WireGuard/"
+        - "/mnt/c/Program Files/NVIDIA Corporation/NVIDIA app/NvDLISR"
+        - "/mnt/c/Program Files/CMake/bin"
+        - "/mnt/c/msys64/mingw64/bin"
+        - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/Scripts/"
+        - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/"
+        - "/mnt/c/Users/pariz/AppData/Local/Microsoft/WindowsApps"
+        - "/mnt/c/Users/pariz/.dotnet/tools"
+        - "/mnt/c/Users/pariz/AppData/Roaming/Programs/Zero Install"
+        - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code/bin"
+        - "/mnt/c/Users/pariz/AppData/Local/Microsoft/WindowsApps"
+        - "/mnt/c/Users/pariz/AppData/Local/Muse Hub/lib"
+        - "/home/luan/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/local/share/cmake-4.1/Modules/CMakeDetermineCompiler.cmake:54 (find_program)"
+      - "/usr/local/share/cmake-4.1/Modules/CMakeDetermineCXXCompiler.cmake:69 (_cmake_find_compiler)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_CXX_COMPILER"
+    description: "CXX compiler"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "c++"
+      - "CC"
+      - "g++"
+      - "aCC"
+      - "cl"
+      - "bcc"
+      - "xlC"
+      - "icpx"
+      - "icx"
+      - "clang++"
+    candidate_directories:
+      - "/usr/bin/"
+    found: "/usr/bin/c++"
+    search_context:
+      ENV{PATH}:
+        - "/usr/local/bin"
+        - "/home/luan/.vscode-server/bin/61b3d0ab13be7dda2389f1d3e60a119c7f660cc3/bin/remote-cli"
+        - "/usr/local/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/usr/lib/wsl/lib"
+        - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code"
+        - "/mnt/c/Program Files/Basler/pylon/Runtime/x64/"
+        - "/mnt/c/Program Files/Basler/pylon/Runtime/Win32/"
+        - "/mnt/c/Windows/system32"
+        - "/mnt/c/Windows"
+        - "/mnt/c/Windows/System32/Wbem"
+        - "/mnt/c/Windows/System32/WindowsPowerShell/v1.0/"
+        - "/mnt/c/Windows/System32/OpenSSH/"
+        - "/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common"
+        - "/mnt/c/WINDOWS/system32"
+        - "/mnt/c/WINDOWS"
+        - "/mnt/c/WINDOWS/System32/Wbem"
+        - "/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/"
+        - "/mnt/c/WINDOWS/System32/OpenSSH/"
+        - "/mnt/c/Program Files (x86)/dotnet/"
+        - "/mnt/c/Program Files/dotnet/"
+        - "/mnt/c/Program Files/MATLAB/R2024b/bin"
+        - "/mnt/c/Program Files/WireGuard/"
+        - "/mnt/c/Program Files/NVIDIA Corporation/NVIDIA app/NvDLISR"
+        - "/mnt/c/Program Files/CMake/bin"
+        - "/mnt/c/msys64/mingw64/bin"
+        - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/Scripts/"
+        - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/"
+        - "/mnt/c/Users/pariz/AppData/Local/Microsoft/WindowsApps"
+        - "/mnt/c/Users/pariz/.dotnet/tools"
+        - "/mnt/c/Users/pariz/AppData/Roaming/Programs/Zero Install"
+        - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code/bin"
+        - "/mnt/c/Users/pariz/AppData/Local/Microsoft/WindowsApps"
+        - "/mnt/c/Users/pariz/AppData/Local/Muse Hub/lib"
+        - "/home/luan/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/local/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:462 (find_file)"
+      - "/usr/local/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:500 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "/usr/local/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "/usr/local/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/local/share/cmake-4.1/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "file"
+    variable: "src_in"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "CMakeCXXCompilerId.cpp.in"
+    candidate_directories:
+      - "/usr/local/share/cmake-4.1/Modules/"
+    found: "/usr/local/share/cmake-4.1/Modules/CMakeCXXCompilerId.cpp.in"
+    search_context:
+      ENV{PATH}:
+        - "/usr/local/bin"
+        - "/home/luan/.vscode-server/bin/61b3d0ab13be7dda2389f1d3e60a119c7f660cc3/bin/remote-cli"
+        - "/usr/local/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/usr/lib/wsl/lib"
+        - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code"
+        - "/mnt/c/Program Files/Basler/pylon/Runtime/x64/"
+        - "/mnt/c/Program Files/Basler/pylon/Runtime/Win32/"
+        - "/mnt/c/Windows/system32"
+        - "/mnt/c/Windows"
+        - "/mnt/c/Windows/System32/Wbem"
+        - "/mnt/c/Windows/System32/WindowsPowerShell/v1.0/"
+        - "/mnt/c/Windows/System32/OpenSSH/"
+        - "/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common"
+        - "/mnt/c/WINDOWS/system32"
+        - "/mnt/c/WINDOWS"
+        - "/mnt/c/WINDOWS/System32/Wbem"
+        - "/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/"
+        - "/mnt/c/WINDOWS/System32/OpenSSH/"
+        - "/mnt/c/Program Files (x86)/dotnet/"
+        - "/mnt/c/Program Files/dotnet/"
+        - "/mnt/c/Program Files/MATLAB/R2024b/bin"
+        - "/mnt/c/Program Files/WireGuard/"
+        - "/mnt/c/Program Files/NVIDIA Corporation/NVIDIA app/NvDLISR"
+        - "/mnt/c/Program Files/CMake/bin"
+        - "/mnt/c/msys64/mingw64/bin"
+        - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/Scripts/"
+        - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/"
+        - "/mnt/c/Users/pariz/AppData/Local/Microsoft/WindowsApps"
+        - "/mnt/c/Users/pariz/.dotnet/tools"
+        - "/mnt/c/Users/pariz/AppData/Roaming/Programs/Zero Install"
+        - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code/bin"
+        - "/mnt/c/Users/pariz/AppData/Local/Microsoft/WindowsApps"
+        - "/mnt/c/Users/pariz/AppData/Local/Muse Hub/lib"
+        - "/home/luan/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts"
   -
     kind: "message-v1"
     backtrace:
-      - "C:/Program Files/CMake/share/cmake-3.27/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
-      - "C:/Program Files/CMake/share/cmake-3.27/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
-      - "C:/Program Files/CMake/share/cmake-3.27/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "/usr/local/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/local/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/local/share/cmake-4.1/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
       - "CMakeLists.txt:2 (project)"
     message: |
       Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
-      Compiler:  
+      Compiler: /usr/bin/c++ 
       Build flags: 
       Id flags:  
       
       The output was:
       0
-      MSBuild version 17.14.40+3e7442088 for .NET Framework
-      Build started 3/14/2026 2:21:42 PM.
-      
-      Project "C:\\Users\\FERRIER Simon\\Documents\\Cours\\Computer Vision\\TP\\Stereo-Vision-Project-\\build\\CMakeFiles\\3.27.4\\CompilerIdCXX\\CompilerIdCXX.vcxproj" on node 1 (default targets).
-      PrepareForBuild:
-        Creating directory "Debug\\".
-        Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
-        Creating directory "Debug\\CompilerIdCXX.tlog\\".
-      InitializeBuildStatus:
-        Creating "Debug\\CompilerIdCXX.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
-        Touching "Debug\\CompilerIdCXX.tlog\\unsuccessfulbuild".
-      ClCompile:
-        C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /nologo /W0 /WX- /diagnostics:column /Od /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\\\" /Fd"Debug\\vc143.pdb" /external:W0 /Gd /TP /FC /errorReport:queue CMakeCXXCompilerId.cpp
-        CMakeCXXCompilerId.cpp
-      Link:
-        C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:".\\CompilerIdCXX.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\CompilerIdCXX.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\CompilerIdCXX.lib" /MACHINE:X64 Debug\\CMakeCXXCompilerId.obj
-        CompilerIdCXX.vcxproj -> C:\\Users\\FERRIER Simon\\Documents\\Cours\\Computer Vision\\TP\\Stereo-Vision-Project-\\build\\CMakeFiles\\3.27.4\\CompilerIdCXX\\CompilerIdCXX.exe
-      PostBuildEvent:
-        for %%i in (cl.exe) do @echo CMAKE_CXX_COMPILER=%%~$PATH:i
-        :VCEnd
-        CMAKE_CXX_COMPILER=C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe
-      FinalizeBuildStatus:
-        Deleting file "Debug\\CompilerIdCXX.tlog\\unsuccessfulbuild".
-        Touching "Debug\\CompilerIdCXX.tlog\\CompilerIdCXX.lastbuildstate".
-      Done Building Project "C:\\Users\\FERRIER Simon\\Documents\\Cours\\Computer Vision\\TP\\Stereo-Vision-Project-\\build\\CMakeFiles\\3.27.4\\CompilerIdCXX\\CompilerIdCXX.vcxproj" (default targets).
-      
-      Build succeeded.
-          0 Warning(s)
-          0 Error(s)
-      
-      Time Elapsed 00:00:01.31
       
       
-      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
       
-      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.vcxproj"
+      The CXX compiler identification is GNU, found in:
+        /home/luan/StereoVision/Stereo-Vision-Project-/build/CMakeFiles/4.1.2/CompilerIdCXX/a.out
       
-      The CXX compiler identification is MSVC, found in:
-        C:/Users/FERRIER Simon/Documents/Cours/Computer Vision/TP/Stereo-Vision-Project-/build/CMakeFiles/3.27.4/CompilerIdCXX/CompilerIdCXX.exe
-      
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/local/share/cmake-4.1/Modules/Compiler/GNU-FindBinUtils.cmake:18 (find_program)"
+      - "/usr/local/share/cmake-4.1/Modules/CMakeDetermineCXXCompiler.cmake:207 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_CXX_COMPILER_AR"
+    description: "A wrapper around 'ar' adding the appropriate '--plugin' option for the GCC compiler"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "gcc-ar-12.2"
+      - "gcc-ar-12"
+      - "gcc-ar12"
+      - "gcc-ar"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/usr/local/bin/"
+      - "/home/luan/.vscode-server/bin/61b3d0ab13be7dda2389f1d3e60a119c7f660cc3/bin/remote-cli/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/games/"
+      - "/usr/local/games/"
+      - "/usr/lib/wsl/lib/"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code/"
+      - "/mnt/c/Program Files/Basler/pylon/Runtime/x64/"
+      - "/mnt/c/Program Files/Basler/pylon/Runtime/Win32/"
+      - "/mnt/c/Windows/system32/"
+      - "/mnt/c/Windows/"
+      - "/mnt/c/Windows/System32/Wbem/"
+      - "/mnt/c/Windows/System32/WindowsPowerShell/v1.0/"
+      - "/mnt/c/Windows/System32/OpenSSH/"
+      - "/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
+      - "/mnt/c/WINDOWS/system32/"
+      - "/mnt/c/WINDOWS/"
+      - "/mnt/c/WINDOWS/System32/Wbem/"
+      - "/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/"
+      - "/mnt/c/WINDOWS/System32/OpenSSH/"
+      - "/mnt/c/Program Files (x86)/dotnet/"
+      - "/mnt/c/Program Files/dotnet/"
+      - "/mnt/c/Program Files/MATLAB/R2024b/bin/"
+      - "/mnt/c/Program Files/WireGuard/"
+      - "/mnt/c/Program Files/NVIDIA Corporation/NVIDIA app/NvDLISR/"
+      - "/mnt/c/Program Files/CMake/bin/"
+      - "/mnt/c/msys64/mingw64/bin/"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/Scripts/"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/"
+      - "/mnt/c/Users/pariz/AppData/Local/Microsoft/WindowsApps/"
+      - "/mnt/c/Users/pariz/.dotnet/tools/"
+      - "/mnt/c/Users/pariz/AppData/Roaming/Programs/Zero Install/"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code/bin/"
+      - "/mnt/c/Users/pariz/AppData/Local/Muse Hub/lib/"
+      - "/home/luan/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts/"
+    searched_directories:
+      - "/usr/bin/gcc-ar-12.2"
+      - "/usr/local/bin/gcc-ar-12.2"
+      - "/home/luan/.vscode-server/bin/61b3d0ab13be7dda2389f1d3e60a119c7f660cc3/bin/remote-cli/gcc-ar-12.2"
+      - "/usr/local/sbin/gcc-ar-12.2"
+      - "/usr/sbin/gcc-ar-12.2"
+      - "/sbin/gcc-ar-12.2"
+      - "/bin/gcc-ar-12.2"
+      - "/usr/games/gcc-ar-12.2"
+      - "/usr/local/games/gcc-ar-12.2"
+      - "/usr/lib/wsl/lib/gcc-ar-12.2"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code/gcc-ar-12.2"
+      - "/mnt/c/Program Files/Basler/pylon/Runtime/x64/gcc-ar-12.2"
+      - "/mnt/c/Program Files/Basler/pylon/Runtime/Win32/gcc-ar-12.2"
+      - "/mnt/c/Windows/system32/gcc-ar-12.2"
+      - "/mnt/c/Windows/gcc-ar-12.2"
+      - "/mnt/c/Windows/System32/Wbem/gcc-ar-12.2"
+      - "/mnt/c/Windows/System32/WindowsPowerShell/v1.0/gcc-ar-12.2"
+      - "/mnt/c/Windows/System32/OpenSSH/gcc-ar-12.2"
+      - "/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common/gcc-ar-12.2"
+      - "/mnt/c/WINDOWS/system32/gcc-ar-12.2"
+      - "/mnt/c/WINDOWS/gcc-ar-12.2"
+      - "/mnt/c/WINDOWS/System32/Wbem/gcc-ar-12.2"
+      - "/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/gcc-ar-12.2"
+      - "/mnt/c/WINDOWS/System32/OpenSSH/gcc-ar-12.2"
+      - "/mnt/c/Program Files (x86)/dotnet/gcc-ar-12.2"
+      - "/mnt/c/Program Files/dotnet/gcc-ar-12.2"
+      - "/mnt/c/Program Files/MATLAB/R2024b/bin/gcc-ar-12.2"
+      - "/mnt/c/Program Files/WireGuard/gcc-ar-12.2"
+      - "/mnt/c/Program Files/NVIDIA Corporation/NVIDIA app/NvDLISR/gcc-ar-12.2"
+      - "/mnt/c/Program Files/CMake/bin/gcc-ar-12.2"
+      - "/mnt/c/msys64/mingw64/bin/gcc-ar-12.2"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/Scripts/gcc-ar-12.2"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/gcc-ar-12.2"
+      - "/mnt/c/Users/pariz/AppData/Local/Microsoft/WindowsApps/gcc-ar-12.2"
+      - "/mnt/c/Users/pariz/.dotnet/tools/gcc-ar-12.2"
+      - "/mnt/c/Users/pariz/AppData/Roaming/Programs/Zero Install/gcc-ar-12.2"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code/bin/gcc-ar-12.2"
+      - "/mnt/c/Users/pariz/AppData/Local/Muse Hub/lib/gcc-ar-12.2"
+      - "/home/luan/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts/gcc-ar-12.2"
+    found: "/usr/bin/gcc-ar-12"
+    search_context:
+      ENV{PATH}:
+        - "/usr/local/bin"
+        - "/home/luan/.vscode-server/bin/61b3d0ab13be7dda2389f1d3e60a119c7f660cc3/bin/remote-cli"
+        - "/usr/local/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/usr/lib/wsl/lib"
+        - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code"
+        - "/mnt/c/Program Files/Basler/pylon/Runtime/x64/"
+        - "/mnt/c/Program Files/Basler/pylon/Runtime/Win32/"
+        - "/mnt/c/Windows/system32"
+        - "/mnt/c/Windows"
+        - "/mnt/c/Windows/System32/Wbem"
+        - "/mnt/c/Windows/System32/WindowsPowerShell/v1.0/"
+        - "/mnt/c/Windows/System32/OpenSSH/"
+        - "/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common"
+        - "/mnt/c/WINDOWS/system32"
+        - "/mnt/c/WINDOWS"
+        - "/mnt/c/WINDOWS/System32/Wbem"
+        - "/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/"
+        - "/mnt/c/WINDOWS/System32/OpenSSH/"
+        - "/mnt/c/Program Files (x86)/dotnet/"
+        - "/mnt/c/Program Files/dotnet/"
+        - "/mnt/c/Program Files/MATLAB/R2024b/bin"
+        - "/mnt/c/Program Files/WireGuard/"
+        - "/mnt/c/Program Files/NVIDIA Corporation/NVIDIA app/NvDLISR"
+        - "/mnt/c/Program Files/CMake/bin"
+        - "/mnt/c/msys64/mingw64/bin"
+        - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/Scripts/"
+        - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/"
+        - "/mnt/c/Users/pariz/AppData/Local/Microsoft/WindowsApps"
+        - "/mnt/c/Users/pariz/.dotnet/tools"
+        - "/mnt/c/Users/pariz/AppData/Roaming/Programs/Zero Install"
+        - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code/bin"
+        - "/mnt/c/Users/pariz/AppData/Local/Microsoft/WindowsApps"
+        - "/mnt/c/Users/pariz/AppData/Local/Muse Hub/lib"
+        - "/home/luan/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/local/share/cmake-4.1/Modules/Compiler/GNU-FindBinUtils.cmake:30 (find_program)"
+      - "/usr/local/share/cmake-4.1/Modules/CMakeDetermineCXXCompiler.cmake:207 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_CXX_COMPILER_RANLIB"
+    description: "A wrapper around 'ranlib' adding the appropriate '--plugin' option for the GCC compiler"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "gcc-ranlib-12.2"
+      - "gcc-ranlib-12"
+      - "gcc-ranlib12"
+      - "gcc-ranlib"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/usr/local/bin/"
+      - "/home/luan/.vscode-server/bin/61b3d0ab13be7dda2389f1d3e60a119c7f660cc3/bin/remote-cli/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/games/"
+      - "/usr/local/games/"
+      - "/usr/lib/wsl/lib/"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code/"
+      - "/mnt/c/Program Files/Basler/pylon/Runtime/x64/"
+      - "/mnt/c/Program Files/Basler/pylon/Runtime/Win32/"
+      - "/mnt/c/Windows/system32/"
+      - "/mnt/c/Windows/"
+      - "/mnt/c/Windows/System32/Wbem/"
+      - "/mnt/c/Windows/System32/WindowsPowerShell/v1.0/"
+      - "/mnt/c/Windows/System32/OpenSSH/"
+      - "/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
+      - "/mnt/c/WINDOWS/system32/"
+      - "/mnt/c/WINDOWS/"
+      - "/mnt/c/WINDOWS/System32/Wbem/"
+      - "/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/"
+      - "/mnt/c/WINDOWS/System32/OpenSSH/"
+      - "/mnt/c/Program Files (x86)/dotnet/"
+      - "/mnt/c/Program Files/dotnet/"
+      - "/mnt/c/Program Files/MATLAB/R2024b/bin/"
+      - "/mnt/c/Program Files/WireGuard/"
+      - "/mnt/c/Program Files/NVIDIA Corporation/NVIDIA app/NvDLISR/"
+      - "/mnt/c/Program Files/CMake/bin/"
+      - "/mnt/c/msys64/mingw64/bin/"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/Scripts/"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/"
+      - "/mnt/c/Users/pariz/AppData/Local/Microsoft/WindowsApps/"
+      - "/mnt/c/Users/pariz/.dotnet/tools/"
+      - "/mnt/c/Users/pariz/AppData/Roaming/Programs/Zero Install/"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code/bin/"
+      - "/mnt/c/Users/pariz/AppData/Local/Muse Hub/lib/"
+      - "/home/luan/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts/"
+    searched_directories:
+      - "/usr/bin/gcc-ranlib-12.2"
+      - "/usr/local/bin/gcc-ranlib-12.2"
+      - "/home/luan/.vscode-server/bin/61b3d0ab13be7dda2389f1d3e60a119c7f660cc3/bin/remote-cli/gcc-ranlib-12.2"
+      - "/usr/local/sbin/gcc-ranlib-12.2"
+      - "/usr/sbin/gcc-ranlib-12.2"
+      - "/sbin/gcc-ranlib-12.2"
+      - "/bin/gcc-ranlib-12.2"
+      - "/usr/games/gcc-ranlib-12.2"
+      - "/usr/local/games/gcc-ranlib-12.2"
+      - "/usr/lib/wsl/lib/gcc-ranlib-12.2"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code/gcc-ranlib-12.2"
+      - "/mnt/c/Program Files/Basler/pylon/Runtime/x64/gcc-ranlib-12.2"
+      - "/mnt/c/Program Files/Basler/pylon/Runtime/Win32/gcc-ranlib-12.2"
+      - "/mnt/c/Windows/system32/gcc-ranlib-12.2"
+      - "/mnt/c/Windows/gcc-ranlib-12.2"
+      - "/mnt/c/Windows/System32/Wbem/gcc-ranlib-12.2"
+      - "/mnt/c/Windows/System32/WindowsPowerShell/v1.0/gcc-ranlib-12.2"
+      - "/mnt/c/Windows/System32/OpenSSH/gcc-ranlib-12.2"
+      - "/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common/gcc-ranlib-12.2"
+      - "/mnt/c/WINDOWS/system32/gcc-ranlib-12.2"
+      - "/mnt/c/WINDOWS/gcc-ranlib-12.2"
+      - "/mnt/c/WINDOWS/System32/Wbem/gcc-ranlib-12.2"
+      - "/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/gcc-ranlib-12.2"
+      - "/mnt/c/WINDOWS/System32/OpenSSH/gcc-ranlib-12.2"
+      - "/mnt/c/Program Files (x86)/dotnet/gcc-ranlib-12.2"
+      - "/mnt/c/Program Files/dotnet/gcc-ranlib-12.2"
+      - "/mnt/c/Program Files/MATLAB/R2024b/bin/gcc-ranlib-12.2"
+      - "/mnt/c/Program Files/WireGuard/gcc-ranlib-12.2"
+      - "/mnt/c/Program Files/NVIDIA Corporation/NVIDIA app/NvDLISR/gcc-ranlib-12.2"
+      - "/mnt/c/Program Files/CMake/bin/gcc-ranlib-12.2"
+      - "/mnt/c/msys64/mingw64/bin/gcc-ranlib-12.2"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/Scripts/gcc-ranlib-12.2"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/gcc-ranlib-12.2"
+      - "/mnt/c/Users/pariz/AppData/Local/Microsoft/WindowsApps/gcc-ranlib-12.2"
+      - "/mnt/c/Users/pariz/.dotnet/tools/gcc-ranlib-12.2"
+      - "/mnt/c/Users/pariz/AppData/Roaming/Programs/Zero Install/gcc-ranlib-12.2"
+      - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code/bin/gcc-ranlib-12.2"
+      - "/mnt/c/Users/pariz/AppData/Local/Muse Hub/lib/gcc-ranlib-12.2"
+      - "/home/luan/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts/gcc-ranlib-12.2"
+    found: "/usr/bin/gcc-ranlib-12"
+    search_context:
+      ENV{PATH}:
+        - "/usr/local/bin"
+        - "/home/luan/.vscode-server/bin/61b3d0ab13be7dda2389f1d3e60a119c7f660cc3/bin/remote-cli"
+        - "/usr/local/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/usr/lib/wsl/lib"
+        - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code"
+        - "/mnt/c/Program Files/Basler/pylon/Runtime/x64/"
+        - "/mnt/c/Program Files/Basler/pylon/Runtime/Win32/"
+        - "/mnt/c/Windows/system32"
+        - "/mnt/c/Windows"
+        - "/mnt/c/Windows/System32/Wbem"
+        - "/mnt/c/Windows/System32/WindowsPowerShell/v1.0/"
+        - "/mnt/c/Windows/System32/OpenSSH/"
+        - "/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common"
+        - "/mnt/c/WINDOWS/system32"
+        - "/mnt/c/WINDOWS"
+        - "/mnt/c/WINDOWS/System32/Wbem"
+        - "/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/"
+        - "/mnt/c/WINDOWS/System32/OpenSSH/"
+        - "/mnt/c/Program Files (x86)/dotnet/"
+        - "/mnt/c/Program Files/dotnet/"
+        - "/mnt/c/Program Files/MATLAB/R2024b/bin"
+        - "/mnt/c/Program Files/WireGuard/"
+        - "/mnt/c/Program Files/NVIDIA Corporation/NVIDIA app/NvDLISR"
+        - "/mnt/c/Program Files/CMake/bin"
+        - "/mnt/c/msys64/mingw64/bin"
+        - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/Scripts/"
+        - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/"
+        - "/mnt/c/Users/pariz/AppData/Local/Microsoft/WindowsApps"
+        - "/mnt/c/Users/pariz/.dotnet/tools"
+        - "/mnt/c/Users/pariz/AppData/Roaming/Programs/Zero Install"
+        - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code/bin"
+        - "/mnt/c/Users/pariz/AppData/Local/Microsoft/WindowsApps"
+        - "/mnt/c/Users/pariz/AppData/Local/Muse Hub/lib"
+        - "/home/luan/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts"
   -
     kind: "try_compile-v1"
     backtrace:
-      - "C:/Program Files/CMake/share/cmake-3.27/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
-      - "C:/Program Files/CMake/share/cmake-3.27/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "/usr/local/share/cmake-4.1/Modules/CMakeDetermineCompilerABI.cmake:83 (try_compile)"
+      - "/usr/local/share/cmake-4.1/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
       - "CMakeLists.txt:2 (project)"
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "C:/Users/FERRIER Simon/Documents/Cours/Computer Vision/TP/Stereo-Vision-Project-/build/CMakeFiles/CMakeScratch/TryCompile-ckyd13"
-      binary: "C:/Users/FERRIER Simon/Documents/Cours/Computer Vision/TP/Stereo-Vision-Project-/build/CMakeFiles/CMakeScratch/TryCompile-ckyd13"
+      source: "/home/luan/StereoVision/Stereo-Vision-Project-/build/CMakeFiles/CMakeScratch/TryCompile-Oi16aZ"
+      binary: "/home/luan/StereoVision/Stereo-Vision-Project-/build/CMakeFiles/CMakeScratch/TryCompile-Oi16aZ"
     cmakeVariables:
-      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS /W3"
-      CMAKE_C_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
-      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
     buildResult:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/FERRIER Simon/Documents/Cours/Computer Vision/TP/Stereo-Vision-Project-/build/CMakeFiles/CMakeScratch/TryCompile-ckyd13'
+        Change Dir: '/home/luan/StereoVision/Stereo-Vision-Project-/build/CMakeFiles/CMakeScratch/TryCompile-Oi16aZ'
         
-        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_8361e.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
-        MSBuild version 17.14.40+3e7442088 for .NET Framework
-        Build started 3/14/2026 2:21:44 PM.
+        Run Build Command(s): /usr/local/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_6ed31/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_6ed31.dir/build.make CMakeFiles/cmTC_6ed31.dir/build
+        gmake[1]: Entering directory '/home/luan/StereoVision/Stereo-Vision-Project-/build/CMakeFiles/CMakeScratch/TryCompile-Oi16aZ'
+        Building C object CMakeFiles/cmTC_6ed31.dir/CMakeCCompilerABI.c.o
+        /usr/bin/cc   -v -o CMakeFiles/cmTC_6ed31.dir/CMakeCCompilerABI.c.o -c /usr/local/share/cmake-4.1/Modules/CMakeCCompilerABI.c
+        Using built-in specs.
+        COLLECT_GCC=/usr/bin/cc
+        OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
+        OFFLOAD_TARGET_DEFAULT=1
+        Target: x86_64-linux-gnu
+        Configured with: ../src/configure -v --with-pkgversion='Debian 12.2.0-14+deb12u1' --with-bugurl=file:///usr/share/doc/gcc-12/README.Bugs --enable-languages=c,ada,c++,go,d,fortran,objc,obj-c++,m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-12 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/reproducible-path/gcc-12-12.2.0/debian/tmp-nvptx/usr,amdgcn-amdhsa=/build/reproducible-path/gcc-12-12.2.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 12.2.0 (Debian 12.2.0-14+deb12u1) 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_6ed31.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_6ed31.dir/'
+         /usr/lib/gcc/x86_64-linux-gnu/12/cc1 -quiet -v -imultiarch x86_64-linux-gnu /usr/local/share/cmake-4.1/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_6ed31.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -o /tmp/ccXb6Uyt.s
+        GNU C17 (Debian 12.2.0-14+deb12u1) version 12.2.0 (x86_64-linux-gnu)
+        	compiled by GNU C version 12.2.0, GMP version 6.2.1, MPFR version 4.2.0, MPC version 1.3.1, isl version isl-0.25-GMP
         
-        Project "C:\\Users\\FERRIER Simon\\Documents\\Cours\\Computer Vision\\TP\\Stereo-Vision-Project-\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ckyd13\\cmTC_8361e.vcxproj" on node 1 (default targets).
-        PrepareForBuild:
-          Creating directory "cmTC_8361e.dir\\Debug\\".
-          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
-          Creating directory "C:\\Users\\FERRIER Simon\\Documents\\Cours\\Computer Vision\\TP\\Stereo-Vision-Project-\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ckyd13\\Debug\\".
-          Creating directory "cmTC_8361e.dir\\Debug\\cmTC_8361e.tlog\\".
-        InitializeBuildStatus:
-          Creating "cmTC_8361e.dir\\Debug\\cmTC_8361e.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
-          Touching "cmTC_8361e.dir\\Debug\\cmTC_8361e.tlog\\unsuccessfulbuild".
-        ClCompile:
-          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_8361e.dir\\Debug\\\\" /Fd"cmTC_8361e.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.27\\Modules\\CMakeCCompilerABI.c"
-          Microsoft (R) C/C++ Optimizing Compiler Version 19.44.35222 for x64
-          Copyright (C) Microsoft Corporation.  All rights reserved.
-          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_8361e.dir\\Debug\\\\" /Fd"cmTC_8361e.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.27\\Modules\\CMakeCCompilerABI.c"
-          CMakeCCompilerABI.c
-        Link:
-          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\FERRIER Simon\\Documents\\Cours\\Computer Vision\\TP\\Stereo-Vision-Project-\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ckyd13\\Debug\\cmTC_8361e.exe" /INCREMENTAL /ILK:"cmTC_8361e.dir\\Debug\\cmTC_8361e.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/FERRIER Simon/Documents/Cours/Computer Vision/TP/Stereo-Vision-Project-/build/CMakeFiles/CMakeScratch/TryCompile-ckyd13/Debug/cmTC_8361e.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/FERRIER Simon/Documents/Cours/Computer Vision/TP/Stereo-Vision-Project-/build/CMakeFiles/CMakeScratch/TryCompile-ckyd13/Debug/cmTC_8361e.lib" /MACHINE:X64  /machine:x64 cmTC_8361e.dir\\Debug\\CMakeCCompilerABI.obj
-          cmTC_8361e.vcxproj -> C:\\Users\\FERRIER Simon\\Documents\\Cours\\Computer Vision\\TP\\Stereo-Vision-Project-\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ckyd13\\Debug\\cmTC_8361e.exe
-        FinalizeBuildStatus:
-          Deleting file "cmTC_8361e.dir\\Debug\\cmTC_8361e.tlog\\unsuccessfulbuild".
-          Touching "cmTC_8361e.dir\\Debug\\cmTC_8361e.tlog\\cmTC_8361e.lastbuildstate".
-        Done Building Project "C:\\Users\\FERRIER Simon\\Documents\\Cours\\Computer Vision\\TP\\Stereo-Vision-Project-\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ckyd13\\cmTC_8361e.vcxproj" (default targets).
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring duplicate directory "/usr/local/include"
+        ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"
+        ignoring duplicate directory "/usr/local/include"
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/12/include-fixed"
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/12/../../../../x86_64-linux-gnu/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /usr/local/include
+         .
+         /usr/lib/gcc/x86_64-linux-gnu/12/include
+         /usr/include/x86_64-linux-gnu
+         /usr/include
+        End of search list.
+        GNU C17 (Debian 12.2.0-14+deb12u1) version 12.2.0 (x86_64-linux-gnu)
+        	compiled by GNU C version 12.2.0, GMP version 6.2.1, MPFR version 4.2.0, MPC version 1.3.1, isl version isl-0.25-GMP
         
-        Build succeeded.
-            0 Warning(s)
-            0 Error(s)
-        
-        Time Elapsed 00:00:01.30
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        Compiler executable checksum: df5cb71f7b1353aac39c2b59ae45fa4a
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_6ed31.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_6ed31.dir/'
+         as -v --64 -o CMakeFiles/cmTC_6ed31.dir/CMakeCCompilerABI.c.o /tmp/ccXb6Uyt.s
+        GNU assembler version 2.40 (x86_64-linux-gnu) using BFD version (GNU Binutils for Debian) 2.40
+        COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/12/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/12/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_6ed31.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_6ed31.dir/CMakeCCompilerABI.c.'
+        Linking C executable cmTC_6ed31
+        /usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6ed31.dir/link.txt --verbose=1
+        Using built-in specs.
+        COLLECT_GCC=/usr/bin/cc
+        COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/12/lto-wrapper
+        OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
+        OFFLOAD_TARGET_DEFAULT=1
+        Target: x86_64-linux-gnu
+        Configured with: ../src/configure -v --with-pkgversion='Debian 12.2.0-14+deb12u1' --with-bugurl=file:///usr/share/doc/gcc-12/README.Bugs --enable-languages=c,ada,c++,go,d,fortran,objc,obj-c++,m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-12 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/reproducible-path/gcc-12-12.2.0/debian/tmp-nvptx/usr,amdgcn-amdhsa=/build/reproducible-path/gcc-12-12.2.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 12.2.0 (Debian 12.2.0-14+deb12u1) 
+        COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/12/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/12/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_6ed31' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_6ed31.'
+         /usr/lib/gcc/x86_64-linux-gnu/12/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/12/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/12/lto-wrapper -plugin-opt=-fresolution=/tmp/cc5SUypf.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_6ed31 /usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/12/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/12 -L/usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/12/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/12/../../.. -v CMakeFiles/cmTC_6ed31.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/12/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/crtn.o
+        collect2 version 12.2.0
+        /usr/bin/ld -plugin /usr/lib/gcc/x86_64-linux-gnu/12/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/12/lto-wrapper -plugin-opt=-fresolution=/tmp/cc5SUypf.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_6ed31 /usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/12/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/12 -L/usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/12/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/12/../../.. -v CMakeFiles/cmTC_6ed31.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/12/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/crtn.o
+        GNU ld (GNU Binutils for Debian) 2.40
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_6ed31' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_6ed31.'
+        /usr/bin/cc  -v -Wl,-v CMakeFiles/cmTC_6ed31.dir/CMakeCCompilerABI.c.o -o cmTC_6ed31
+        gmake[1]: Leaving directory '/home/luan/StereoVision/Stereo-Vision-Project-/build/CMakeFiles/CMakeScratch/TryCompile-Oi16aZ'
         
       exitCode: 0
   -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/local/share/cmake-4.1/Modules/CMakeDetermineCompilerABI.cmake:217 (message)"
+      - "/usr/local/share/cmake-4.1/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Parsed C implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/usr/local/include]
+          add: [.]
+          add: [/usr/lib/gcc/x86_64-linux-gnu/12/include]
+          add: [/usr/include/x86_64-linux-gnu]
+          add: [/usr/include]
+        end of search list found
+        collapse include dir [/usr/local/include] ==> [/usr/local/include]
+        skipping relative include dir [.]
+        collapse include dir [/usr/lib/gcc/x86_64-linux-gnu/12/include] ==> [/usr/lib/gcc/x86_64-linux-gnu/12/include]
+        collapse include dir [/usr/include/x86_64-linux-gnu] ==> [/usr/include/x86_64-linux-gnu]
+        collapse include dir [/usr/include] ==> [/usr/include]
+        implicit include dirs: [/usr/local/include;/usr/lib/gcc/x86_64-linux-gnu/12/include;/usr/include/x86_64-linux-gnu;/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/local/share/cmake-4.1/Modules/CMakeDetermineCompilerABI.cmake:253 (message)"
+      - "/usr/local/share/cmake-4.1/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Parsed C implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
+        ignore line: [Change Dir: '/home/luan/StereoVision/Stereo-Vision-Project-/build/CMakeFiles/CMakeScratch/TryCompile-Oi16aZ']
+        ignore line: []
+        ignore line: [Run Build Command(s): /usr/local/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_6ed31/fast]
+        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_6ed31.dir/build.make CMakeFiles/cmTC_6ed31.dir/build]
+        ignore line: [gmake[1]: Entering directory '/home/luan/StereoVision/Stereo-Vision-Project-/build/CMakeFiles/CMakeScratch/TryCompile-Oi16aZ']
+        ignore line: [Building C object CMakeFiles/cmTC_6ed31.dir/CMakeCCompilerABI.c.o]
+        ignore line: [/usr/bin/cc   -v -o CMakeFiles/cmTC_6ed31.dir/CMakeCCompilerABI.c.o -c /usr/local/share/cmake-4.1/Modules/CMakeCCompilerABI.c]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/usr/bin/cc]
+        ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
+        ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+        ignore line: [Target: x86_64-linux-gnu]
+        ignore line: [Configured with: ../src/configure -v --with-pkgversion='Debian 12.2.0-14+deb12u1' --with-bugurl=file:///usr/share/doc/gcc-12/README.Bugs --enable-languages=c ada c++ go d fortran objc obj-c++ m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-12 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32 m64 mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/reproducible-path/gcc-12-12.2.0/debian/tmp-nvptx/usr amdgcn-amdhsa=/build/reproducible-path/gcc-12-12.2.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 12.2.0 (Debian 12.2.0-14+deb12u1) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_6ed31.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_6ed31.dir/']
+        ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/12/cc1 -quiet -v -imultiarch x86_64-linux-gnu /usr/local/share/cmake-4.1/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_6ed31.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -o /tmp/ccXb6Uyt.s]
+        ignore line: [GNU C17 (Debian 12.2.0-14+deb12u1) version 12.2.0 (x86_64-linux-gnu)]
+        ignore line: [	compiled by GNU C version 12.2.0  GMP version 6.2.1  MPFR version 4.2.0  MPC version 1.3.1  isl version isl-0.25-GMP]
+        ignore line: []
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring duplicate directory "/usr/local/include"]
+        ignore line: [ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"]
+        ignore line: [ignoring duplicate directory "/usr/local/include"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/12/include-fixed"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/12/../../../../x86_64-linux-gnu/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /usr/local/include]
+        ignore line: [ .]
+        ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/12/include]
+        ignore line: [ /usr/include/x86_64-linux-gnu]
+        ignore line: [ /usr/include]
+        ignore line: [End of search list.]
+        ignore line: [GNU C17 (Debian 12.2.0-14+deb12u1) version 12.2.0 (x86_64-linux-gnu)]
+        ignore line: [	compiled by GNU C version 12.2.0  GMP version 6.2.1  MPFR version 4.2.0  MPC version 1.3.1  isl version isl-0.25-GMP]
+        ignore line: []
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [Compiler executable checksum: df5cb71f7b1353aac39c2b59ae45fa4a]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_6ed31.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_6ed31.dir/']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_6ed31.dir/CMakeCCompilerABI.c.o /tmp/ccXb6Uyt.s]
+        ignore line: [GNU assembler version 2.40 (x86_64-linux-gnu) using BFD version (GNU Binutils for Debian) 2.40]
+        ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/12/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/12/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_6ed31.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_6ed31.dir/CMakeCCompilerABI.c.']
+        ignore line: [Linking C executable cmTC_6ed31]
+        ignore line: [/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6ed31.dir/link.txt --verbose=1]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/usr/bin/cc]
+        ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/12/lto-wrapper]
+        ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
+        ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+        ignore line: [Target: x86_64-linux-gnu]
+        ignore line: [Configured with: ../src/configure -v --with-pkgversion='Debian 12.2.0-14+deb12u1' --with-bugurl=file:///usr/share/doc/gcc-12/README.Bugs --enable-languages=c ada c++ go d fortran objc obj-c++ m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-12 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32 m64 mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/reproducible-path/gcc-12-12.2.0/debian/tmp-nvptx/usr amdgcn-amdhsa=/build/reproducible-path/gcc-12-12.2.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 12.2.0 (Debian 12.2.0-14+deb12u1) ]
+        ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/12/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/12/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_6ed31' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_6ed31.']
+        link line: [ /usr/lib/gcc/x86_64-linux-gnu/12/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/12/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/12/lto-wrapper -plugin-opt=-fresolution=/tmp/cc5SUypf.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_6ed31 /usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/12/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/12 -L/usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/12/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/12/../../.. -v CMakeFiles/cmTC_6ed31.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/12/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/crtn.o]
+          arg [/usr/lib/gcc/x86_64-linux-gnu/12/collect2] ==> ignore
+          arg [-plugin] ==> ignore
+          arg [/usr/lib/gcc/x86_64-linux-gnu/12/liblto_plugin.so] ==> ignore
+          arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/12/lto-wrapper] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/cc5SUypf.res] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [--build-id] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [-m] ==> ignore
+          arg [elf_x86_64] ==> ignore
+          arg [--hash-style=gnu] ==> ignore
+          arg [--as-needed] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+          arg [-pie] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_6ed31] ==> ignore
+          arg [/usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/Scrt1.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/Scrt1.o]
+          arg [/usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/crti.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/crti.o]
+          arg [/usr/lib/gcc/x86_64-linux-gnu/12/crtbeginS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/12/crtbeginS.o]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/12] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/12]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/12/../../../../lib] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/12/../../../../lib]
+          arg [-L/lib/x86_64-linux-gnu] ==> dir [/lib/x86_64-linux-gnu]
+          arg [-L/lib/../lib] ==> dir [/lib/../lib]
+          arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
+          arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/12/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/12/../../..]
+          arg [-v] ==> ignore
+          arg [CMakeFiles/cmTC_6ed31.dir/CMakeCCompilerABI.c.o] ==> ignore
+          arg [-lgcc] ==> lib [gcc]
+          arg [--push-state] ==> ignore
+          arg [--as-needed] ==> ignore
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [--pop-state] ==> ignore
+          arg [-lc] ==> lib [c]
+          arg [-lgcc] ==> lib [gcc]
+          arg [--push-state] ==> ignore
+          arg [--as-needed] ==> ignore
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [--pop-state] ==> ignore
+          arg [/usr/lib/gcc/x86_64-linux-gnu/12/crtendS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/12/crtendS.o]
+          arg [/usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/crtn.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/crtn.o]
+        ignore line: [collect2 version 12.2.0]
+        ignore line: [/usr/bin/ld -plugin /usr/lib/gcc/x86_64-linux-gnu/12/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/12/lto-wrapper -plugin-opt=-fresolution=/tmp/cc5SUypf.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_6ed31 /usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/12/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/12 -L/usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/12/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/12/../../.. -v CMakeFiles/cmTC_6ed31.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/12/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/crtn.o]
+        linker tool for 'C': /usr/bin/ld
+        collapse obj [/usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/Scrt1.o] ==> [/usr/lib/x86_64-linux-gnu/Scrt1.o]
+        collapse obj [/usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/crti.o] ==> [/usr/lib/x86_64-linux-gnu/crti.o]
+        collapse obj [/usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/crtn.o] ==> [/usr/lib/x86_64-linux-gnu/crtn.o]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/12] ==> [/usr/lib/gcc/x86_64-linux-gnu/12]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/12/../../../../lib] ==> [/usr/lib]
+        collapse library dir [/lib/x86_64-linux-gnu] ==> [/lib/x86_64-linux-gnu]
+        collapse library dir [/lib/../lib] ==> [/lib]
+        collapse library dir [/usr/lib/x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+        collapse library dir [/usr/lib/../lib] ==> [/usr/lib]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/12/../../..] ==> [/usr/lib]
+        implicit libs: [gcc;gcc_s;c;gcc;gcc_s]
+        implicit objs: [/usr/lib/x86_64-linux-gnu/Scrt1.o;/usr/lib/x86_64-linux-gnu/crti.o;/usr/lib/gcc/x86_64-linux-gnu/12/crtbeginS.o;/usr/lib/gcc/x86_64-linux-gnu/12/crtendS.o;/usr/lib/x86_64-linux-gnu/crtn.o]
+        implicit dirs: [/usr/lib/gcc/x86_64-linux-gnu/12;/usr/lib/x86_64-linux-gnu;/usr/lib;/lib/x86_64-linux-gnu;/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/local/share/cmake-4.1/Modules/Internal/CMakeDetermineLinkerId.cmake:36 (message)"
+      - "/usr/local/share/cmake-4.1/Modules/CMakeDetermineCompilerABI.cmake:299 (cmake_determine_linker_id)"
+      - "/usr/local/share/cmake-4.1/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Running the C compiler's linker: "/usr/bin/ld" "-v"
+      GNU ld (GNU Binutils for Debian) 2.40
+  -
     kind: "try_compile-v1"
     backtrace:
-      - "C:/Program Files/CMake/share/cmake-3.27/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
-      - "C:/Program Files/CMake/share/cmake-3.27/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "/usr/local/share/cmake-4.1/Modules/CMakeDetermineCompilerABI.cmake:83 (try_compile)"
+      - "/usr/local/share/cmake-4.1/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
       - "CMakeLists.txt:2 (project)"
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "C:/Users/FERRIER Simon/Documents/Cours/Computer Vision/TP/Stereo-Vision-Project-/build/CMakeFiles/CMakeScratch/TryCompile-x7nm92"
-      binary: "C:/Users/FERRIER Simon/Documents/Cours/Computer Vision/TP/Stereo-Vision-Project-/build/CMakeFiles/CMakeScratch/TryCompile-x7nm92"
+      source: "/home/luan/StereoVision/Stereo-Vision-Project-/build/CMakeFiles/CMakeScratch/TryCompile-wxZBH2"
+      binary: "/home/luan/StereoVision/Stereo-Vision-Project-/build/CMakeFiles/CMakeScratch/TryCompile-wxZBH2"
     cmakeVariables:
-      CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /W3 /GR /EHsc"
-      CMAKE_CXX_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
-      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_EXE_LINKER_FLAGS: ""
     buildResult:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/FERRIER Simon/Documents/Cours/Computer Vision/TP/Stereo-Vision-Project-/build/CMakeFiles/CMakeScratch/TryCompile-x7nm92'
+        Change Dir: '/home/luan/StereoVision/Stereo-Vision-Project-/build/CMakeFiles/CMakeScratch/TryCompile-wxZBH2'
         
-        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_8fd39.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
-        MSBuild version 17.14.40+3e7442088 for .NET Framework
-        Build started 3/14/2026 2:21:45 PM.
+        Run Build Command(s): /usr/local/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_486ff/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_486ff.dir/build.make CMakeFiles/cmTC_486ff.dir/build
+        gmake[1]: Entering directory '/home/luan/StereoVision/Stereo-Vision-Project-/build/CMakeFiles/CMakeScratch/TryCompile-wxZBH2'
+        Building CXX object CMakeFiles/cmTC_486ff.dir/CMakeCXXCompilerABI.cpp.o
+        /usr/bin/c++   -v -o CMakeFiles/cmTC_486ff.dir/CMakeCXXCompilerABI.cpp.o -c /usr/local/share/cmake-4.1/Modules/CMakeCXXCompilerABI.cpp
+        Using built-in specs.
+        COLLECT_GCC=/usr/bin/c++
+        OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
+        OFFLOAD_TARGET_DEFAULT=1
+        Target: x86_64-linux-gnu
+        Configured with: ../src/configure -v --with-pkgversion='Debian 12.2.0-14+deb12u1' --with-bugurl=file:///usr/share/doc/gcc-12/README.Bugs --enable-languages=c,ada,c++,go,d,fortran,objc,obj-c++,m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-12 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/reproducible-path/gcc-12-12.2.0/debian/tmp-nvptx/usr,amdgcn-amdhsa=/build/reproducible-path/gcc-12-12.2.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 12.2.0 (Debian 12.2.0-14+deb12u1) 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_486ff.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_486ff.dir/'
+         /usr/lib/gcc/x86_64-linux-gnu/12/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/local/share/cmake-4.1/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_486ff.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -o /tmp/ccYAW1Ci.s
+        GNU C++17 (Debian 12.2.0-14+deb12u1) version 12.2.0 (x86_64-linux-gnu)
+        	compiled by GNU C version 12.2.0, GMP version 6.2.1, MPFR version 4.2.0, MPC version 1.3.1, isl version isl-0.25-GMP
         
-        Project "C:\\Users\\FERRIER Simon\\Documents\\Cours\\Computer Vision\\TP\\Stereo-Vision-Project-\\build\\CMakeFiles\\CMakeScratch\\TryCompile-x7nm92\\cmTC_8fd39.vcxproj" on node 1 (default targets).
-        PrepareForBuild:
-          Creating directory "cmTC_8fd39.dir\\Debug\\".
-          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
-          Creating directory "C:\\Users\\FERRIER Simon\\Documents\\Cours\\Computer Vision\\TP\\Stereo-Vision-Project-\\build\\CMakeFiles\\CMakeScratch\\TryCompile-x7nm92\\Debug\\".
-          Creating directory "cmTC_8fd39.dir\\Debug\\cmTC_8fd39.tlog\\".
-        InitializeBuildStatus:
-          Creating "cmTC_8fd39.dir\\Debug\\cmTC_8fd39.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
-          Touching "cmTC_8fd39.dir\\Debug\\cmTC_8fd39.tlog\\unsuccessfulbuild".
-        ClCompile:
-          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_8fd39.dir\\Debug\\\\" /Fd"cmTC_8fd39.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.27\\Modules\\CMakeCXXCompilerABI.cpp"
-          Microsoft (R) C/C++ Optimizing Compiler Version 19.44.35222 for x64
-          Copyright (C) Microsoft Corporation.  All rights reserved.
-          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_8fd39.dir\\Debug\\\\" /Fd"cmTC_8fd39.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.27\\Modules\\CMakeCXXCompilerABI.cpp"
-          CMakeCXXCompilerABI.cpp
-        Link:
-          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\FERRIER Simon\\Documents\\Cours\\Computer Vision\\TP\\Stereo-Vision-Project-\\build\\CMakeFiles\\CMakeScratch\\TryCompile-x7nm92\\Debug\\cmTC_8fd39.exe" /INCREMENTAL /ILK:"cmTC_8fd39.dir\\Debug\\cmTC_8fd39.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/FERRIER Simon/Documents/Cours/Computer Vision/TP/Stereo-Vision-Project-/build/CMakeFiles/CMakeScratch/TryCompile-x7nm92/Debug/cmTC_8fd39.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/FERRIER Simon/Documents/Cours/Computer Vision/TP/Stereo-Vision-Project-/build/CMakeFiles/CMakeScratch/TryCompile-x7nm92/Debug/cmTC_8fd39.lib" /MACHINE:X64  /machine:x64 cmTC_8fd39.dir\\Debug\\CMakeCXXCompilerABI.obj
-          cmTC_8fd39.vcxproj -> C:\\Users\\FERRIER Simon\\Documents\\Cours\\Computer Vision\\TP\\Stereo-Vision-Project-\\build\\CMakeFiles\\CMakeScratch\\TryCompile-x7nm92\\Debug\\cmTC_8fd39.exe
-        FinalizeBuildStatus:
-          Deleting file "cmTC_8fd39.dir\\Debug\\cmTC_8fd39.tlog\\unsuccessfulbuild".
-          Touching "cmTC_8fd39.dir\\Debug\\cmTC_8fd39.tlog\\cmTC_8fd39.lastbuildstate".
-        Done Building Project "C:\\Users\\FERRIER Simon\\Documents\\Cours\\Computer Vision\\TP\\Stereo-Vision-Project-\\build\\CMakeFiles\\CMakeScratch\\TryCompile-x7nm92\\cmTC_8fd39.vcxproj" (default targets).
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring duplicate directory "/usr/local/include"
+        ignoring duplicate directory "/usr/include/x86_64-linux-gnu/c++/12"
+        ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"
+        ignoring duplicate directory "/usr/local/include"
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/12/include-fixed"
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/12/../../../../x86_64-linux-gnu/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /usr/local/include
+         .
+         /usr/include/c++/12
+         /usr/include/x86_64-linux-gnu/c++/12
+         /usr/include/c++/12/backward
+         /usr/lib/gcc/x86_64-linux-gnu/12/include
+         /usr/include/x86_64-linux-gnu
+         /usr/include
+        End of search list.
+        GNU C++17 (Debian 12.2.0-14+deb12u1) version 12.2.0 (x86_64-linux-gnu)
+        	compiled by GNU C version 12.2.0, GMP version 6.2.1, MPFR version 4.2.0, MPC version 1.3.1, isl version isl-0.25-GMP
         
-        Build succeeded.
-            0 Warning(s)
-            0 Error(s)
-        
-        Time Elapsed 00:00:01.29
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        Compiler executable checksum: 18a4c0b3348b838f5ec9d956298050ac
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_486ff.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_486ff.dir/'
+         as -v --64 -o CMakeFiles/cmTC_486ff.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccYAW1Ci.s
+        GNU assembler version 2.40 (x86_64-linux-gnu) using BFD version (GNU Binutils for Debian) 2.40
+        COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/12/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/12/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_486ff.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_486ff.dir/CMakeCXXCompilerABI.cpp.'
+        Linking CXX executable cmTC_486ff
+        /usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_486ff.dir/link.txt --verbose=1
+        Using built-in specs.
+        COLLECT_GCC=/usr/bin/c++
+        COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/12/lto-wrapper
+        OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
+        OFFLOAD_TARGET_DEFAULT=1
+        Target: x86_64-linux-gnu
+        Configured with: ../src/configure -v --with-pkgversion='Debian 12.2.0-14+deb12u1' --with-bugurl=file:///usr/share/doc/gcc-12/README.Bugs --enable-languages=c,ada,c++,go,d,fortran,objc,obj-c++,m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-12 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/reproducible-path/gcc-12-12.2.0/debian/tmp-nvptx/usr,amdgcn-amdhsa=/build/reproducible-path/gcc-12-12.2.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 12.2.0 (Debian 12.2.0-14+deb12u1) 
+        COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/12/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/12/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_486ff' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_486ff.'
+         /usr/lib/gcc/x86_64-linux-gnu/12/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/12/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/12/lto-wrapper -plugin-opt=-fresolution=/tmp/ccyUN3ej.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_486ff /usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/12/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/12 -L/usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/12/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/12/../../.. -v CMakeFiles/cmTC_486ff.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/12/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/crtn.o
+        collect2 version 12.2.0
+        /usr/bin/ld -plugin /usr/lib/gcc/x86_64-linux-gnu/12/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/12/lto-wrapper -plugin-opt=-fresolution=/tmp/ccyUN3ej.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_486ff /usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/12/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/12 -L/usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/12/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/12/../../.. -v CMakeFiles/cmTC_486ff.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/12/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/crtn.o
+        GNU ld (GNU Binutils for Debian) 2.40
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_486ff' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_486ff.'
+        /usr/bin/c++  -v -Wl,-v CMakeFiles/cmTC_486ff.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_486ff
+        gmake[1]: Leaving directory '/home/luan/StereoVision/Stereo-Vision-Project-/build/CMakeFiles/CMakeScratch/TryCompile-wxZBH2'
         
       exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/local/share/cmake-4.1/Modules/CMakeDetermineCompilerABI.cmake:217 (message)"
+      - "/usr/local/share/cmake-4.1/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Parsed CXX implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/usr/local/include]
+          add: [.]
+          add: [/usr/include/c++/12]
+          add: [/usr/include/x86_64-linux-gnu/c++/12]
+          add: [/usr/include/c++/12/backward]
+          add: [/usr/lib/gcc/x86_64-linux-gnu/12/include]
+          add: [/usr/include/x86_64-linux-gnu]
+          add: [/usr/include]
+        end of search list found
+        collapse include dir [/usr/local/include] ==> [/usr/local/include]
+        skipping relative include dir [.]
+        collapse include dir [/usr/include/c++/12] ==> [/usr/include/c++/12]
+        collapse include dir [/usr/include/x86_64-linux-gnu/c++/12] ==> [/usr/include/x86_64-linux-gnu/c++/12]
+        collapse include dir [/usr/include/c++/12/backward] ==> [/usr/include/c++/12/backward]
+        collapse include dir [/usr/lib/gcc/x86_64-linux-gnu/12/include] ==> [/usr/lib/gcc/x86_64-linux-gnu/12/include]
+        collapse include dir [/usr/include/x86_64-linux-gnu] ==> [/usr/include/x86_64-linux-gnu]
+        collapse include dir [/usr/include] ==> [/usr/include]
+        implicit include dirs: [/usr/local/include;/usr/include/c++/12;/usr/include/x86_64-linux-gnu/c++/12;/usr/include/c++/12/backward;/usr/lib/gcc/x86_64-linux-gnu/12/include;/usr/include/x86_64-linux-gnu;/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/local/share/cmake-4.1/Modules/CMakeDetermineCompilerABI.cmake:253 (message)"
+      - "/usr/local/share/cmake-4.1/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Parsed CXX implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
+        ignore line: [Change Dir: '/home/luan/StereoVision/Stereo-Vision-Project-/build/CMakeFiles/CMakeScratch/TryCompile-wxZBH2']
+        ignore line: []
+        ignore line: [Run Build Command(s): /usr/local/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_486ff/fast]
+        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_486ff.dir/build.make CMakeFiles/cmTC_486ff.dir/build]
+        ignore line: [gmake[1]: Entering directory '/home/luan/StereoVision/Stereo-Vision-Project-/build/CMakeFiles/CMakeScratch/TryCompile-wxZBH2']
+        ignore line: [Building CXX object CMakeFiles/cmTC_486ff.dir/CMakeCXXCompilerABI.cpp.o]
+        ignore line: [/usr/bin/c++   -v -o CMakeFiles/cmTC_486ff.dir/CMakeCXXCompilerABI.cpp.o -c /usr/local/share/cmake-4.1/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/usr/bin/c++]
+        ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
+        ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+        ignore line: [Target: x86_64-linux-gnu]
+        ignore line: [Configured with: ../src/configure -v --with-pkgversion='Debian 12.2.0-14+deb12u1' --with-bugurl=file:///usr/share/doc/gcc-12/README.Bugs --enable-languages=c ada c++ go d fortran objc obj-c++ m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-12 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32 m64 mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/reproducible-path/gcc-12-12.2.0/debian/tmp-nvptx/usr amdgcn-amdhsa=/build/reproducible-path/gcc-12-12.2.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 12.2.0 (Debian 12.2.0-14+deb12u1) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_486ff.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_486ff.dir/']
+        ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/12/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/local/share/cmake-4.1/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_486ff.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -o /tmp/ccYAW1Ci.s]
+        ignore line: [GNU C++17 (Debian 12.2.0-14+deb12u1) version 12.2.0 (x86_64-linux-gnu)]
+        ignore line: [	compiled by GNU C version 12.2.0  GMP version 6.2.1  MPFR version 4.2.0  MPC version 1.3.1  isl version isl-0.25-GMP]
+        ignore line: []
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring duplicate directory "/usr/local/include"]
+        ignore line: [ignoring duplicate directory "/usr/include/x86_64-linux-gnu/c++/12"]
+        ignore line: [ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"]
+        ignore line: [ignoring duplicate directory "/usr/local/include"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/12/include-fixed"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/12/../../../../x86_64-linux-gnu/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /usr/local/include]
+        ignore line: [ .]
+        ignore line: [ /usr/include/c++/12]
+        ignore line: [ /usr/include/x86_64-linux-gnu/c++/12]
+        ignore line: [ /usr/include/c++/12/backward]
+        ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/12/include]
+        ignore line: [ /usr/include/x86_64-linux-gnu]
+        ignore line: [ /usr/include]
+        ignore line: [End of search list.]
+        ignore line: [GNU C++17 (Debian 12.2.0-14+deb12u1) version 12.2.0 (x86_64-linux-gnu)]
+        ignore line: [	compiled by GNU C version 12.2.0  GMP version 6.2.1  MPFR version 4.2.0  MPC version 1.3.1  isl version isl-0.25-GMP]
+        ignore line: []
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [Compiler executable checksum: 18a4c0b3348b838f5ec9d956298050ac]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_486ff.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_486ff.dir/']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_486ff.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccYAW1Ci.s]
+        ignore line: [GNU assembler version 2.40 (x86_64-linux-gnu) using BFD version (GNU Binutils for Debian) 2.40]
+        ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/12/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/12/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_486ff.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_486ff.dir/CMakeCXXCompilerABI.cpp.']
+        ignore line: [Linking CXX executable cmTC_486ff]
+        ignore line: [/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_486ff.dir/link.txt --verbose=1]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/usr/bin/c++]
+        ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/12/lto-wrapper]
+        ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
+        ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+        ignore line: [Target: x86_64-linux-gnu]
+        ignore line: [Configured with: ../src/configure -v --with-pkgversion='Debian 12.2.0-14+deb12u1' --with-bugurl=file:///usr/share/doc/gcc-12/README.Bugs --enable-languages=c ada c++ go d fortran objc obj-c++ m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-12 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32 m64 mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/reproducible-path/gcc-12-12.2.0/debian/tmp-nvptx/usr amdgcn-amdhsa=/build/reproducible-path/gcc-12-12.2.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 12.2.0 (Debian 12.2.0-14+deb12u1) ]
+        ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/12/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/12/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_486ff' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_486ff.']
+        link line: [ /usr/lib/gcc/x86_64-linux-gnu/12/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/12/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/12/lto-wrapper -plugin-opt=-fresolution=/tmp/ccyUN3ej.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_486ff /usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/12/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/12 -L/usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/12/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/12/../../.. -v CMakeFiles/cmTC_486ff.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/12/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/crtn.o]
+          arg [/usr/lib/gcc/x86_64-linux-gnu/12/collect2] ==> ignore
+          arg [-plugin] ==> ignore
+          arg [/usr/lib/gcc/x86_64-linux-gnu/12/liblto_plugin.so] ==> ignore
+          arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/12/lto-wrapper] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccyUN3ej.res] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [--build-id] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [-m] ==> ignore
+          arg [elf_x86_64] ==> ignore
+          arg [--hash-style=gnu] ==> ignore
+          arg [--as-needed] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+          arg [-pie] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_486ff] ==> ignore
+          arg [/usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/Scrt1.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/Scrt1.o]
+          arg [/usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/crti.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/crti.o]
+          arg [/usr/lib/gcc/x86_64-linux-gnu/12/crtbeginS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/12/crtbeginS.o]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/12] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/12]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/12/../../../../lib] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/12/../../../../lib]
+          arg [-L/lib/x86_64-linux-gnu] ==> dir [/lib/x86_64-linux-gnu]
+          arg [-L/lib/../lib] ==> dir [/lib/../lib]
+          arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
+          arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/12/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/12/../../..]
+          arg [-v] ==> ignore
+          arg [CMakeFiles/cmTC_486ff.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [-lstdc++] ==> lib [stdc++]
+          arg [-lm] ==> lib [m]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [-lc] ==> lib [c]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [/usr/lib/gcc/x86_64-linux-gnu/12/crtendS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/12/crtendS.o]
+          arg [/usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/crtn.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/crtn.o]
+        ignore line: [collect2 version 12.2.0]
+        ignore line: [/usr/bin/ld -plugin /usr/lib/gcc/x86_64-linux-gnu/12/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/12/lto-wrapper -plugin-opt=-fresolution=/tmp/ccyUN3ej.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_486ff /usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/12/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/12 -L/usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/12/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/12/../../.. -v CMakeFiles/cmTC_486ff.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/12/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/crtn.o]
+        linker tool for 'CXX': /usr/bin/ld
+        collapse obj [/usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/Scrt1.o] ==> [/usr/lib/x86_64-linux-gnu/Scrt1.o]
+        collapse obj [/usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/crti.o] ==> [/usr/lib/x86_64-linux-gnu/crti.o]
+        collapse obj [/usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/crtn.o] ==> [/usr/lib/x86_64-linux-gnu/crtn.o]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/12] ==> [/usr/lib/gcc/x86_64-linux-gnu/12]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/12/../../../../lib] ==> [/usr/lib]
+        collapse library dir [/lib/x86_64-linux-gnu] ==> [/lib/x86_64-linux-gnu]
+        collapse library dir [/lib/../lib] ==> [/lib]
+        collapse library dir [/usr/lib/x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+        collapse library dir [/usr/lib/../lib] ==> [/usr/lib]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/12/../../..] ==> [/usr/lib]
+        implicit libs: [stdc++;m;gcc_s;gcc;c;gcc_s;gcc]
+        implicit objs: [/usr/lib/x86_64-linux-gnu/Scrt1.o;/usr/lib/x86_64-linux-gnu/crti.o;/usr/lib/gcc/x86_64-linux-gnu/12/crtbeginS.o;/usr/lib/gcc/x86_64-linux-gnu/12/crtendS.o;/usr/lib/x86_64-linux-gnu/crtn.o]
+        implicit dirs: [/usr/lib/gcc/x86_64-linux-gnu/12;/usr/lib/x86_64-linux-gnu;/usr/lib;/lib/x86_64-linux-gnu;/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/local/share/cmake-4.1/Modules/Internal/CMakeDetermineLinkerId.cmake:36 (message)"
+      - "/usr/local/share/cmake-4.1/Modules/CMakeDetermineCompilerABI.cmake:299 (cmake_determine_linker_id)"
+      - "/usr/local/share/cmake-4.1/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Running the CXX compiler's linker: "/usr/bin/ld" "-v"
+      GNU ld (GNU Binutils for Debian) 2.40
+  -
+    kind: "find_package-v1"
+    backtrace:
+      - "CMakeLists.txt:8 (find_package)"
+    name: "OpenCV"
+    configs:
+      -
+        filename: "OpenCVConfig.cmake"
+        kind: "cmake"
+      -
+        filename: "opencv-config.cmake"
+        kind: "cmake"
+    version_request:
+      exact: false
+    settings:
+      required: "required_explicit"
+      quiet: false
+      global: false
+      policy_scope: true
+      bypass_provider: false
+      names:
+        - "OpenCV"
+      path_suffixes:
+        - ""
+      paths:
+        CMAKE_FIND_USE_CMAKE_PATH: true
+        CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+        CMAKE_FIND_USE_INSTALL_PREFIX: true
+        CMAKE_FIND_USE_PACKAGE_ROOT_PATH: true
+        CMAKE_FIND_USE_CMAKE_PACKAGE_REGISTRY: true
+        CMAKE_FIND_USE_SYSTEM_PACKAGE_REGISTRY: true
+        CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
+    candidates:
+      -
+        path: "/home/luan/StereoVision/Stereo-Vision-Project-/ C:/opencv/build/OpenCVConfig.cmake"
+        mode: "none?"
+        reason: "no_exist"
+      -
+        path: "/home/luan/StereoVision/Stereo-Vision-Project-/ C:/opencv/build/opencv-config.cmake"
+        mode: "none?"
+        reason: "no_exist"
+      -
+        path: "/home/luan/StereoVision/Stereo-Vision-Project-/build/CMakeFiles/pkgRedirects/OpenCVConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/luan/StereoVision/Stereo-Vision-Project-/build/CMakeFiles/pkgRedirects/opencv-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/OpenCVConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/opencv-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/luan/.vscode-server/bin/61b3d0ab13be7dda2389f1d3e60a119c7f660cc3/bin/remote-cli/OpenCVConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/luan/.vscode-server/bin/61b3d0ab13be7dda2389f1d3e60a119c7f660cc3/bin/remote-cli/opencv-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/OpenCVConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/opencv-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+    found:
+      path: "/usr/lib/x86_64-linux-gnu/cmake/opencv4/OpenCVConfig.cmake"
+      mode: "config"
+      version: "4.6.0"
+    search_context:
+      ENV{PATH}:
+        - "/usr/local/bin"
+        - "/home/luan/.vscode-server/bin/61b3d0ab13be7dda2389f1d3e60a119c7f660cc3/bin/remote-cli"
+        - "/usr/local/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/usr/lib/wsl/lib"
+        - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code"
+        - "/mnt/c/Program Files/Basler/pylon/Runtime/x64/"
+        - "/mnt/c/Program Files/Basler/pylon/Runtime/Win32/"
+        - "/mnt/c/Windows/system32"
+        - "/mnt/c/Windows"
+        - "/mnt/c/Windows/System32/Wbem"
+        - "/mnt/c/Windows/System32/WindowsPowerShell/v1.0/"
+        - "/mnt/c/Windows/System32/OpenSSH/"
+        - "/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common"
+        - "/mnt/c/WINDOWS/system32"
+        - "/mnt/c/WINDOWS"
+        - "/mnt/c/WINDOWS/System32/Wbem"
+        - "/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/"
+        - "/mnt/c/WINDOWS/System32/OpenSSH/"
+        - "/mnt/c/Program Files (x86)/dotnet/"
+        - "/mnt/c/Program Files/dotnet/"
+        - "/mnt/c/Program Files/MATLAB/R2024b/bin"
+        - "/mnt/c/Program Files/WireGuard/"
+        - "/mnt/c/Program Files/NVIDIA Corporation/NVIDIA app/NvDLISR"
+        - "/mnt/c/Program Files/CMake/bin"
+        - "/mnt/c/msys64/mingw64/bin"
+        - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/Scripts/"
+        - "/mnt/c/Users/pariz/AppData/Local/Programs/Python/Python310/"
+        - "/mnt/c/Users/pariz/AppData/Local/Microsoft/WindowsApps"
+        - "/mnt/c/Users/pariz/.dotnet/tools"
+        - "/mnt/c/Users/pariz/AppData/Roaming/Programs/Zero Install"
+        - "/mnt/c/Users/pariz/AppData/Local/Programs/Microsoft VS Code/bin"
+        - "/mnt/c/Users/pariz/AppData/Local/Microsoft/WindowsApps"
+        - "/mnt/c/Users/pariz/AppData/Local/Muse Hub/lib"
+        - "/home/luan/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/usr/local"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
 ...
