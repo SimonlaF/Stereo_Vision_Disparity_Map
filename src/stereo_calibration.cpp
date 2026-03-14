@@ -8,7 +8,7 @@ bool StereoCalibrator::loadIntrinsics(const std::string& leftFile, const std::st
     cv::FileStorage fsL(leftFile, cv::FileStorage::READ);
     cv::FileStorage fsR(rightFile, cv::FileStorage::READ);
 
-    if(!fsL.isOpened() || !fsR.isOpened()) return false;
+    if (!fsL.isOpened() || !fsR.isOpened()) return false;
 
     fsL["camera_matrix"] >> _K1; fsL["dist_coeffs"] >> _dist1;
     fsR["camera_matrix"] >> _K2; fsR["dist_coeffs"] >> _dist2;
@@ -16,10 +16,10 @@ bool StereoCalibrator::loadIntrinsics(const std::string& leftFile, const std::st
     return true;
 }
 
-void StereoCalibrator::generateObjectPoints(std::vector<cv::Point3f>& objp) {
-    for (int i = 0; i < _patternSize.height; i++) {
-        for (int j = 0; j < _patternSize.width; j++) {
-            objp.push_back(cv::Point3f(j * _squareSize, i * _squareSize, 0));
+void StereoCalibrator::generateObjectPoints(std::vector<cv::Point3f>& objp) const {
+    for (int i = 0; i < _patternSize.height; ++i) {
+        for (int j = 0; j < _patternSize.width; ++j) {
+            objp.emplace_back(j * _squareSize, i * _squareSize, 0.0f);
         }
     }
 }
@@ -32,7 +32,6 @@ bool StereoCalibrator::runStereoCalibrationFromTwoFiles(const std::string& leftI
     std::vector<cv::Point3f> objp;
     generateObjectPoints(objp);
 
-    // Chargement des deux images
     cv::Mat frame1 = cv::imread(leftImgPath);
     cv::Mat frame2 = cv::imread(rightImgPath);
 
@@ -46,12 +45,10 @@ bool StereoCalibrator::runStereoCalibrationFromTwoFiles(const std::string& leftI
     cv::cvtColor(frame2, gray2, cv::COLOR_BGR2GRAY);
 
     std::vector<cv::Point2f> corners1, corners2;
-    // Détection des coins
     bool found1 = cv::findChessboardCorners(gray1, _patternSize, corners1);
     bool found2 = cv::findChessboardCorners(gray2, _patternSize, corners2);
 
     if (found1 && found2) {
-        // Affinage indispensable
         cv::cornerSubPix(gray1, corners1, cv::Size(11, 11), cv::Size(-1, -1), 
                          cv::TermCriteria(cv::TermCriteria::EPS + cv::TermCriteria::COUNT, 30, 0.001));
         cv::cornerSubPix(gray2, corners2, cv::Size(11, 11), cv::Size(-1, -1), 
@@ -65,64 +62,49 @@ bool StereoCalibrator::runStereoCalibrationFromTwoFiles(const std::string& leftI
         return false;
     }
 
-    // Calcul de la géométrie entre les deux caméras
     cv::Mat R, T, E, F;
     double rms = cv::stereoCalibrate(objectPoints, imgPts1, imgPts2,
-                    _K1, _dist1, _K2, _dist2, gray1.size(),
-                    R, T, E, F, cv::CALIB_FIX_INTRINSIC);
+                                     _K1, _dist1, _K2, _dist2, gray1.size(),
+                                     R, T, E, F, cv::CALIB_FIX_INTRINSIC);
 
-    // Sauvegarde des paramètres extrinsèques (R et T)
     cv::FileStorage fs(saveFile, cv::FileStorage::WRITE);
     fs << "K1" << _K1 << "D1" << _dist1 << "K2" << _K2 << "D2" << _dist2;
     fs << "R" << R << "T" << T << "RMS" << rms;
     fs.release();
 
     std::cout << "Calibration finie avec 1 paire. RMS: " << rms << std::endl;
-    // --- PHASE DE VÉRIFICATION : RECTIFICATION ---
     std::cout << "Génération de la vue rectifiée pour vérification..." << std::endl;
-    // IMPORTANT : OpenCV exige souvent du CV_64F (double) pour la stéréo
+
     _K1.convertTo(_K1, CV_64F);
     _K2.convertTo(_K2, CV_64F);
     _dist1.convertTo(_dist1, CV_64F);
     _dist2.convertTo(_dist2, CV_64F);
-    
-    // On s'assure que R et T sont aussi au bon format
     R.convertTo(R, CV_64F);
     T.convertTo(T, CV_64F);
 
     cv::Mat R1, R2, P1, P2, Q;
     cv::Rect validROI[2];
 
-    // 1. Calcul des matrices de rectification
-    // On utilise la taille de gray1 qui est déjà chargée
     cv::stereoRectify(_K1, _dist1, _K2, _dist2, gray1.size(), R, T, 
                       R1, R2, P1, P2, Q, cv::CALIB_ZERO_DISPARITY, 0, gray1.size(), 
                       &validROI[0], &validROI[1]);
 
-    // 2. Préparation des cartes de transformation
     cv::Mat map11, map12, map21, map22;
     cv::initUndistortRectifyMap(_K1, _dist1, R1, P1, gray1.size(), CV_16SC2, map11, map12);
     cv::initUndistortRectifyMap(_K2, _dist2, R2, P2, gray2.size(), CV_16SC2, map21, map22);
-    // 3. Application de la rectification sur nos images originales
-    // 3. Application de la rectification sur nos images originales
+
     cv::Mat rect1, rect2;
     cv::remap(frame1, rect1, map11, map12, cv::INTER_LINEAR);
     cv::remap(frame2, rect2, map21, map22, cv::INTER_LINEAR);
 
-    // --- CORRECTION ICI : Fini le canvas rigide et copyTo ! ---
     cv::Mat canvas;
-    
-    // On vérifie que les images sont compatibles avant de les coller
     if (rect1.size() != rect2.size() || rect1.type() != rect2.type()) {
         std::cerr << "ERREUR FATALE : Les deux images n'ont pas la même taille ou le même format (Canaux) !" << std::endl;
-        std::cerr << "Taille img1: " << rect1.cols << "x" << rect1.rows << " | Taille img2: " << rect2.cols << "x" << rect2.rows << std::endl;
         return false; 
     }
 
-    // Colle les images l'une à côté de l'autre de manière 100% sécurisée
     cv::hconcat(rect1, rect2, canvas);
 
-    // 5. Dessin de lignes horizontales rouges pour vérifier l'alignement
     for (int i = 0; i < canvas.rows; i += 32) {
         cv::line(canvas, cv::Point(0, i), cv::Point(canvas.cols, i), cv::Scalar(0, 0, 255), 1);
     }
@@ -131,9 +113,6 @@ bool StereoCalibrator::runStereoCalibrationFromTwoFiles(const std::string& leftI
     cv::waitKey(0); 
     return true;
 }
-
-
-
 
 bool StereoCalibrator::runStereoCalibration(int camIdx1, int camIdx2, const std::string& saveFile) {
     std::vector<std::vector<cv::Point3f>> objectPoints;
@@ -144,7 +123,6 @@ bool StereoCalibrator::runStereoCalibration(int camIdx1, int camIdx2, const std:
     cv::VideoCapture cap1(camIdx1), cap2(camIdx2);
     if (!cap1.isOpened() || !cap2.isOpened()) return false;
 
-    // Ajustement résolution (optionnel, doit être identique à l'étape 1)
     cap1.set(cv::CAP_PROP_FRAME_WIDTH, 1280); cap1.set(cv::CAP_PROP_FRAME_HEIGHT, 720);
     cap2.set(cv::CAP_PROP_FRAME_WIDTH, 1280); cap2.set(cv::CAP_PROP_FRAME_HEIGHT, 720);
 
@@ -170,23 +148,24 @@ bool StereoCalibrator::runStereoCalibration(int camIdx1, int camIdx2, const std:
 
         cv::imshow("Cam GAUCHE", vis1); cv::imshow("Cam DROITE", vis2);
         
-        char key = (char)cv::waitKey(1);
+        char key = static_cast<char>(cv::waitKey(1));
         if (key == ' ' && found1 && found2) {
             imgPts1.push_back(corners1);
             imgPts2.push_back(corners2);
             objectPoints.push_back(objp);
             std::cout << "Paire " << imgPts1.size() << " capturée." << std::endl;
-        } else if (key == 27 && imgPts1.size() >= 10) break;
+        } else if (key == 27 && imgPts1.size() >= 10) {
+            break;
+        }
     }
 
     std::cout << "Calcul des paramètres extrinsèques..." << std::endl;
     cv::Mat R, T, E, F;
     
-    // On utilise CALIB_FIX_INTRINSIC car K1, K2 sont déjà parfaits
     double rms = cv::stereoCalibrate(objectPoints, imgPts1, imgPts2,
-                    _K1, _dist1, _K2, _dist2, gray1.size(),
-                    R, T, E, F, cv::CALIB_FIX_INTRINSIC,
-                    cv::TermCriteria(cv::TermCriteria::COUNT + cv::TermCriteria::EPS, 100, 1e-5));
+                                     _K1, _dist1, _K2, _dist2, gray1.size(),
+                                     R, T, E, F, cv::CALIB_FIX_INTRINSIC,
+                                     cv::TermCriteria(cv::TermCriteria::COUNT + cv::TermCriteria::EPS, 100, 1e-5));
 
     cv::FileStorage fs(saveFile, cv::FileStorage::WRITE);
     fs << "K1" << _K1 << "D1" << _dist1 << "K2" << _K2 << "D2" << _dist2;
@@ -197,11 +176,9 @@ bool StereoCalibrator::runStereoCalibration(int camIdx1, int camIdx2, const std:
     return true;
 }
 
-bool StereoCalibrator::runStereoCalibrationFromFileSets(
-    const std::vector<std::string>& leftImages,
-    const std::vector<std::string>& rightImages,
-    const std::string& saveFile) 
-{
+bool StereoCalibrator::runStereoCalibrationFromFileSets(const std::vector<std::string>& leftImages,
+                                                        const std::vector<std::string>& rightImages,
+                                                        const std::string& saveFile) {
     if (leftImages.size() != rightImages.size() || leftImages.empty()) {
         std::cerr << "Erreur : le nombre d'images doit correspondre et > 0" << std::endl;
         return false;
@@ -212,7 +189,7 @@ bool StereoCalibrator::runStereoCalibrationFromFileSets(
     std::vector<cv::Point3f> objp;
     generateObjectPoints(objp);
 
-    for (size_t i = 0; i < leftImages.size(); i++) {
+    for (size_t i = 0; i < leftImages.size(); ++i) {
         cv::Mat imgL = cv::imread(leftImages[i]);
         cv::Mat imgR = cv::imread(rightImages[i]);
         if (imgL.empty() || imgR.empty()) continue;
@@ -226,9 +203,9 @@ bool StereoCalibrator::runStereoCalibrationFromFileSets(
         bool foundR = cv::findChessboardCorners(grayR, _patternSize, cornersR);
 
         if (foundL && foundR) {
-            cv::cornerSubPix(grayL, cornersL, cv::Size(11,11), cv::Size(-1,-1),
+            cv::cornerSubPix(grayL, cornersL, cv::Size(11, 11), cv::Size(-1, -1),
                              cv::TermCriteria(cv::TermCriteria::EPS + cv::TermCriteria::COUNT, 30, 0.001));
-            cv::cornerSubPix(grayR, cornersR, cv::Size(11,11), cv::Size(-1,-1),
+            cv::cornerSubPix(grayR, cornersR, cv::Size(11, 11), cv::Size(-1, -1),
                              cv::TermCriteria(cv::TermCriteria::EPS + cv::TermCriteria::COUNT, 30, 0.001));
 
             imgPts1.push_back(cornersL);
@@ -250,7 +227,6 @@ bool StereoCalibrator::runStereoCalibrationFromFileSets(
                                      _K1, _dist1, _K2, _dist2, imageSize,
                                      R, T, E, F, cv::CALIB_FIX_INTRINSIC);
 
-    // Sauvegarde complète dans un fichier YAML
     cv::FileStorage fs(saveFile, cv::FileStorage::WRITE);
     fs << "K1" << _K1 << "D1" << _dist1
        << "K2" << _K2 << "D2" << _dist2

@@ -1,5 +1,5 @@
-#ifndef STEREOCALIBRATOR_H
-#define STEREOCALIBRATOR_H
+#ifndef STEREO_CALIBRATION_HPP
+#define STEREO_CALIBRATION_HPP
 
 #include <opencv2/opencv.hpp>
 #include <vector>
@@ -14,8 +14,9 @@ public:
 
     // Lance la capture synchro et calcule R et T
     bool runStereoCalibration(int camIdx1, int camIdx2, const std::string& saveFile);
-    bool runStereoCalibrationFromTwoFiles(const std::string& leftImgPath,const std::string& rightImgPath, const std::string& saveFile);
+    bool runStereoCalibrationFromTwoFiles(const std::string& leftImgPath, const std::string& rightImgPath, const std::string& saveFile);
     bool runStereoCalibrationFromFileSets(const std::vector<std::string>& leftImages, const std::vector<std::string>& rightImages, const std::string& saveFile);
+
 private:
     cv::Size _patternSize;
     float _squareSize;
@@ -23,7 +24,7 @@ private:
     // Matrices intrinsèques
     cv::Mat _K1, _dist1, _K2, _dist2;
     
-    void generateObjectPoints(std::vector<cv::Point3f>& objp);
+    void generateObjectPoints(std::vector<cv::Point3f>& objp) const;
 };
 
-#endif
+#endif // STEREO_CALIBRATION_HPP

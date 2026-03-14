@@ -1278,7 +1278,6 @@ CMakeFiles/MonApp.dir/src/main.cpp.o: /home/luan/StereoVision/Stereo-Vision-Proj
   /usr/include/c++/12/bits/fs_fwd.h \
   /usr/include/c++/12/bits/fs_ops.h \
   /usr/include/c++/12/bits/fs_path.h \
-  /usr/include/c++/12/bits/fstream.tcc \
   /usr/include/c++/12/bits/functexcept.h \
   /usr/include/c++/12/bits/functional_hash.h \
   /usr/include/c++/12/bits/hash_bytes.h \
@@ -1382,7 +1381,6 @@ CMakeFiles/MonApp.dir/src/main.cpp.o: /home/luan/StereoVision/Stereo-Vision-Proj
   /usr/include/c++/12/ext/string_conversions.h \
   /usr/include/c++/12/ext/type_traits.h \
   /usr/include/c++/12/filesystem \
-  /usr/include/c++/12/fstream \
   /usr/include/c++/12/functional \
   /usr/include/c++/12/initializer_list \
   /usr/include/c++/12/iomanip \
@@ -1628,10 +1626,8 @@ CMakeFiles/MonApp.dir/src/main.cpp.o: /home/luan/StereoVision/Stereo-Vision-Proj
   /usr/include/x86_64-linux-gnu/bits/wordsize.h \
   /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
   /usr/include/x86_64-linux-gnu/c++/12/bits/atomic_word.h \
-  /usr/include/x86_64-linux-gnu/c++/12/bits/basic_file.h \
   /usr/include/x86_64-linux-gnu/c++/12/bits/c++allocator.h \
   /usr/include/x86_64-linux-gnu/c++/12/bits/c++config.h \
-  /usr/include/x86_64-linux-gnu/c++/12/bits/c++io.h \
   /usr/include/x86_64-linux-gnu/c++/12/bits/c++locale.h \
   /usr/include/x86_64-linux-gnu/c++/12/bits/cpu_defines.h \
   /usr/include/x86_64-linux-gnu/c++/12/bits/ctype_base.h \
@@ -2484,12 +2480,6 @@ CMakeFiles/MonApp.dir/src/stereo_reconstruction.cpp.o: /home/luan/StereoVision/S
 
 /home/luan/StereoVision/Stereo-Vision-Project-/src/stereo_calibration.cpp:
 
-/usr/include/x86_64-linux-gnu/c++/12/bits/c++io.h:
-
-/usr/include/x86_64-linux-gnu/c++/12/bits/basic_file.h:
-
-/usr/include/c++/12/bits/fstream.tcc:
-
 /usr/include/c++/12/bits/fs_path.h:
 
 /usr/include/c++/12/bits/fs_ops.h:
@@ -2631,8 +2621,6 @@ CMakeFiles/MonApp.dir/src/stereo_reconstruction.cpp.o: /home/luan/StereoVision/S
 /usr/include/x86_64-linux-gnu/bits/cpu-set.h:
 
 /usr/include/opencv4/opencv2/flann/kdtree_single_index.h:
-
-/usr/include/c++/12/fstream:
 
 /usr/include/c++/12/bits/std_abs.h:
 

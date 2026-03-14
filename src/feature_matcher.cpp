@@ -1,8 +1,7 @@
 #include "feature_matcher.hpp"
 
 FeatureMatcher::FeatureMatcher() {
-    // ORB est gratuit et très performant pour le temps réel
-    _orb = cv::ORB::create(5000); // On cherche 500 points max
+    _orb = cv::ORB::create(5000); 
     _matcher = cv::DescriptorMatcher::create(cv::DescriptorMatcher::BRUTEFORCE_HAMMING);
 }
 
@@ -17,13 +16,13 @@ void FeatureMatcher::findMatches(const cv::Mat& img1, const cv::Mat& img2,
 
     if (desc1.empty() || desc2.empty()) return;
 
-    // 2. Mise en correspondance (Matching)
+    // 2. Mise en correspondance
     std::vector<cv::DMatch> matches;
     _matcher->match(desc1, desc2, matches);
 
-    // 3. Filtrage des mauvais points (on ne garde que les plus proches)
+    // 3. Filtrage des mauvais points
     std::sort(matches.begin(), matches.end());
-    const int numGoodMatches = matches.size() * 0.2f; // Garde les 20% meilleurs
+    const size_t numGoodMatches = static_cast<size_t>(matches.size() * 0.2f);
     goodMatches.assign(matches.begin(), matches.begin() + numGoodMatches);
 }
 

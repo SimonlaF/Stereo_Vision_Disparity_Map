@@ -1,5 +1,5 @@
-#ifndef FEATUREMATCHER_H
-#define FEATUREMATCHER_H
+#ifndef FEATURE_MATCHER_HPP
+#define FEATURE_MATCHER_HPP
 
 #include <opencv2/opencv.hpp>
 #include <vector>
@@ -23,4 +23,4 @@ private:
     cv::Ptr<cv::DescriptorMatcher> _matcher;
 };
 
-#endif
+#endif // FEATURE_MATCHER_HPP

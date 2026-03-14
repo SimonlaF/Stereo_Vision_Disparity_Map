@@ -23,12 +23,12 @@ cv::Mat StereoReconstructor::computeDisparity(const cv::Mat& leftImg, const cv::
     cv::remap(leftImg, rectL, _mapL1, _mapL2, cv::INTER_LINEAR);
     cv::remap(rightImg, rectR, _mapR1, _mapR2, cv::INTER_LINEAR);
 
-    // Étape 10 : Algorithme de correspondance dense (StereoBM ou StereoSGBM)
+    // Étape 10 : Algorithme de correspondance dense (StereoSGBM)
     auto stereo = cv::StereoSGBM::create(0, 64, 11); 
     stereo->compute(rectL, rectR, disp);
 
     cv::Mat dispVis;
-    disp.convertTo(dispVis, CV_8U, 255 / (64 * 16.0));
+    disp.convertTo(dispVis, CV_8U, 255.0 / (64 * 16.0));
     cv::imshow("Disparity Map", dispVis);
     
     return disp; // Retourne la disparité brute pour les calculs 3D
@@ -36,12 +36,13 @@ cv::Mat StereoReconstructor::computeDisparity(const cv::Mat& leftImg, const cv::
 
 cv::Point3f StereoReconstructor::projectTo3D(int u, int v, int d) {
     // Étape 9 : Utilisation de la matrice Q (qui contient f, B, cx, cy)
-    // Z = f * B / d
-    if (d <= 0) return cv::Point3f(0, 0, 0);
+    if (d <= 0) return cv::Point3f(0.0f, 0.0f, 0.0f);
 
     cv::Mat vec = (cv::Mat_<double>(4, 1) << u, v, d, 1.0);
     cv::Mat pos = _Q * vec;
     pos /= pos.at<double>(3, 0); // Normalisation homogène
 
-    return cv::Point3f(pos.at<double>(0, 0), pos.at<double>(1, 0), pos.at<double>(2, 0));
+    return cv::Point3f(static_cast<float>(pos.at<double>(0, 0)), 
+                       static_cast<float>(pos.at<double>(1, 0)), 
+                       static_cast<float>(pos.at<double>(2, 0)));
 }
