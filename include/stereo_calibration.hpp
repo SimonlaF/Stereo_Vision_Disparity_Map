@@ -14,9 +14,9 @@ public:
 
     // Lance la capture synchro et calcule R et T
     bool runStereoCalibration(int camIdx1, int camIdx2, const std::string& saveFile);
-    bool runStereoCalibrationFromTwoFiles(const std::string& leftImgPath, const std::string& rightImgPath, const std::string& saveFile);
+    bool displayRectifiedView(const std::string& leftImgPath, const std::string& rightImgPath, const std::string& stereoParamsPath);
     bool runStereoCalibrationFromFileSets(const std::vector<std::string>& leftImages, const std::vector<std::string>& rightImages, const std::string& saveFile);
-
+    void rectifyImages(const cv::Mat& left, const cv::Mat& right, cv::Mat& rectLeft, cv::Mat& rectRight, const std::string& stereoParamsPath);
 private:
     cv::Size _patternSize;
     float _squareSize;

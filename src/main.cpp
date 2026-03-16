@@ -6,29 +6,26 @@
 #include "../include/calibration.hpp"
 #include "../include/stereo_calibration.hpp"
 #include "../include/feature_matcher.hpp"
-#include "../include/stereo_reconstruction.hpp"
 
 namespace fs = std::filesystem;
 
-// Variables globales Middlebury
 static float fx = 0.0f, fy = 0.0f, cx0 = 0.0f, cx1 = 0.0f, cy = 0.0f, baseline = 0.0f, doffs = 0.0f;
-
+// Function to load calibration parameters from a text file (calib.txt)
 void loadCalibrationFromTxt(const std::string& filename) {
     std::ifstream file(filename);
     if (!file.is_open()) return;
     std::string line;
     while (std::getline(file, line)) {
-        if (line.find("cam0=") != std::string::npos) sscanf(line.c_str(), "cam0=[%f 0 %f; 0 %f %f; 0 0 1]", &fx, &cx0, &fy, &cy);
-        if (line.find("cam1=") != std::string::npos) sscanf(line.c_str(), "cam1=[%*f 0 %f; 0 %*f %*f; 0 0 1]", &cx1);
-        if (line.find("baseline=") != std::string::npos) sscanf(line.c_str(), "baseline=%f", &baseline);
-        if (line.find("doffs=") != std::string::npos) sscanf(line.c_str(), "doffs=%f", &doffs);
+        if (line.find("cam0=") != std::string::npos) sscanf_s(line.c_str(), "cam0=[%f 0 %f; 0 %f %f; 0 0 1]", &fx, &cx0, &fy, &cy);
+        if (line.find("cam1=") != std::string::npos) sscanf_s(line.c_str(), "cam1=[%*f 0 %f; 0 %*f %*f; 0 0 1]", &cx1);
+        if (line.find("baseline=") != std::string::npos) sscanf_s(line.c_str(), "baseline=%f", &baseline);
+        if (line.find("doffs=") != std::string::npos) sscanf_s(line.c_str(), "doffs=%f", &doffs);
     }
 }
 
 int main() {
     cv::Size pattern(7, 11);   // Size of the checkerboard pattern (columns, rows)
     float squareSize = 25.0f;
-    // CALIBRATION STÉRÉO (Dataset CheckerBoard)
     std::cout << "[STEP 1] Intrisic Calibration..." << std::endl;
     CameraCalibrator mono(pattern, squareSize);
     // Loading images from the left and right camera folders
@@ -53,34 +50,19 @@ int main() {
     std::cout << "[STEP 2] Extrinsic Calibration..." << std::endl;
     StereoCalibrator stereo(pattern, squareSize);
     
+
     if (stereo.loadIntrinsics("intrinsics_L.yml", "intrinsics_R.yml")) {
-        std::cout << "[1/2] Computing extrinsic parameters..." << std::endl;
-        size_t subsetSize = std::min((size_t)15, leftImages.size());
-        std::vector<std::string> lSub(leftImages.begin(), leftImages.begin() + subsetSize);
-        std::vector<std::string> rSub(rightImages.begin(), rightImages.begin() + subsetSize);
-        if (stereo.runStereoCalibrationFromFileSets(lSub, rSub, "stereo_params.yml")) {
-            std::cout << "[2/2] Verification visuelle de l'alignement..." << std::endl;
-            stereo.runStereoCalibrationFromTwoFiles(leftImages[0], rightImages[0], "stereo_params.yml");
+        std::cout << "[1/2] Computing extrinsic parameters..." << std::endl;    // Compute R and T from the set of images
+        if (stereo.runStereoCalibrationFromFileSets(leftImages, rightImages, "stereo_params.yml")) {
+            std::cout << "[2/2] Checking rectified images..." << std::endl;                 // Display rectified images to visually check the epipolar alignment
+            stereo.displayRectifiedView(leftImages[0], rightImages[0], "../build/stereo_params.yml");
         }
     }
     cv::destroyAllWindows();
 
-    // ========================================================================
-    // ACTE II : MATCHING & DISPARITÉ (Dataset Middlebury)
-    // ========================================================================
-    std::cout << "\n--- ACTE II : RECONSTRUCTION SUR IMAGES REELLES ---" << std::endl;
-    
-    loadCalibrationFromTxt("calib.txt");
-    cv::Mat frameL = cv::imread("../im0.png");
-    cv::Mat frameR = cv::imread("../im1.png");
-
-    if (frameL.empty() || frameR.empty()) {
-        std::cerr << "Erreur : im0.png ou im1.png introuvable." << std::endl;
-        return -1;
-    }
-
+    // MATCHING & DISPARITY (Dataset Middlebury) (No need for calibration parameters here because MiddleBury images are already rectified)
     // 1. Matching ORB
-    std::cout << "[1/3] Matching de points d'interet..." << std::endl;
+    std::cout << "[1/3] Matching of interest points..." << std::endl;
     FeatureMatcher matcher;
     std::vector<cv::KeyPoint> kpL, kpR;
     std::vector<cv::DMatch> goodMatches;
@@ -88,44 +70,19 @@ int main() {
     matcher.drawMatches(frameL, frameR, kpL, kpR, goodMatches);
     cv::waitKey(0);
 
-    // 2. Disparité (StereoBM avec les paramètres originaux)
-    std::cout << "[2/3] Calcul de la carte de disparite (StereoBM)..." << std::endl;
+    // Disparity ( Stereo Block Matching with default parameters)
+    std::cout << "[2/3] Computing disparity map..." << std::endl;
     cv::Mat grayL, grayR;
-    cv::cvtColor(frameL, grayL, cv::COLOR_BGR2GRAY);
+    cv::cvtColor(frameL, grayL, cv::COLOR_BGR2GRAY); // Convert to grayscale for disparity computation 
     cv::cvtColor(frameR, grayR, cv::COLOR_BGR2GRAY);
     
-    cv::Ptr<cv::StereoBM> stereoBM = cv::StereoBM::create(96, 15);
+    cv::Ptr<cv::StereoBM> stereoBM = cv::StereoBM::create(32, 15);
     cv::Mat disparity;
     stereoBM->compute(grayL, grayR, disparity);
     
     cv::Mat disp8;
-    cv::normalize(disparity, disp8, 0, 255, cv::NORM_MINMAX, CV_8U);
+    cv::normalize(disparity, disp8, 0, 255, cv::NORM_MINMAX, CV_8U);   // Normalize disparity to scale it on 8 bits for visualization
     cv::imshow("Disparity", disp8);
-
-    // 3. Projection 3D (Distance au centre)
-    std::cout << "[3/3] Calcul de la profondeur au centre..." << std::endl;
-    int centerX = frameL.cols / 2;
-    int centerY = frameL.rows / 2;
-
-    short dValue = disparity.at<short>(centerY, centerX);
-
-    if (dValue > 0)
-    {
-        float d = dValue / 16.0f;
-        // FORMULE AVEC DOFFS
-        float Z = (fx * baseline) / (d + doffs);
-
-        std::string text = "Distance: " + std::to_string(Z/10.0f) + " cm";
-
-        cv::putText(frameL, text, cv::Point(50,80), 
-                    cv::FONT_HERSHEY_SIMPLEX, 1, 
-                    cv::Scalar(0,0,255), 2);
-
-        cv::drawMarker(frameL, cv::Point(centerX, centerY), 
-                       cv::Scalar(0,255,0), 
-                       cv::MARKER_CROSS, 20, 2);
-    }
-
     cv::waitKey(0);
 
     return 0;

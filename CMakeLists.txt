@@ -16,8 +16,6 @@ set(SOURCE_FILES
     src/calibration.cpp
     src/stereo_calibration.cpp
     src/feature_matcher.cpp
-    src/epipolar.cpp
-    src/stereo_reconstruction.cpp
 )
 
 add_executable(MonApp ${SOURCE_FILES})

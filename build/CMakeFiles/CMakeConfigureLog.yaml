@@ -24,7 +24,7 @@ events:
       The output was:
       0
       MSBuild version 17.14.40+3e7442088 for .NET Framework
-      Build started 3/16/2026 7:50:15 PM.
+      Build started 3/16/2026 10:33:48 PM.
       
       Project "C:\\Users\\FERRIER Simon\\Documents\\Cours\\Computer Vision\\TP\\Stereo-Vision-Project-\\build\\CMakeFiles\\3.27.4\\CompilerIdC\\CompilerIdC.vcxproj" on node 1 (default targets).
       PrepareForBuild:
@@ -53,7 +53,7 @@ events:
           0 Warning(s)
           0 Error(s)
       
-      Time Elapsed 00:00:01.29
+      Time Elapsed 00:00:01.27
       
       
       Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
@@ -79,7 +79,7 @@ events:
       The output was:
       0
       MSBuild version 17.14.40+3e7442088 for .NET Framework
-      Build started 3/16/2026 7:50:16 PM.
+      Build started 3/16/2026 10:33:49 PM.
       
       Project "C:\\Users\\FERRIER Simon\\Documents\\Cours\\Computer Vision\\TP\\Stereo-Vision-Project-\\build\\CMakeFiles\\3.27.4\\CompilerIdCXX\\CompilerIdCXX.vcxproj" on node 1 (default targets).
       PrepareForBuild:
@@ -127,8 +127,8 @@ events:
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "C:/Users/FERRIER Simon/Documents/Cours/Computer Vision/TP/Stereo-Vision-Project-/build/CMakeFiles/CMakeScratch/TryCompile-8x4q2m"
-      binary: "C:/Users/FERRIER Simon/Documents/Cours/Computer Vision/TP/Stereo-Vision-Project-/build/CMakeFiles/CMakeScratch/TryCompile-8x4q2m"
+      source: "C:/Users/FERRIER Simon/Documents/Cours/Computer Vision/TP/Stereo-Vision-Project-/build/CMakeFiles/CMakeScratch/TryCompile-xt986g"
+      binary: "C:/Users/FERRIER Simon/Documents/Cours/Computer Vision/TP/Stereo-Vision-Project-/build/CMakeFiles/CMakeScratch/TryCompile-xt986g"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS /W3"
       CMAKE_C_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
@@ -137,40 +137,40 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/FERRIER Simon/Documents/Cours/Computer Vision/TP/Stereo-Vision-Project-/build/CMakeFiles/CMakeScratch/TryCompile-8x4q2m'
+        Change Dir: 'C:/Users/FERRIER Simon/Documents/Cours/Computer Vision/TP/Stereo-Vision-Project-/build/CMakeFiles/CMakeScratch/TryCompile-xt986g'
         
-        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_9f3d8.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_37d71.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
         MSBuild version 17.14.40+3e7442088 for .NET Framework
-        Build started 3/16/2026 7:50:18 PM.
+        Build started 3/16/2026 10:33:51 PM.
         
-        Project "C:\\Users\\FERRIER Simon\\Documents\\Cours\\Computer Vision\\TP\\Stereo-Vision-Project-\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8x4q2m\\cmTC_9f3d8.vcxproj" on node 1 (default targets).
+        Project "C:\\Users\\FERRIER Simon\\Documents\\Cours\\Computer Vision\\TP\\Stereo-Vision-Project-\\build\\CMakeFiles\\CMakeScratch\\TryCompile-xt986g\\cmTC_37d71.vcxproj" on node 1 (default targets).
         PrepareForBuild:
-          Creating directory "cmTC_9f3d8.dir\\Debug\\".
+          Creating directory "cmTC_37d71.dir\\Debug\\".
           Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
-          Creating directory "C:\\Users\\FERRIER Simon\\Documents\\Cours\\Computer Vision\\TP\\Stereo-Vision-Project-\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8x4q2m\\Debug\\".
-          Creating directory "cmTC_9f3d8.dir\\Debug\\cmTC_9f3d8.tlog\\".
+          Creating directory "C:\\Users\\FERRIER Simon\\Documents\\Cours\\Computer Vision\\TP\\Stereo-Vision-Project-\\build\\CMakeFiles\\CMakeScratch\\TryCompile-xt986g\\Debug\\".
+          Creating directory "cmTC_37d71.dir\\Debug\\cmTC_37d71.tlog\\".
         InitializeBuildStatus:
-          Creating "cmTC_9f3d8.dir\\Debug\\cmTC_9f3d8.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
-          Touching "cmTC_9f3d8.dir\\Debug\\cmTC_9f3d8.tlog\\unsuccessfulbuild".
+          Creating "cmTC_37d71.dir\\Debug\\cmTC_37d71.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_37d71.dir\\Debug\\cmTC_37d71.tlog\\unsuccessfulbuild".
         ClCompile:
-          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_9f3d8.dir\\Debug\\\\" /Fd"cmTC_9f3d8.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.27\\Modules\\CMakeCCompilerABI.c"
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_37d71.dir\\Debug\\\\" /Fd"cmTC_37d71.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.27\\Modules\\CMakeCCompilerABI.c"
           Microsoft (R) C/C++ Optimizing Compiler Version 19.44.35222 for x64
           Copyright (C) Microsoft Corporation.  All rights reserved.
-          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_9f3d8.dir\\Debug\\\\" /Fd"cmTC_9f3d8.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.27\\Modules\\CMakeCCompilerABI.c"
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_37d71.dir\\Debug\\\\" /Fd"cmTC_37d71.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.27\\Modules\\CMakeCCompilerABI.c"
           CMakeCCompilerABI.c
         Link:
-          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\FERRIER Simon\\Documents\\Cours\\Computer Vision\\TP\\Stereo-Vision-Project-\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8x4q2m\\Debug\\cmTC_9f3d8.exe" /INCREMENTAL /ILK:"cmTC_9f3d8.dir\\Debug\\cmTC_9f3d8.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/FERRIER Simon/Documents/Cours/Computer Vision/TP/Stereo-Vision-Project-/build/CMakeFiles/CMakeScratch/TryCompile-8x4q2m/Debug/cmTC_9f3d8.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/FERRIER Simon/Documents/Cours/Computer Vision/TP/Stereo-Vision-Project-/build/CMakeFiles/CMakeScratch/TryCompile-8x4q2m/Debug/cmTC_9f3d8.lib" /MACHINE:X64  /machine:x64 cmTC_9f3d8.dir\\Debug\\CMakeCCompilerABI.obj
-          cmTC_9f3d8.vcxproj -> C:\\Users\\FERRIER Simon\\Documents\\Cours\\Computer Vision\\TP\\Stereo-Vision-Project-\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8x4q2m\\Debug\\cmTC_9f3d8.exe
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\FERRIER Simon\\Documents\\Cours\\Computer Vision\\TP\\Stereo-Vision-Project-\\build\\CMakeFiles\\CMakeScratch\\TryCompile-xt986g\\Debug\\cmTC_37d71.exe" /INCREMENTAL /ILK:"cmTC_37d71.dir\\Debug\\cmTC_37d71.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/FERRIER Simon/Documents/Cours/Computer Vision/TP/Stereo-Vision-Project-/build/CMakeFiles/CMakeScratch/TryCompile-xt986g/Debug/cmTC_37d71.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/FERRIER Simon/Documents/Cours/Computer Vision/TP/Stereo-Vision-Project-/build/CMakeFiles/CMakeScratch/TryCompile-xt986g/Debug/cmTC_37d71.lib" /MACHINE:X64  /machine:x64 cmTC_37d71.dir\\Debug\\CMakeCCompilerABI.obj
+          cmTC_37d71.vcxproj -> C:\\Users\\FERRIER Simon\\Documents\\Cours\\Computer Vision\\TP\\Stereo-Vision-Project-\\build\\CMakeFiles\\CMakeScratch\\TryCompile-xt986g\\Debug\\cmTC_37d71.exe
         FinalizeBuildStatus:
-          Deleting file "cmTC_9f3d8.dir\\Debug\\cmTC_9f3d8.tlog\\unsuccessfulbuild".
-          Touching "cmTC_9f3d8.dir\\Debug\\cmTC_9f3d8.tlog\\cmTC_9f3d8.lastbuildstate".
-        Done Building Project "C:\\Users\\FERRIER Simon\\Documents\\Cours\\Computer Vision\\TP\\Stereo-Vision-Project-\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8x4q2m\\cmTC_9f3d8.vcxproj" (default targets).
+          Deleting file "cmTC_37d71.dir\\Debug\\cmTC_37d71.tlog\\unsuccessfulbuild".
+          Touching "cmTC_37d71.dir\\Debug\\cmTC_37d71.tlog\\cmTC_37d71.lastbuildstate".
+        Done Building Project "C:\\Users\\FERRIER Simon\\Documents\\Cours\\Computer Vision\\TP\\Stereo-Vision-Project-\\build\\CMakeFiles\\CMakeScratch\\TryCompile-xt986g\\cmTC_37d71.vcxproj" (default targets).
         
         Build succeeded.
             0 Warning(s)
             0 Error(s)
         
-        Time Elapsed 00:00:01.27
+        Time Elapsed 00:00:01.26
         
       exitCode: 0
   -
@@ -182,8 +182,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "C:/Users/FERRIER Simon/Documents/Cours/Computer Vision/TP/Stereo-Vision-Project-/build/CMakeFiles/CMakeScratch/TryCompile-06r3nq"
-      binary: "C:/Users/FERRIER Simon/Documents/Cours/Computer Vision/TP/Stereo-Vision-Project-/build/CMakeFiles/CMakeScratch/TryCompile-06r3nq"
+      source: "C:/Users/FERRIER Simon/Documents/Cours/Computer Vision/TP/Stereo-Vision-Project-/build/CMakeFiles/CMakeScratch/TryCompile-rxgi5n"
+      binary: "C:/Users/FERRIER Simon/Documents/Cours/Computer Vision/TP/Stereo-Vision-Project-/build/CMakeFiles/CMakeScratch/TryCompile-rxgi5n"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /W3 /GR /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
@@ -192,40 +192,40 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/FERRIER Simon/Documents/Cours/Computer Vision/TP/Stereo-Vision-Project-/build/CMakeFiles/CMakeScratch/TryCompile-06r3nq'
+        Change Dir: 'C:/Users/FERRIER Simon/Documents/Cours/Computer Vision/TP/Stereo-Vision-Project-/build/CMakeFiles/CMakeScratch/TryCompile-rxgi5n'
         
-        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_523bb.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_c3950.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
         MSBuild version 17.14.40+3e7442088 for .NET Framework
-        Build started 3/16/2026 7:50:20 PM.
+        Build started 3/16/2026 10:33:53 PM.
         
-        Project "C:\\Users\\FERRIER Simon\\Documents\\Cours\\Computer Vision\\TP\\Stereo-Vision-Project-\\build\\CMakeFiles\\CMakeScratch\\TryCompile-06r3nq\\cmTC_523bb.vcxproj" on node 1 (default targets).
+        Project "C:\\Users\\FERRIER Simon\\Documents\\Cours\\Computer Vision\\TP\\Stereo-Vision-Project-\\build\\CMakeFiles\\CMakeScratch\\TryCompile-rxgi5n\\cmTC_c3950.vcxproj" on node 1 (default targets).
         PrepareForBuild:
-          Creating directory "cmTC_523bb.dir\\Debug\\".
+          Creating directory "cmTC_c3950.dir\\Debug\\".
           Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
-          Creating directory "C:\\Users\\FERRIER Simon\\Documents\\Cours\\Computer Vision\\TP\\Stereo-Vision-Project-\\build\\CMakeFiles\\CMakeScratch\\TryCompile-06r3nq\\Debug\\".
-          Creating directory "cmTC_523bb.dir\\Debug\\cmTC_523bb.tlog\\".
+          Creating directory "C:\\Users\\FERRIER Simon\\Documents\\Cours\\Computer Vision\\TP\\Stereo-Vision-Project-\\build\\CMakeFiles\\CMakeScratch\\TryCompile-rxgi5n\\Debug\\".
+          Creating directory "cmTC_c3950.dir\\Debug\\cmTC_c3950.tlog\\".
         InitializeBuildStatus:
-          Creating "cmTC_523bb.dir\\Debug\\cmTC_523bb.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
-          Touching "cmTC_523bb.dir\\Debug\\cmTC_523bb.tlog\\unsuccessfulbuild".
+          Creating "cmTC_c3950.dir\\Debug\\cmTC_c3950.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_c3950.dir\\Debug\\cmTC_c3950.tlog\\unsuccessfulbuild".
         ClCompile:
-          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_523bb.dir\\Debug\\\\" /Fd"cmTC_523bb.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.27\\Modules\\CMakeCXXCompilerABI.cpp"
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_c3950.dir\\Debug\\\\" /Fd"cmTC_c3950.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.27\\Modules\\CMakeCXXCompilerABI.cpp"
           Microsoft (R) C/C++ Optimizing Compiler Version 19.44.35222 for x64
           Copyright (C) Microsoft Corporation.  All rights reserved.
-          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_523bb.dir\\Debug\\\\" /Fd"cmTC_523bb.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.27\\Modules\\CMakeCXXCompilerABI.cpp"
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_c3950.dir\\Debug\\\\" /Fd"cmTC_c3950.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.27\\Modules\\CMakeCXXCompilerABI.cpp"
           CMakeCXXCompilerABI.cpp
         Link:
-          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\FERRIER Simon\\Documents\\Cours\\Computer Vision\\TP\\Stereo-Vision-Project-\\build\\CMakeFiles\\CMakeScratch\\TryCompile-06r3nq\\Debug\\cmTC_523bb.exe" /INCREMENTAL /ILK:"cmTC_523bb.dir\\Debug\\cmTC_523bb.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/FERRIER Simon/Documents/Cours/Computer Vision/TP/Stereo-Vision-Project-/build/CMakeFiles/CMakeScratch/TryCompile-06r3nq/Debug/cmTC_523bb.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/FERRIER Simon/Documents/Cours/Computer Vision/TP/Stereo-Vision-Project-/build/CMakeFiles/CMakeScratch/TryCompile-06r3nq/Debug/cmTC_523bb.lib" /MACHINE:X64  /machine:x64 cmTC_523bb.dir\\Debug\\CMakeCXXCompilerABI.obj
-          cmTC_523bb.vcxproj -> C:\\Users\\FERRIER Simon\\Documents\\Cours\\Computer Vision\\TP\\Stereo-Vision-Project-\\build\\CMakeFiles\\CMakeScratch\\TryCompile-06r3nq\\Debug\\cmTC_523bb.exe
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\FERRIER Simon\\Documents\\Cours\\Computer Vision\\TP\\Stereo-Vision-Project-\\build\\CMakeFiles\\CMakeScratch\\TryCompile-rxgi5n\\Debug\\cmTC_c3950.exe" /INCREMENTAL /ILK:"cmTC_c3950.dir\\Debug\\cmTC_c3950.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/FERRIER Simon/Documents/Cours/Computer Vision/TP/Stereo-Vision-Project-/build/CMakeFiles/CMakeScratch/TryCompile-rxgi5n/Debug/cmTC_c3950.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/FERRIER Simon/Documents/Cours/Computer Vision/TP/Stereo-Vision-Project-/build/CMakeFiles/CMakeScratch/TryCompile-rxgi5n/Debug/cmTC_c3950.lib" /MACHINE:X64  /machine:x64 cmTC_c3950.dir\\Debug\\CMakeCXXCompilerABI.obj
+          cmTC_c3950.vcxproj -> C:\\Users\\FERRIER Simon\\Documents\\Cours\\Computer Vision\\TP\\Stereo-Vision-Project-\\build\\CMakeFiles\\CMakeScratch\\TryCompile-rxgi5n\\Debug\\cmTC_c3950.exe
         FinalizeBuildStatus:
-          Deleting file "cmTC_523bb.dir\\Debug\\cmTC_523bb.tlog\\unsuccessfulbuild".
-          Touching "cmTC_523bb.dir\\Debug\\cmTC_523bb.tlog\\cmTC_523bb.lastbuildstate".
-        Done Building Project "C:\\Users\\FERRIER Simon\\Documents\\Cours\\Computer Vision\\TP\\Stereo-Vision-Project-\\build\\CMakeFiles\\CMakeScratch\\TryCompile-06r3nq\\cmTC_523bb.vcxproj" (default targets).
+          Deleting file "cmTC_c3950.dir\\Debug\\cmTC_c3950.tlog\\unsuccessfulbuild".
+          Touching "cmTC_c3950.dir\\Debug\\cmTC_c3950.tlog\\cmTC_c3950.lastbuildstate".
+        Done Building Project "C:\\Users\\FERRIER Simon\\Documents\\Cours\\Computer Vision\\TP\\Stereo-Vision-Project-\\build\\CMakeFiles\\CMakeScratch\\TryCompile-rxgi5n\\cmTC_c3950.vcxproj" (default targets).
         
         Build succeeded.
             0 Warning(s)
             0 Error(s)
         
-        Time Elapsed 00:00:01.28
+        Time Elapsed 00:00:01.27
         
       exitCode: 0
 ...

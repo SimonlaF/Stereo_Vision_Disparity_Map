@@ -10,17 +10,16 @@ void FeatureMatcher::findMatches(const cv::Mat& img1, const cv::Mat& img2,
                                  std::vector<cv::DMatch>& goodMatches) {
     cv::Mat desc1, desc2;
     
-    // 1. Détection et calcul des descripteurs
+    // Detection and calculation of descriptors
     _orb->detectAndCompute(img1, cv::noArray(), kp1, desc1);
     _orb->detectAndCompute(img2, cv::noArray(), kp2, desc2);
 
     if (desc1.empty() || desc2.empty()) return;
 
-    // 2. Mise en correspondance
     std::vector<cv::DMatch> matches;
     _matcher->match(desc1, desc2, matches);
 
-    // 3. Filtrage des mauvais points
+    // Filter matches based on distance (keep top 20%)
     std::sort(matches.begin(), matches.end());
     const size_t numGoodMatches = static_cast<size_t>(matches.size() * 0.2f);
     goodMatches.assign(matches.begin(), matches.begin() + numGoodMatches);
