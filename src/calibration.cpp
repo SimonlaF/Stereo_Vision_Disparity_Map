@@ -12,7 +12,7 @@ void CameraCalibrator::generateObjectPoints(std::vector<cv::Point3f>& objp) cons
         }
     }
 }
-
+// Function to calibrate from live camera 
 bool CameraCalibrator::runCalibration(int camID, const std::string& saveFileName) {
     std::vector<std::vector<cv::Point3f>> objectPoints;
     std::vector<std::vector<cv::Point2f>> imagePoints;
@@ -39,68 +39,70 @@ bool CameraCalibrator::runCalibration(int camID, const std::string& saveFileName
             cv::drawChessboardCorners(frame, _patternSize, corners, found);
         }
 
-        std::string msg = "Captures: " + std::to_string(imagePoints.size()) + " (Echap pour finir)";
+        std::string msg = "Captures : " + std::to_string(imagePoints.size()) + " (Esc to end)";
         cv::putText(frame, msg, cv::Point(30, 50), cv::FONT_HERSHEY_SIMPLEX, 0.7, cv::Scalar(0, 255, 0), 2);
-        cv::imshow("Calibration Camera " + std::to_string(camID), frame);
+        cv::imshow("Camera Calibration" + std::to_string(camID), frame);
 
         char key = static_cast<char>(cv::waitKey(1));
         if (key == ' ' && found) {
             imagePoints.push_back(corners);
             objectPoints.push_back(objp);
-            std::cout << "Pose enregistrée !" << std::endl;
+            std::cout << "Pose saved!" << std::endl;
         } else if (key == 27 && imagePoints.size() >= 10) {
             break;
         }
     }
 
     if (imagePoints.empty()) {
-        std::cerr << "Erreur : Aucune capture réalisée." << std::endl;
+        std::cerr << "Error : No images captured." << std::endl;
         return false;
     }
 
-    // Calcul final
+    // Final calculation
     cv::Mat K, dist; 
     std::vector<cv::Mat> rvecs, tvecs;
     double rms = cv::calibrateCamera(objectPoints, imagePoints, gray.size(), K, dist, rvecs, tvecs);
     
-    std::cout << "\nMatrice K calculée :\n" << K << std::endl;
+    std::cout << "\n K Camera matrix calculated :\n" << K << std::endl;
 
-    // Sauvegarde
+    // Save results
     cv::FileStorage fs(saveFileName, cv::FileStorage::WRITE);
     fs << "camera_matrix" << K << "dist_coeffs" << dist << "rms" << rms;
     fs.release();
 
-    // --- PHASE DE VÉRIFICATION ---
+    // Checking reprojection on the last captured frame
     cv::Mat testFrame;
     cap >> testFrame; 
     if (!testFrame.empty()) {
         cv::Mat grayTest;
-        cv::cvtColor(testFrame, grayTest, cv::COLOR_BGR2GRAY);
+        cv::cvtColor(testFrame, grayTest, cv::COLOR_BGR2GRAY); // Convert to grayscale for corner detection
 
         std::vector<cv::Point2f> detectedCorners;
         bool found = cv::findChessboardCorners(grayTest, _patternSize, detectedCorners);
 
         if (found) {
             std::vector<cv::Point2f> reprojectedPoints;
-            cv::projectPoints(objp, rvecs.back(), tvecs.back(), K, dist, reprojectedPoints);
+            cv::projectPoints(objp, rvecs.back(), tvecs.back(), K, dist, reprojectedPoints);   // Reprojection the object points to 2D using the camera Matrix
 
             for (size_t i = 0; i < detectedCorners.size(); ++i) {
                 cv::circle(testFrame, detectedCorners[i], 5, cv::Scalar(0, 255, 0), 2);
                 cv::circle(testFrame, reprojectedPoints[i], 2, cv::Scalar(0, 0, 255), -1);
             }
             
-            cv::putText(testFrame, "Vert: Detection / Rouge: Reprojection (K)", 
+            cv::putText(testFrame, "Green: Detected / Red: Reprojected (K)", 
                         cv::Point(30, 30), cv::FONT_HERSHEY_SIMPLEX, 0.6, cv::Scalar(255, 255, 255), 2);
-            cv::imshow("Verification de la Calibration", testFrame);
+            cv::imshow("Calibration Check", testFrame);
             cv::waitKey(0);
         }
     }
 
-    std::cout << "Calibration terminée. RMS: " << rms << " Sauvegardé dans " << saveFileName << std::endl;
+    std::cout << "Calibration done. RMS: " << rms << " Saved in " << saveFileName << std::endl;
     cv::destroyAllWindows();
     return true;
 }
 
+
+// Function to calibrate from a set of images
 bool CameraCalibrator::runCalibrationFromFiles(const std::vector<std::string>& imagePaths, const std::string& saveFileName) {
     std::vector<std::vector<cv::Point3f>> objectPoints;
     std::vector<std::vector<cv::Point2f>> imagePoints;
@@ -110,12 +112,12 @@ bool CameraCalibrator::runCalibrationFromFiles(const std::vector<std::string>& i
     cv::Mat frame, gray;
     cv::Size imageSize;
 
-    std::cout << "Début de la calibration à partir de " << imagePaths.size() << " fichiers..." << std::endl;
+    std::cout << "Starting calibration from " << imagePaths.size() << " files..." << std::endl;
 
     for (const std::string& path : imagePaths) {
         frame = cv::imread(path);
         if (frame.empty()) {
-            std::cerr << "Impossible de lire l'image : " << path << std::endl;
+            std::cerr << "Error: Could not read image : " << path << std::endl;
             continue;
         }
 
@@ -132,51 +134,51 @@ bool CameraCalibrator::runCalibrationFromFiles(const std::vector<std::string>& i
             imagePoints.push_back(corners);
             objectPoints.push_back(objp);
             
-            // Visualisation de la détection
+            // Dectection visualization
             cv::drawChessboardCorners(frame, _patternSize, corners, found);
-            cv::imshow("Detection - " + path, frame);
+            cv::imshow("Detection " + path, frame);
             cv::waitKey(500);
-            std::cout << "Coins trouvés dans : " << path << std::endl;
+            std::cout << "Corners found in : " << path << std::endl;
         } else {
-            std::cerr << "Damier non trouvé dans : " << path << std::endl;
+            std::cerr << "Checkerboard not found in : " << path << std::endl;  // Print a warning if the checkerboard is not detected in the image
         }
     }
 
     if (imagePoints.empty()) {
-        std::cerr << "Erreur : Aucune image valide pour la calibration." << std::endl;
+        std::cerr << "Error: No valid images for calibration." << std::endl;
         return false;
     }
 
-    // Calcul final
+    // Final computation of K and distortion coefficients
     cv::Mat K, dist; 
     std::vector<cv::Mat> rvecs, tvecs;
     double rms = cv::calibrateCamera(objectPoints, imagePoints, imageSize, K, dist, rvecs, tvecs);
     
-    std::cout << "\nMatrice K calculée :\n" << K << std::endl;
+    std::cout << "\nComputed K Matrix :\n" << K << std::endl;
 
-    // Sauvegarde
+    // Save the calibration results
     cv::FileStorage fs(saveFileName, cv::FileStorage::WRITE);
     fs << "camera_matrix" << K << "dist_coeffs" << dist << "rms" << rms;
     fs.release();
 
-    // --- PHASE DE VÉRIFICATION ---
-    cv::Mat verificationFrame = cv::imread(imagePaths.back());
+    // Checking reprojection on the last image
+    cv::Mat verificationFrame = cv::imread(imagePaths.back()); // Load the last image for verification
     if (!verificationFrame.empty()) {
         std::vector<cv::Point2f> reprojectedPoints;
-        cv::projectPoints(objp, rvecs.back(), tvecs.back(), K, dist, reprojectedPoints);
+        cv::projectPoints(objp, rvecs.back(), tvecs.back(), K, dist, reprojectedPoints);   // Reprojection the object points to 2D using the camera Matrix
 
         for (size_t i = 0; i < imagePoints.back().size(); ++i) {
             cv::circle(verificationFrame, imagePoints.back()[i], 5, cv::Scalar(0, 255, 0), 2);
             cv::circle(verificationFrame, reprojectedPoints[i], 2, cv::Scalar(0, 0, 255), -1);
         }
         
-        cv::putText(verificationFrame, "Vert: Réel / Rouge: Reprojeté", 
+        cv::putText(verificationFrame, "Green: Detected / Red: Reprojected (K)", 
                     cv::Point(30, 30), cv::FONT_HERSHEY_SIMPLEX, 0.6, cv::Scalar(255, 255, 255), 2);
-        cv::imshow("Verification Reprojection", verificationFrame);
+        cv::imshow("Calibration Check", verificationFrame);
         cv::waitKey(0);
     }
 
-    std::cout << "Calibration terminée. RMS: " << rms << " Sauvegardé dans " << saveFileName << std::endl;
+    std::cout << "Calibration done. RMS: " << rms << " Saved in " << saveFileName << std::endl;
     cv::destroyAllWindows();
     return true;
 }

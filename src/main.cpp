@@ -26,16 +26,12 @@ void loadCalibrationFromTxt(const std::string& filename) {
 }
 
 int main() {
-    cv::Size pattern(7, 11);
+    cv::Size pattern(7, 11);   // Size of the checkerboard pattern (columns, rows)
     float squareSize = 25.0f;
-
-    // ========================================================================
-    // ACTE I : CALIBRATION STÉRÉO (Dataset Damier)
-    // ========================================================================
-    std::cout << "--- ACTE I : CALIBRATION SUR DATASET DAMIER ---" << std::endl;
-    std::cout << "[STEP 1] Calibration Intrinsèque..." << std::endl;
+    // CALIBRATION STÉRÉO (Dataset CheckerBoard)
+    std::cout << "[STEP 1] Intrisic Calibration..." << std::endl;
     CameraCalibrator mono(pattern, squareSize);
-    // Charger toutes les images du dossier left
+    // Loading images from the left and right camera folders
     std::vector<std::string> leftImages, rightImages;
 
     for (const auto& entry : fs::directory_iterator("../leftcamera")) {
@@ -50,22 +46,18 @@ int main() {
     std::sort(leftImages.begin(), leftImages.end());
     std::sort(rightImages.begin(), rightImages.end());
 
-    mono.runCalibrationFromFiles(leftImages, "intrinsics_L.yml");
+    mono.runCalibrationFromFiles(leftImages, "intrinsics_L.yml"); 
     mono.runCalibrationFromFiles(rightImages, "intrinsics_R.yml");
-
-    for (const auto& entry : fs::directory_iterator("../leftcamera")) leftImages.push_back(entry.path().string());
-    for (const auto& entry : fs::directory_iterator("../rightcamera")) rightImages.push_back(entry.path().string());
-    std::sort(leftImages.begin(), leftImages.end());
-    std::sort(rightImages.begin(), rightImages.end());
-
+    
+    
+    std::cout << "[STEP 2] Extrinsic Calibration..." << std::endl;
     StereoCalibrator stereo(pattern, squareSize);
     
     if (stereo.loadIntrinsics("intrinsics_L.yml", "intrinsics_R.yml")) {
-        std::cout << "[1/2] Calcul des parametres extrinseques..." << std::endl;
+        std::cout << "[1/2] Computing extrinsic parameters..." << std::endl;
         size_t subsetSize = std::min((size_t)15, leftImages.size());
         std::vector<std::string> lSub(leftImages.begin(), leftImages.begin() + subsetSize);
         std::vector<std::string> rSub(rightImages.begin(), rightImages.begin() + subsetSize);
-
         if (stereo.runStereoCalibrationFromFileSets(lSub, rSub, "stereo_params.yml")) {
             std::cout << "[2/2] Verification visuelle de l'alignement..." << std::endl;
             stereo.runStereoCalibrationFromTwoFiles(leftImages[0], rightImages[0], "stereo_params.yml");
