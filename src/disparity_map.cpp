@@ -13,22 +13,31 @@ cv::Mat DisparityMap::computeBM(const cv::Mat& rectL, const cv::Mat& rectR,
 
     // Creating the StereoBM object with specified parameters
     cv::Ptr<cv::StereoBM> stereo = cv::StereoBM::create(numDisparities, blockSize);
+    // UniquenessRatio : Delete matches that are not significantly better than the second-best match
+    stereo->setUniquenessRatio(15); 
+    
+    // TextureThreshold : Ignore regions with low texture (few gradients) to avoid unreliable disparity estimates.
+    stereo->setTextureThreshold(10);
+    
+    // Spekle : Filter small isolated regions in the disparity map that are likely to be noise (speckles) by setting a maximum speckle size and a disparity difference threshold.
+    stereo->setSpeckleWindowSize(100);
+    stereo->setSpeckleRange(32);
+
     cv::Mat disparity;
     stereo->compute(grayL, grayR, disparity);
 
     return disparity;
 }
 
-cv::Mat DisparityMap::getVisualColorMap(const cv::Mat& disparity) {
+cv::Mat DisparityMap::getVisualMap(const cv::Mat& disparity) {
     if (disparity.empty()) return cv::Mat();
     cv::Mat disp8, colorMap;
     // Normalization of the disparity map to the range [0, 255] for visualization
     cv::normalize(disparity, disp8, 0, 255, cv::NORM_MINMAX, CV_8U);
     // Applying a color map to enhance visualization of disparity (depth)
-    cv::applyColorMap(disp8, colorMap, cv::COLORMAP_JET);
     // Set pixels with invalid disparity (negative values) to black
     colorMap.setTo(cv::Scalar(0,0,0), disparity < 0);
-    return colorMap;
+    return disp8;
 }
 
 

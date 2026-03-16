@@ -12,7 +12,7 @@ class DisparityMap {
 public:
     static cv::Mat computeBM(const cv::Mat& rectL, const cv::Mat& rectR, 
                              int numDisparities = 64, int blockSize = 15);
-    static cv::Mat getVisualColorMap(const cv::Mat& disparity);
+    static cv::Mat getVisualMap(const cv::Mat& disparity);
     static std::vector<SparsePoint> computeSparse(const std::vector<cv::KeyPoint>& kpL, 
                                                   const std::vector<cv::KeyPoint>& kpR,
                                                   const std::vector<cv::DMatch>& matches);

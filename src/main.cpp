@@ -80,8 +80,8 @@ int main() {
 
     // Disparity ( Stereo Block Matching with default parameters)
     std::cout << "[2/3] Computing disparity map..." << std::endl;
-    cv::Mat dispRaw = DisparityMap::computeBM(frameL, frameR, 64, 21);
-    cv::Mat dispColor = DisparityMap::getVisualColorMap(dispRaw);
+    cv::Mat dispRaw = DisparityMap::computeBM(frameL, frameR, 96, 15);
+    cv::Mat dispColor = DisparityMap::getVisualMap(dispRaw);
     cv::imshow("Disparity", dispColor);
 
     // Sparse Disparity (only on matched keypoints with ORB)
