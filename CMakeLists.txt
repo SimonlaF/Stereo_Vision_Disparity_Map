@@ -16,6 +16,7 @@ set(SOURCE_FILES
     src/calibration.cpp
     src/stereo_calibration.cpp
     src/feature_matcher.cpp
+    src/disparity_map.cpp
 )
 
 add_executable(MonApp ${SOURCE_FILES})

@@ -74,8 +74,8 @@ bool StereoCalibrator::runStereoCalibration(int camIdx1, int camIdx2, const std:
 
     std::cout << "Extrinsic parameters calculation" << std::endl;
     cv::Mat R, T, E, F;
-    
-    double rms = cv::stereoCalibrate(objectPoints, imgPts1, imgPts2,
+    // StereoCalibrate compute R and T from the set of images and the intrinsics loaded previously
+    double rms = cv::stereoCalibrate(objectPoints, imgPts1, imgPts2,    
                                      _K1, _dist1, _K2, _dist2, gray1.size(),
                                      R, T, E, F, cv::CALIB_FIX_INTRINSIC,
                                      cv::TermCriteria(cv::TermCriteria::COUNT + cv::TermCriteria::EPS, 100, 1e-5));
@@ -135,7 +135,7 @@ bool StereoCalibrator::runStereoCalibrationFromFileSets(const std::vector<std::s
     cv::Mat R, T, E, F;
     cv::Mat imgL = cv::imread(leftImages[0]);
     cv::Size imageSize = imgL.size();
-
+    // Stereo Calibrate compute R and T from the set of images and the intrinsics loaded previously
     double rms = cv::stereoCalibrate(objectPoints, imgPts1, imgPts2,                   
                                      _K1, _dist1, _K2, _dist2, imageSize,
                                      R, T, E, F, cv::CALIB_FIX_INTRINSIC);
@@ -180,6 +180,7 @@ bool StereoCalibrator::displayRectifiedView(const std::string& leftImgPath,
     // 3. Computing rectification transforms
     cv::Mat R1, R2, P1, P2, Q;
     cv::Rect validROI[2];
+    // StereoRectify compute the rectification transforms for each camera (dividing the reprojection error by 2 to get a better visual result)
     cv::stereoRectify(K1, D1, K2, D2, frame1.size(), R, T, 
                       R1, R2, P1, P2, Q, cv::CALIB_ZERO_DISPARITY, 0, frame1.size(), 
                       &validROI[0], &validROI[1]);

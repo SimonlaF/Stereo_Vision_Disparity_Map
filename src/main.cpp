@@ -6,7 +6,7 @@
 #include "../include/calibration.hpp"
 #include "../include/stereo_calibration.hpp"
 #include "../include/feature_matcher.hpp"
-
+#include "../include/disparity_map.hpp"
 namespace fs = std::filesystem;
 
 static float fx = 0.0f, fy = 0.0f, cx0 = 0.0f, cx1 = 0.0f, cy = 0.0f, baseline = 0.0f, doffs = 0.0f;
@@ -63,6 +63,14 @@ int main() {
     // MATCHING & DISPARITY (Dataset Middlebury) (No need for calibration parameters here because MiddleBury images are already rectified)
     // 1. Matching ORB
     std::cout << "[1/3] Matching of interest points..." << std::endl;
+    loadCalibrationFromTxt("calib.txt");
+    cv::Mat frameL = cv::imread("../im0.png");
+    cv::Mat frameR = cv::imread("../im1.png");
+
+    if (frameL.empty() || frameR.empty()) {
+        std::cerr << "Erreur : im0.png ou im1.png introuvable." << std::endl;
+        return -1;
+    }
     FeatureMatcher matcher;
     std::vector<cv::KeyPoint> kpL, kpR;
     std::vector<cv::DMatch> goodMatches;
@@ -72,17 +80,16 @@ int main() {
 
     // Disparity ( Stereo Block Matching with default parameters)
     std::cout << "[2/3] Computing disparity map..." << std::endl;
-    cv::Mat grayL, grayR;
-    cv::cvtColor(frameL, grayL, cv::COLOR_BGR2GRAY); // Convert to grayscale for disparity computation 
-    cv::cvtColor(frameR, grayR, cv::COLOR_BGR2GRAY);
-    
-    cv::Ptr<cv::StereoBM> stereoBM = cv::StereoBM::create(32, 15);
-    cv::Mat disparity;
-    stereoBM->compute(grayL, grayR, disparity);
-    
-    cv::Mat disp8;
-    cv::normalize(disparity, disp8, 0, 255, cv::NORM_MINMAX, CV_8U);   // Normalize disparity to scale it on 8 bits for visualization
-    cv::imshow("Disparity", disp8);
+    cv::Mat dispRaw = DisparityMap::computeBM(frameL, frameR, 64, 21);
+    cv::Mat dispColor = DisparityMap::getVisualColorMap(dispRaw);
+    cv::imshow("Disparity", dispColor);
+
+    // Sparse Disparity (only on matched keypoints with ORB)
+    std::vector<SparsePoint> sparsePoints = DisparityMap::computeSparse(kpL, kpR, goodMatches);
+    cv::Mat visSparse = frameL.clone();
+    DisparityMap::drawSparse(visSparse, sparsePoints);
+
+    cv::imshow("Sparse Disparity (ORB)", visSparse);
     cv::waitKey(0);
 
     return 0;
